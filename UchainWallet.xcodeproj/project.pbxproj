@@ -1,0 +1,810 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9D131EB02189A8730068B36C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EAF2189A8730068B36C /* AppDelegate.m */; };
+		9D131EB82189A8730068B36C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D131EB72189A8730068B36C /* Assets.xcassets */; };
+		9D131EBE2189A8730068B36C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EBD2189A8730068B36C /* main.m */; };
+		9D131EDA2189B68E0068B36C /* UchainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131ED92189B68E0068B36C /* UchainNavigationViewController.m */; };
+		9D131EE9218A97D90068B36C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D131EEB218A97D90068B36C /* InfoPlist.strings */; };
+		9D131EEF218A97FE0068B36C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D131EF1218A97FE0068B36C /* Localizable.strings */; };
+		9D131F08218A98480068B36C /* SOLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EF4218A98480068B36C /* SOLocalization.m */; };
+		9D131F09218A98480068B36C /* UIViewController+SOLocalizations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EF9218A98480068B36C /* UIViewController+SOLocalizations.m */; };
+		9D131F0A218A98480068B36C /* UIBarItem+SOLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EFA218A98480068B36C /* UIBarItem+SOLocalization.m */; };
+		9D131F0B218A98480068B36C /* UIView+SOLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EFB218A98480068B36C /* UIView+SOLocalization.m */; };
+		9D131F0C218A98480068B36C /* UINavigationItem+SOLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EFC218A98480068B36C /* UINavigationItem+SOLocalization.m */; };
+		9D131F0D218A98480068B36C /* SOSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EFD218A98480068B36C /* SOSwizzle.m */; };
+		9D131F0E218A98480068B36C /* UIButton+SOLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EFE218A98480068B36C /* UIButton+SOLocalization.m */; };
+		9D131F0F218A98480068B36C /* UILabel+SOLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EFF218A98480068B36C /* UILabel+SOLocalization.m */; };
+		9D131F10218A98480068B36C /* UITextField+SOLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F00218A98480068B36C /* UITextField+SOLocalization.m */; };
+		9D131F16218A998C0068B36C /* UchainMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F15218A998C0068B36C /* UchainMineViewController.m */; };
+		9D131F19218A99AD0068B36C /* UchainNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F18218A99AD0068B36C /* UchainNewsViewController.m */; };
+		9D131F1C218A99C40068B36C /* UchainWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F1B218A99C40068B36C /* UchainWalletViewController.m */; };
+		9D131F28218AA1B80068B36C /* UIResponder+Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F27218AA1B80068B36C /* UIResponder+Router.m */; };
+		9D131F2C218AA3CC0068B36C /* UchainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F2B218AA3CC0068B36C /* UchainUtil.m */; };
+		9D131F31218AA6CA0068B36C /* UIColor+HYF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F2F218AA6CA0068B36C /* UIColor+HYF.m */; };
+		9D131F32218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F30218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.m */; };
+		9D131F35218ACE190068B36C /* UIView+TKFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F34218ACE190068B36C /* UIView+TKFrame.m */; };
+		9D131F38218AD9DF0068B36C /* UchainSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F37218AD9DF0068B36C /* UchainSideViewController.m */; };
+		9D131F3B218ADE6B0068B36C /* UIViewController+Apex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F39218ADE6B0068B36C /* UIViewController+Apex.m */; };
+		9D131F3E218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F3D218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m */; };
+		9D131F46218B020D0068B36C /* UchainWalletInitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F45218B020D0068B36C /* UchainWalletInitViewController.m */; };
+		9D131F4A218B060A0068B36C /* UchainCreatWalletController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F49218B060A0068B36C /* UchainCreatWalletController.m */; };
+		9D131F4D218B06230068B36C /* UchainImportWalletController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F4C218B06230068B36C /* UchainImportWalletController.m */; };
+		9D131F5B218BEBD30068B36C /* YRSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F56218BEBD30068B36C /* YRSideViewController.m */; };
+		9D131F6C218C2DB30068B36C /* UchainMethodSwizzlingUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F6B218C2DB30068B36C /* UchainMethodSwizzlingUtil.m */; };
+		9D131F74218C3AFE0068B36C /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F6E218C3AFE0068B36C /* RDVTabBar.m */; };
+		9D131F75218C3AFE0068B36C /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F72218C3AFE0068B36C /* RDVTabBarController.m */; };
+		9D131F76218C3AFE0068B36C /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F73218C3AFE0068B36C /* RDVTabBarItem.m */; };
+		F506AF8A11147E314A1F51F2 /* libPods-UchainWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9A3212DDC04BBAFC80C9CFD1 /* Pods-UchainWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		9D131EAB2189A8730068B36C /* UchainWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UchainWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D131EAE2189A8730068B36C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9D131EAF2189A8730068B36C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9D131EB72189A8730068B36C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D131EBC2189A8730068B36C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D131EBD2189A8730068B36C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9D131ED82189B68E0068B36C /* UchainNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainNavigationViewController.h; sourceTree = "<group>"; };
+		9D131ED92189B68E0068B36C /* UchainNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainNavigationViewController.m; sourceTree = "<group>"; };
+		9D131EEA218A97D90068B36C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		9D131EEC218A97DA0068B36C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9D131EF0218A97FE0068B36C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		9D131EF2218A98000068B36C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9D131EF4218A98480068B36C /* SOLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOLocalization.m; sourceTree = "<group>"; };
+		9D131EF6218A98480068B36C /* SOLocalizationElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOLocalizationElement.h; sourceTree = "<group>"; };
+		9D131EF7218A98480068B36C /* UILabel+SOLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+SOLocalization.h"; sourceTree = "<group>"; };
+		9D131EF8218A98480068B36C /* UITextField+SOLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+SOLocalization.h"; sourceTree = "<group>"; };
+		9D131EF9218A98480068B36C /* UIViewController+SOLocalizations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SOLocalizations.m"; sourceTree = "<group>"; };
+		9D131EFA218A98480068B36C /* UIBarItem+SOLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarItem+SOLocalization.m"; sourceTree = "<group>"; };
+		9D131EFB218A98480068B36C /* UIView+SOLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SOLocalization.m"; sourceTree = "<group>"; };
+		9D131EFC218A98480068B36C /* UINavigationItem+SOLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+SOLocalization.m"; sourceTree = "<group>"; };
+		9D131EFD218A98480068B36C /* SOSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOSwizzle.m; sourceTree = "<group>"; };
+		9D131EFE218A98480068B36C /* UIButton+SOLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SOLocalization.m"; sourceTree = "<group>"; };
+		9D131EFF218A98480068B36C /* UILabel+SOLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+SOLocalization.m"; sourceTree = "<group>"; };
+		9D131F00218A98480068B36C /* UITextField+SOLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+SOLocalization.m"; sourceTree = "<group>"; };
+		9D131F01218A98480068B36C /* UIBarItem+SOLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarItem+SOLocalization.h"; sourceTree = "<group>"; };
+		9D131F02218A98480068B36C /* UIViewController+SOLocalizations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SOLocalizations.h"; sourceTree = "<group>"; };
+		9D131F03218A98480068B36C /* UIButton+SOLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SOLocalization.h"; sourceTree = "<group>"; };
+		9D131F04218A98480068B36C /* UINavigationItem+SOLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+SOLocalization.h"; sourceTree = "<group>"; };
+		9D131F05218A98480068B36C /* SOSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSwizzle.h; sourceTree = "<group>"; };
+		9D131F06218A98480068B36C /* UIView+SOLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SOLocalization.h"; sourceTree = "<group>"; };
+		9D131F07218A98480068B36C /* SOLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOLocalization.h; sourceTree = "<group>"; };
+		9D131F14218A998C0068B36C /* UchainMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainMineViewController.h; sourceTree = "<group>"; };
+		9D131F15218A998C0068B36C /* UchainMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainMineViewController.m; sourceTree = "<group>"; };
+		9D131F17218A99AD0068B36C /* UchainNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainNewsViewController.h; sourceTree = "<group>"; };
+		9D131F18218A99AD0068B36C /* UchainNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainNewsViewController.m; sourceTree = "<group>"; };
+		9D131F1A218A99C40068B36C /* UchainWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainWalletViewController.h; sourceTree = "<group>"; };
+		9D131F1B218A99C40068B36C /* UchainWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainWalletViewController.m; sourceTree = "<group>"; };
+		9D131F23218A9C5B0068B36C /* UchainPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainPrefixHeader.pch; sourceTree = "<group>"; };
+		9D131F24218A9C9E0068B36C /* UchainConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainConstants.h; sourceTree = "<group>"; };
+		9D131F26218AA1B80068B36C /* UIResponder+Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Router.h"; sourceTree = "<group>"; };
+		9D131F27218AA1B80068B36C /* UIResponder+Router.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Router.m"; sourceTree = "<group>"; };
+		9D131F2A218AA3CC0068B36C /* UchainUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainUtil.h; sourceTree = "<group>"; };
+		9D131F2B218AA3CC0068B36C /* UchainUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainUtil.m; sourceTree = "<group>"; };
+		9D131F2D218AA6CA0068B36C /* UIColor+HYF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HYF.h"; sourceTree = "<group>"; };
+		9D131F2E218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ApexNavigationBar.h"; sourceTree = "<group>"; };
+		9D131F2F218AA6CA0068B36C /* UIColor+HYF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HYF.m"; sourceTree = "<group>"; };
+		9D131F30218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ApexNavigationBar.m"; sourceTree = "<group>"; };
+		9D131F33218ACE190068B36C /* UIView+TKFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TKFrame.h"; sourceTree = "<group>"; };
+		9D131F34218ACE190068B36C /* UIView+TKFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKFrame.m"; sourceTree = "<group>"; };
+		9D131F36218AD9DF0068B36C /* UchainSideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainSideViewController.h; sourceTree = "<group>"; };
+		9D131F37218AD9DF0068B36C /* UchainSideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainSideViewController.m; sourceTree = "<group>"; };
+		9D131F39218ADE6B0068B36C /* UIViewController+Apex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Apex.m"; sourceTree = "<group>"; };
+		9D131F3A218ADE6B0068B36C /* UIViewController+Apex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Apex.h"; sourceTree = "<group>"; };
+		9D131F3C218ADEFE0068B36C /* UIViewController+UchainNavigationColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UchainNavigationColor.h"; sourceTree = "<group>"; };
+		9D131F3D218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UchainNavigationColor.m"; sourceTree = "<group>"; };
+		9D131F44218B020D0068B36C /* UchainWalletInitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainWalletInitViewController.h; sourceTree = "<group>"; };
+		9D131F45218B020D0068B36C /* UchainWalletInitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainWalletInitViewController.m; sourceTree = "<group>"; };
+		9D131F48218B060A0068B36C /* UchainCreatWalletController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainCreatWalletController.h; sourceTree = "<group>"; };
+		9D131F49218B060A0068B36C /* UchainCreatWalletController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainCreatWalletController.m; sourceTree = "<group>"; };
+		9D131F4B218B06230068B36C /* UchainImportWalletController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainImportWalletController.h; sourceTree = "<group>"; };
+		9D131F4C218B06230068B36C /* UchainImportWalletController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainImportWalletController.m; sourceTree = "<group>"; };
+		9D131F56218BEBD30068B36C /* YRSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRSideViewController.m; sourceTree = "<group>"; };
+		9D131F57218BEBD30068B36C /* YRSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRSideViewController.h; sourceTree = "<group>"; };
+		9D131F6A218C2DB30068B36C /* UchainMethodSwizzlingUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainMethodSwizzlingUtil.h; sourceTree = "<group>"; };
+		9D131F6B218C2DB30068B36C /* UchainMethodSwizzlingUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainMethodSwizzlingUtil.m; sourceTree = "<group>"; };
+		9D131F6E218C3AFE0068B36C /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
+		9D131F6F218C3AFE0068B36C /* RDVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarController.h; sourceTree = "<group>"; };
+		9D131F70218C3AFE0068B36C /* RDVTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarItem.h; sourceTree = "<group>"; };
+		9D131F71218C3AFE0068B36C /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
+		9D131F72218C3AFE0068B36C /* RDVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarController.m; sourceTree = "<group>"; };
+		9D131F73218C3AFE0068B36C /* RDVTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarItem.m; sourceTree = "<group>"; };
+		B3C00042EC786C0C4FEBD697 /* Pods-UchainWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.release.xcconfig"; sourceTree = "<group>"; };
+		FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UchainWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D131EA82189A8730068B36C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F506AF8A11147E314A1F51F2 /* libPods-UchainWallet.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		259A7E1FFF7919F033914904 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A3212DDC04BBAFC80C9CFD1 /* Pods-UchainWallet.debug.xcconfig */,
+				B3C00042EC786C0C4FEBD697 /* Pods-UchainWallet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3865545503DA0A5CC30EC7CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D131EA22189A8730068B36C = {
+			isa = PBXGroup;
+			children = (
+				9D131EAD2189A8730068B36C /* UchainWallet */,
+				9D131EAC2189A8730068B36C /* Products */,
+				259A7E1FFF7919F033914904 /* Pods */,
+				3865545503DA0A5CC30EC7CE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9D131EAC2189A8730068B36C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D131EAB2189A8730068B36C /* UchainWallet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D131EAD2189A8730068B36C /* UchainWallet */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F29218AA3A20068B36C /* Utils */,
+				9D131F25218AA1B80068B36C /* Categories */,
+				9D131ED22189B5F20068B36C /* BaseView */,
+				9D131EC72189B1820068B36C /* Mine */,
+				9D131EC42189B1820068B36C /* News */,
+				9D131EC52189B1820068B36C /* System */,
+				9D131EC62189B1820068B36C /* Vendors */,
+				9D131EC82189B1820068B36C /* Wallet */,
+				9D131EB72189A8730068B36C /* Assets.xcassets */,
+				9D131EBC2189A8730068B36C /* Info.plist */,
+				9D131F24218A9C9E0068B36C /* UchainConstants.h */,
+				9D131F23218A9C5B0068B36C /* UchainPrefixHeader.pch */,
+				9D131EF1218A97FE0068B36C /* Localizable.strings */,
+				9D131EEB218A97D90068B36C /* InfoPlist.strings */,
+				9D131EBD2189A8730068B36C /* main.m */,
+			);
+			path = UchainWallet;
+			sourceTree = "<group>";
+		};
+		9D131EC42189B1820068B36C /* News */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F12218A994F0068B36C /* Controllers */,
+				9D131ECE2189B5330068B36C /* Models */,
+				9D131ECD2189B5330068B36C /* ViewModel */,
+				9D131ECC2189B5330068B36C /* Views */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		9D131EC52189B1820068B36C /* System */ = {
+			isa = PBXGroup;
+			children = (
+				9D131EAE2189A8730068B36C /* AppDelegate.h */,
+				9D131EAF2189A8730068B36C /* AppDelegate.m */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		9D131EC62189B1820068B36C /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F6D218C3AFE0068B36C /* RDVTabBarController */,
+				9D131F55218BEBD30068B36C /* YRSideViewController */,
+				9D131EF3218A98480068B36C /* SOLocalizations */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		9D131EC72189B1820068B36C /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F11218A99460068B36C /* Controllers */,
+				9D131EC92189B52A0068B36C /* Models */,
+				9D131ECA2189B52A0068B36C /* ViewModel */,
+				9D131ECB2189B52A0068B36C /* Views */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		9D131EC82189B1820068B36C /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F13218A99580068B36C /* Controllers */,
+				9D131ECF2189B53D0068B36C /* Models */,
+				9D131ED02189B53D0068B36C /* ViewModel */,
+				9D131ED12189B53D0068B36C /* Views */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		9D131EC92189B52A0068B36C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9D131ECA2189B52A0068B36C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9D131ECB2189B52A0068B36C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D131ECC2189B5330068B36C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D131ECD2189B5330068B36C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9D131ECE2189B5330068B36C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9D131ECF2189B53D0068B36C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9D131ED02189B53D0068B36C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9D131ED12189B53D0068B36C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D131ED22189B5F20068B36C /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				9D131ED32189B60F0068B36C /* Controllers */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		9D131ED32189B60F0068B36C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F36218AD9DF0068B36C /* UchainSideViewController.h */,
+				9D131F37218AD9DF0068B36C /* UchainSideViewController.m */,
+				9D131F44218B020D0068B36C /* UchainWalletInitViewController.h */,
+				9D131F45218B020D0068B36C /* UchainWalletInitViewController.m */,
+				9D131ED82189B68E0068B36C /* UchainNavigationViewController.h */,
+				9D131ED92189B68E0068B36C /* UchainNavigationViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9D131EF3218A98480068B36C /* SOLocalizations */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F07218A98480068B36C /* SOLocalization.h */,
+				9D131EF4218A98480068B36C /* SOLocalization.m */,
+				9D131EF5218A98480068B36C /* UIKit */,
+			);
+			path = SOLocalizations;
+			sourceTree = "<group>";
+		};
+		9D131EF5218A98480068B36C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9D131EF6218A98480068B36C /* SOLocalizationElement.h */,
+				9D131EF7218A98480068B36C /* UILabel+SOLocalization.h */,
+				9D131EF8218A98480068B36C /* UITextField+SOLocalization.h */,
+				9D131EF9218A98480068B36C /* UIViewController+SOLocalizations.m */,
+				9D131EFA218A98480068B36C /* UIBarItem+SOLocalization.m */,
+				9D131EFB218A98480068B36C /* UIView+SOLocalization.m */,
+				9D131EFC218A98480068B36C /* UINavigationItem+SOLocalization.m */,
+				9D131EFD218A98480068B36C /* SOSwizzle.m */,
+				9D131EFE218A98480068B36C /* UIButton+SOLocalization.m */,
+				9D131EFF218A98480068B36C /* UILabel+SOLocalization.m */,
+				9D131F00218A98480068B36C /* UITextField+SOLocalization.m */,
+				9D131F01218A98480068B36C /* UIBarItem+SOLocalization.h */,
+				9D131F02218A98480068B36C /* UIViewController+SOLocalizations.h */,
+				9D131F03218A98480068B36C /* UIButton+SOLocalization.h */,
+				9D131F04218A98480068B36C /* UINavigationItem+SOLocalization.h */,
+				9D131F05218A98480068B36C /* SOSwizzle.h */,
+				9D131F06218A98480068B36C /* UIView+SOLocalization.h */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		9D131F11218A99460068B36C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F14218A998C0068B36C /* UchainMineViewController.h */,
+				9D131F15218A998C0068B36C /* UchainMineViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9D131F12218A994F0068B36C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F17218A99AD0068B36C /* UchainNewsViewController.h */,
+				9D131F18218A99AD0068B36C /* UchainNewsViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9D131F13218A99580068B36C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F1A218A99C40068B36C /* UchainWalletViewController.h */,
+				9D131F1B218A99C40068B36C /* UchainWalletViewController.m */,
+				9D131F48218B060A0068B36C /* UchainCreatWalletController.h */,
+				9D131F49218B060A0068B36C /* UchainCreatWalletController.m */,
+				9D131F4B218B06230068B36C /* UchainImportWalletController.h */,
+				9D131F4C218B06230068B36C /* UchainImportWalletController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9D131F25218AA1B80068B36C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F26218AA1B80068B36C /* UIResponder+Router.h */,
+				9D131F27218AA1B80068B36C /* UIResponder+Router.m */,
+				9D131F2D218AA6CA0068B36C /* UIColor+HYF.h */,
+				9D131F2F218AA6CA0068B36C /* UIColor+HYF.m */,
+				9D131F33218ACE190068B36C /* UIView+TKFrame.h */,
+				9D131F34218ACE190068B36C /* UIView+TKFrame.m */,
+				9D131F3A218ADE6B0068B36C /* UIViewController+Apex.h */,
+				9D131F39218ADE6B0068B36C /* UIViewController+Apex.m */,
+				9D131F3C218ADEFE0068B36C /* UIViewController+UchainNavigationColor.h */,
+				9D131F3D218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m */,
+				9D131F2E218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.h */,
+				9D131F30218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		9D131F29218AA3A20068B36C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F2A218AA3CC0068B36C /* UchainUtil.h */,
+				9D131F2B218AA3CC0068B36C /* UchainUtil.m */,
+				9D131F6A218C2DB30068B36C /* UchainMethodSwizzlingUtil.h */,
+				9D131F6B218C2DB30068B36C /* UchainMethodSwizzlingUtil.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9D131F55218BEBD30068B36C /* YRSideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F57218BEBD30068B36C /* YRSideViewController.h */,
+				9D131F56218BEBD30068B36C /* YRSideViewController.m */,
+			);
+			path = YRSideViewController;
+			sourceTree = "<group>";
+		};
+		9D131F6D218C3AFE0068B36C /* RDVTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				9D131F6E218C3AFE0068B36C /* RDVTabBar.m */,
+				9D131F6F218C3AFE0068B36C /* RDVTabBarController.h */,
+				9D131F70218C3AFE0068B36C /* RDVTabBarItem.h */,
+				9D131F71218C3AFE0068B36C /* RDVTabBar.h */,
+				9D131F72218C3AFE0068B36C /* RDVTabBarController.m */,
+				9D131F73218C3AFE0068B36C /* RDVTabBarItem.m */,
+			);
+			path = RDVTabBarController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9D131EAA2189A8730068B36C /* UchainWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D131EC12189A8730068B36C /* Build configuration list for PBXNativeTarget "UchainWallet" */;
+			buildPhases = (
+				DFA2EA17937122F5C4B32657 /* [CP] Check Pods Manifest.lock */,
+				9D131EA72189A8730068B36C /* Sources */,
+				9D131EA82189A8730068B36C /* Frameworks */,
+				9D131EA92189A8730068B36C /* Resources */,
+				FE88F01E00FA374D2F7EB171 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UchainWallet;
+			productName = UchainWallet;
+			productReference = 9D131EAB2189A8730068B36C /* UchainWallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D131EA32189A8730068B36C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = uwallet;
+				TargetAttributes = {
+					9D131EAA2189A8730068B36C = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 9D131EA62189A8730068B36C /* Build configuration list for PBXProject "UchainWallet" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 9D131EA22189A8730068B36C;
+			productRefGroup = 9D131EAC2189A8730068B36C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D131EAA2189A8730068B36C /* UchainWallet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D131EA92189A8730068B36C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D131EB82189A8730068B36C /* Assets.xcassets in Resources */,
+				9D131EEF218A97FE0068B36C /* Localizable.strings in Resources */,
+				9D131EE9218A97D90068B36C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DFA2EA17937122F5C4B32657 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UchainWallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE88F01E00FA374D2F7EB171 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D131EA72189A8730068B36C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D131F0C218A98480068B36C /* UINavigationItem+SOLocalization.m in Sources */,
+				9D131EDA2189B68E0068B36C /* UchainNavigationViewController.m in Sources */,
+				9D131F3E218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m in Sources */,
+				9D131F0B218A98480068B36C /* UIView+SOLocalization.m in Sources */,
+				9D131F10218A98480068B36C /* UITextField+SOLocalization.m in Sources */,
+				9D131EBE2189A8730068B36C /* main.m in Sources */,
+				9D131F4D218B06230068B36C /* UchainImportWalletController.m in Sources */,
+				9D131F08218A98480068B36C /* SOLocalization.m in Sources */,
+				9D131EB02189A8730068B36C /* AppDelegate.m in Sources */,
+				9D131F31218AA6CA0068B36C /* UIColor+HYF.m in Sources */,
+				9D131F1C218A99C40068B36C /* UchainWalletViewController.m in Sources */,
+				9D131F6C218C2DB30068B36C /* UchainMethodSwizzlingUtil.m in Sources */,
+				9D131F38218AD9DF0068B36C /* UchainSideViewController.m in Sources */,
+				9D131F3B218ADE6B0068B36C /* UIViewController+Apex.m in Sources */,
+				9D131F0D218A98480068B36C /* SOSwizzle.m in Sources */,
+				9D131F46218B020D0068B36C /* UchainWalletInitViewController.m in Sources */,
+				9D131F75218C3AFE0068B36C /* RDVTabBarController.m in Sources */,
+				9D131F76218C3AFE0068B36C /* RDVTabBarItem.m in Sources */,
+				9D131F2C218AA3CC0068B36C /* UchainUtil.m in Sources */,
+				9D131F4A218B060A0068B36C /* UchainCreatWalletController.m in Sources */,
+				9D131F35218ACE190068B36C /* UIView+TKFrame.m in Sources */,
+				9D131F0F218A98480068B36C /* UILabel+SOLocalization.m in Sources */,
+				9D131F5B218BEBD30068B36C /* YRSideViewController.m in Sources */,
+				9D131F74218C3AFE0068B36C /* RDVTabBar.m in Sources */,
+				9D131F0E218A98480068B36C /* UIButton+SOLocalization.m in Sources */,
+				9D131F32218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.m in Sources */,
+				9D131F19218A99AD0068B36C /* UchainNewsViewController.m in Sources */,
+				9D131F28218AA1B80068B36C /* UIResponder+Router.m in Sources */,
+				9D131F16218A998C0068B36C /* UchainMineViewController.m in Sources */,
+				9D131F0A218A98480068B36C /* UIBarItem+SOLocalization.m in Sources */,
+				9D131F09218A98480068B36C /* UIViewController+SOLocalizations.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9D131EEB218A97D90068B36C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D131EEA218A97D90068B36C /* zh-Hans */,
+				9D131EEC218A97DA0068B36C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9D131EF1218A97FE0068B36C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D131EF0218A97FE0068B36C /* zh-Hans */,
+				9D131EF2218A98000068B36C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9D131EBF2189A8730068B36C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9D131EC02189A8730068B36C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9D131EC22189A8730068B36C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A3212DDC04BBAFC80C9CFD1 /* Pods-UchainWallet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/UchainWallet/UchainPrefixHeader.pch";
+				INFOPLIST_FILE = UchainWallet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wallet.ios.uchain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9D131EC32189A8730068B36C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3C00042EC786C0C4FEBD697 /* Pods-UchainWallet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/UchainWallet/UchainPrefixHeader.pch";
+				INFOPLIST_FILE = UchainWallet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wallet.ios.uchain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D131EA62189A8730068B36C /* Build configuration list for PBXProject "UchainWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D131EBF2189A8730068B36C /* Debug */,
+				9D131EC02189A8730068B36C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D131EC12189A8730068B36C /* Build configuration list for PBXNativeTarget "UchainWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D131EC22189A8730068B36C /* Debug */,
+				9D131EC32189A8730068B36C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9D131EA32189A8730068B36C /* Project object */;
+}

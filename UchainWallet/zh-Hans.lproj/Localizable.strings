@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  UchainWallet
+
+  Created by 李超 on 2018/11/1.
+  Copyright © 2018 uwallet. All rights reserved.
+*/
+
+"Wallet" = "钱包";
+"News" = "快讯";
+"Mine" = "我的";
+
+"Create Wallet" = "创建钱包";
+"Import Wallet" = "导入钱包";
