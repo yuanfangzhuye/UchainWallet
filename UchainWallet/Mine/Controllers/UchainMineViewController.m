@@ -7,6 +7,7 @@
 //
 
 #import "UchainMineViewController.h"
+#import "UchainLanguageSettingController.h"
 
 @interface UchainMineViewController ()
 
@@ -20,6 +21,18 @@
     [super viewDidLoad];
     
     [self.view addSubview:self.backgroundImageView];
+    
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    btn.frame = CGRectMake(50, 50, 100, 100);
+//    btn.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:btn];
+//    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)btnClick:(id)sender
+{
+    UchainLanguageSettingController *languageSettingController = [[UchainLanguageSettingController alloc] init];
+    [self.navigationController pushViewController:languageSettingController animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated

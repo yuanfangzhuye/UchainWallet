@@ -27,8 +27,6 @@ typedef void(^RootViewMoveBlock)(UIView *rootView,CGRect orginFrame,CGFloat xoff
 @property (assign,nonatomic) NSTimeInterval animationDuration;//动画时长
 @property (assign,nonatomic) BOOL showBoundsShadow;//是否显示边框阴影
 
-@property BOOL isHorizontalTransformMidView;
-
 @property (copy,nonatomic) RootViewMoveBlock rootViewMoveBlock;//可在此block中重做动画效果
 - (void)setRootViewMoveBlock:(RootViewMoveBlock)rootViewMoveBlock;
 

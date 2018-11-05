@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (CGFloat)tabBarHeight;
 
 + (UchainNavigationViewController *)goWalletTabBarController;
++ (void)jumpToMainController:(UIViewController *)currentViewController;
 
 @end
 

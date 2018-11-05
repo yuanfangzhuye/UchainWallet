@@ -41,6 +41,10 @@
 		9D131F74218C3AFE0068B36C /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F6E218C3AFE0068B36C /* RDVTabBar.m */; };
 		9D131F75218C3AFE0068B36C /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F72218C3AFE0068B36C /* RDVTabBarController.m */; };
 		9D131F76218C3AFE0068B36C /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131F73218C3AFE0068B36C /* RDVTabBarItem.m */; };
+		9D131FAF218FEBC90068B36C /* UchainLanguageSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FAE218FEBC90068B36C /* UchainLanguageSettingController.m */; };
+		9D131FB221900EC70068B36C /* UchainLanguageSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FB121900EC70068B36C /* UchainLanguageSettingCell.m */; };
+		9D131FB82190198B0068B36C /* UIViewController+NetLoadIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FB72190198B0068B36C /* UIViewController+NetLoadIndicator.m */; };
+		9D131FBB219023530068B36C /* AppDelegate+UchainUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FBA219023530068B36C /* AppDelegate+UchainUI.m */; };
 		F506AF8A11147E314A1F51F2 /* libPods-UchainWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +121,14 @@
 		9D131F71218C3AFE0068B36C /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
 		9D131F72218C3AFE0068B36C /* RDVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarController.m; sourceTree = "<group>"; };
 		9D131F73218C3AFE0068B36C /* RDVTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarItem.m; sourceTree = "<group>"; };
+		9D131FAD218FEBC90068B36C /* UchainLanguageSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainLanguageSettingController.h; sourceTree = "<group>"; };
+		9D131FAE218FEBC90068B36C /* UchainLanguageSettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainLanguageSettingController.m; sourceTree = "<group>"; };
+		9D131FB021900EC70068B36C /* UchainLanguageSettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainLanguageSettingCell.h; sourceTree = "<group>"; };
+		9D131FB121900EC70068B36C /* UchainLanguageSettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainLanguageSettingCell.m; sourceTree = "<group>"; };
+		9D131FB62190198A0068B36C /* UIViewController+NetLoadIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NetLoadIndicator.h"; sourceTree = "<group>"; };
+		9D131FB72190198B0068B36C /* UIViewController+NetLoadIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NetLoadIndicator.m"; sourceTree = "<group>"; };
+		9D131FB9219023530068B36C /* AppDelegate+UchainUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+UchainUI.h"; sourceTree = "<group>"; };
+		9D131FBA219023530068B36C /* AppDelegate+UchainUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+UchainUI.m"; sourceTree = "<group>"; };
 		B3C00042EC786C0C4FEBD697 /* Pods-UchainWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.release.xcconfig"; sourceTree = "<group>"; };
 		FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UchainWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -206,6 +218,8 @@
 			children = (
 				9D131EAE2189A8730068B36C /* AppDelegate.h */,
 				9D131EAF2189A8730068B36C /* AppDelegate.m */,
+				9D131FB9219023530068B36C /* AppDelegate+UchainUI.h */,
+				9D131FBA219023530068B36C /* AppDelegate+UchainUI.m */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -259,6 +273,8 @@
 		9D131ECB2189B52A0068B36C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D131FB021900EC70068B36C /* UchainLanguageSettingCell.h */,
+				9D131FB121900EC70068B36C /* UchainLanguageSettingCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -365,6 +381,8 @@
 			children = (
 				9D131F14218A998C0068B36C /* UchainMineViewController.h */,
 				9D131F15218A998C0068B36C /* UchainMineViewController.m */,
+				9D131FAD218FEBC90068B36C /* UchainLanguageSettingController.h */,
+				9D131FAE218FEBC90068B36C /* UchainLanguageSettingController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -402,6 +420,8 @@
 				9D131F34218ACE190068B36C /* UIView+TKFrame.m */,
 				9D131F3A218ADE6B0068B36C /* UIViewController+Apex.h */,
 				9D131F39218ADE6B0068B36C /* UIViewController+Apex.m */,
+				9D131FB62190198A0068B36C /* UIViewController+NetLoadIndicator.h */,
+				9D131FB72190198B0068B36C /* UIViewController+NetLoadIndicator.m */,
 				9D131F3C218ADEFE0068B36C /* UIViewController+UchainNavigationColor.h */,
 				9D131F3D218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m */,
 				9D131F2E218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.h */,
@@ -568,17 +588,21 @@
 				9D131F0C218A98480068B36C /* UINavigationItem+SOLocalization.m in Sources */,
 				9D131EDA2189B68E0068B36C /* UchainNavigationViewController.m in Sources */,
 				9D131F3E218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m in Sources */,
+				9D131FB221900EC70068B36C /* UchainLanguageSettingCell.m in Sources */,
 				9D131F0B218A98480068B36C /* UIView+SOLocalization.m in Sources */,
 				9D131F10218A98480068B36C /* UITextField+SOLocalization.m in Sources */,
 				9D131EBE2189A8730068B36C /* main.m in Sources */,
 				9D131F4D218B06230068B36C /* UchainImportWalletController.m in Sources */,
+				9D131FB82190198B0068B36C /* UIViewController+NetLoadIndicator.m in Sources */,
 				9D131F08218A98480068B36C /* SOLocalization.m in Sources */,
 				9D131EB02189A8730068B36C /* AppDelegate.m in Sources */,
 				9D131F31218AA6CA0068B36C /* UIColor+HYF.m in Sources */,
 				9D131F1C218A99C40068B36C /* UchainWalletViewController.m in Sources */,
+				9D131FBB219023530068B36C /* AppDelegate+UchainUI.m in Sources */,
 				9D131F6C218C2DB30068B36C /* UchainMethodSwizzlingUtil.m in Sources */,
 				9D131F38218AD9DF0068B36C /* UchainSideViewController.m in Sources */,
 				9D131F3B218ADE6B0068B36C /* UIViewController+Apex.m in Sources */,
+				9D131FAF218FEBC90068B36C /* UchainLanguageSettingController.m in Sources */,
 				9D131F0D218A98480068B36C /* SOSwizzle.m in Sources */,
 				9D131F46218B020D0068B36C /* UchainWalletInitViewController.m in Sources */,
 				9D131F75218C3AFE0068B36C /* RDVTabBarController.m in Sources */,

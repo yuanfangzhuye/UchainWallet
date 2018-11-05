@@ -202,8 +202,6 @@
         [self showShadow:_showBoundsShadow];
         _leftViewController.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
     }];
-    
-    //    self.view.backgroundColor = ECJiaDominantHue;
 }
 
 - (void)showRightViewController:(BOOL)animated{
@@ -271,7 +269,6 @@
     
     if (_panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
         
-        //        _leftViewController.view.frame = CGRectMake(-kScreenWidth/5, 0, kScreenWidth, kScreenHeight);
         _startPanPoint = _currentView.frame.origin;
         if (_currentView.frame.origin.x==0) {
             [self showShadow:_showBoundsShadow];
@@ -321,17 +318,12 @@
             CGFloat maxDistance = maxDistanceRight;
             CGFloat distance = maxDistance * persent;
             l.origin.x = -(maxDistance-distance);
-            //            l.origin.x = -kScreenWidth/5
-            //            + (xoffset * kScreenWidth/5) / (kScreenWidth/5*4);
-            //            c.origin.x = xoffset;
         }
         
         self.leftViewController.view.frame = l;
-        //        _currentView.frame = c;
     }
     
     if (_panGestureRecognizer.state==UIGestureRecognizerStateEnded) {
-        //        _leftViewController.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
         if (_currentView.frame.origin.x!=0 && _currentView.frame.origin.x!=_leftViewShowWidth && _currentView.frame.origin.x!=-_rightViewShowWidth) {
             if (_panMovingRightOrLeft && _currentView.frame.origin.x>20) {
                 [self showLeftViewController:YES];

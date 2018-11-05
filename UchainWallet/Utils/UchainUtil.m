@@ -88,9 +88,19 @@
     mainTabBarController.selectedIndex = 0;
     
     UchainNavigationViewController *navigationController = (UchainNavigationViewController *)mainTabBarController.selectedViewController;
-//    [navigationController popToRootViewControllerAnimated:YES];
     
     return navigationController;
+}
+
++ (void)jumpToMainController:(UIViewController *)currentViewController
+{
+    NSArray *navControllers = currentViewController.navigationController.viewControllers;
+    [currentViewController.navigationController setViewControllers:[navControllers subarrayWithRange:NSMakeRange(0, 1)]];
+    
+    RDVTabBarController *mainTabBarController = [[AppDelegate sharedApplicationDelegate] mainTabBarController];
+    if (mainTabBarController.selectedIndex != 0) {
+        [mainTabBarController setSelectedIndex:0];
+    }
 }
 
 @end
