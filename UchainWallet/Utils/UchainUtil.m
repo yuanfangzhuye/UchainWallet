@@ -81,14 +81,14 @@
 
 + (UchainNavigationViewController *)goWalletTabBarController
 {
+    YRSideViewController *sideViewController = [[AppDelegate sharedApplicationDelegate] sideViewController];
+    [sideViewController hideSideViewController:YES];
+    
     RDVTabBarController *mainTabBarController = [[AppDelegate sharedApplicationDelegate] mainTabBarController];
     mainTabBarController.selectedIndex = 0;
     
     UchainNavigationViewController *navigationController = (UchainNavigationViewController *)mainTabBarController.selectedViewController;
-    [navigationController popToRootViewControllerAnimated:YES];
-    
-    YRSideViewController *sideViewController = [[AppDelegate sharedApplicationDelegate] sideViewController];
-    [sideViewController hideSideViewController:YES];
+//    [navigationController popToRootViewControllerAnimated:YES];
     
     return navigationController;
 }

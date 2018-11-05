@@ -8,10 +8,7 @@
 
 #import "YRSideViewController.h"
 
-#define ScaleMin 0.7f
-#define MaxWidthMove kScreenWidth * 0.8
-
-@interface YRSideViewController ()<UIGestureRecognizerDelegate>{
+@interface YRSideViewController () <UIGestureRecognizerDelegate>{
     UIView *_baseView;//目前是_baseView
     UIView *_currentView;//其实就是rootViewController.view
     
@@ -59,16 +56,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    _baseView              = self.view;
+    
+    _baseView = self.view;
     [_baseView setBackgroundColor:[UIColor colorWithRed:0.5 green:0.6 blue:0.8 alpha:1]];
     
-    //    UIImageView* backGroundImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:MainBackgroundImage]];
-    //    backGroundImageView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
-    //
-    //    [self.view addSubview:backGroundImageView];
-    
-    self.needSwipeShowMenu = YES;
+    self.needSwipeShowMenu = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -142,8 +134,6 @@
             [self addChildViewController:_rootViewController];
             [self.view addSubview:_rootViewController.view];
             [self.view bringSubviewToFront:_rootViewController.view];
-            
-            
         }
     }
     
@@ -159,6 +149,7 @@
         [_baseView removeGestureRecognizer:_panGestureRecognizer];
     }
 }
+
 - (void)showShadow:(BOOL)show{
     _currentView.layer.shadowOpacity    = show ? 0.8f : 0.0f;
     if (show) {
@@ -168,6 +159,7 @@
         _currentView.layer.shadowPath   = [UIBezierPath bezierPathWithRect:_currentView.bounds].CGPath;
     }
 }
+
 #pragma mark  ShowOrHideTheView
 - (void)willShowLeftViewController{
     if (!_leftViewController || _leftViewController.view.superview) {
@@ -179,6 +171,7 @@
         [_rightViewController.view removeFromSuperview];
     }
 }
+
 - (void)willShowRightViewController{
     if (!_rightViewController || _rightViewController.view.superview) {
         return;
@@ -189,6 +182,7 @@
         [_leftViewController.view removeFromSuperview];
     }
 }
+
 - (void)showLeftViewController:(BOOL)animated{
     if (!_leftViewController) {
         return;
@@ -211,6 +205,7 @@
     
     //    self.view.backgroundColor = ECJiaDominantHue;
 }
+
 - (void)showRightViewController:(BOOL)animated{
     if (!_rightViewController)
     {
@@ -228,6 +223,7 @@
         [self showShadow:_showBoundsShadow];
     }];
 }
+
 - (void)hideSideViewController:(BOOL)animated{
     [self showShadow:NO];
     NSTimeInterval animatedTime = 0;
@@ -366,8 +362,6 @@
         return;
     }
     
-    //    CGFloat minScale = ScaleMin;
-    //    CGFloat scale = minScale + (percentVisible*(1.0 - minScale));
     CATransform3D scaleTransform =  CATransform3DMakeScale(1, 1, 1);
     
     CGFloat maxDistanceRight = (kScreenWidth *2/ 5.0);

@@ -34,17 +34,10 @@
     [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = YES;;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [self.navigationController lt_setBackgroundColor:[UIColor clearColor]];
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
     self.navigationItem.leftBarButtonItem = _leftItem;
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 }
 
 - (void)initUI {

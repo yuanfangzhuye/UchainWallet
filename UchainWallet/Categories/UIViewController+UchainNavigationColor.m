@@ -23,9 +23,9 @@
 
 - (void)uchain_viewWillDisappear:(BOOL)animated
 {
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
-    [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
+    [self.navigationController lt_setBackgroundColor:[UIColor clearColor]];
     [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     
     [self uchain_viewWillDisappear:animated];
 }

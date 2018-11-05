@@ -85,11 +85,10 @@
     [self customizeTabBarOutlook];
     
     UchainSideViewController *sideViewController = [[UchainSideViewController alloc] init];
-    UchainNavigationViewController *sideNavigationViewController = [[UchainNavigationViewController alloc] initWithRootViewController:sideViewController];
     
     _sideViewController = [[YRSideViewController alloc] initWithNibName:nil bundle:nil];
     _sideViewController.rootViewController = _mainTabBarController;
-    _sideViewController.rightViewController = sideNavigationViewController;
+    _sideViewController.rightViewController = sideViewController;
     
     _sideViewController.rightViewShowWidth = scaleWidth375(150);
     _sideViewController.needSwipeShowMenu = NO;//默认开启的可滑动展示
