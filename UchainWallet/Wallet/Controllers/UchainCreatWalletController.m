@@ -15,6 +15,9 @@
 
 @interface UchainCreatWalletController ()
 
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) RACSignal *combineSignal;
+
 @end
 
 @implementation UchainCreatWalletController

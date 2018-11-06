@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AppDelegate+UchainUI.h"
 #import "UchainWalletInitViewController.h"
+#import "UchainWelcomePageViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,13 +22,11 @@
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
-
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self localization];
     return YES;
 }
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -39,21 +38,21 @@
     
 //    NSMutableArray *arr = [[ApexWalletManager shareManager] getWalletsArr];
 //    [arr addObjectsFromArray:[[ETHWalletManager shareManager] getWalletsArr]];
-    NSArray *arr = [NSArray arrayWithObject:@"1"];
-//    NSArray *arr = [NSArray new];
+//    NSArray *arr = [NSArray arrayWithObject:@"1"];
     
-    BOOL isFirstCreatDone = [[NSUserDefaults standardUserDefaults] objectForKey:KisFirstCreateWalletDone];
-    if (arr.count == 0 && !isFirstCreatDone) {
-        UchainWalletInitViewController *walletVC = [[UchainWalletInitViewController alloc] init];
-        walletVC.didFinishCreatSub = [RACSubject subject];
-        [walletVC.didFinishCreatSub subscribeNext:^(id  _Nullable x) {
-            self.window.rootViewController = _sideViewController;
+    BOOL isFirstOpenApp = [self isOpenInNewVersion];
+    
+    if (isFirstOpenApp) {
+        UchainWelcomePageViewController *welcomePageViewController = [[UchainWelcomePageViewController alloc] initWithWelcomeController];
+        welcomePageViewController.didFinishScrollerWelcomeSub = [RACSubject subject];
+        [welcomePageViewController.didFinishScrollerWelcomeSub subscribeNext:^(id  _Nullable x) {
+            [self targetRootViewControllerSet];
         }];
-
-        self.window.rootViewController = [[UchainNavigationViewController alloc] initWithRootViewController:walletVC];
+        
+        self.window.rootViewController = welcomePageViewController;
     }
     else {
-        self.window.rootViewController = _sideViewController;
+        [self targetRootViewControllerSet];
     }
 //
 //    [ApexAppConfig configAll];
@@ -62,9 +61,43 @@
     }
     
     [self.window makeKeyAndVisible];
+    
+//    [self showWelcomePage];
     return YES;
 }
 
+- (void)targetRootViewControllerSet
+{
+    NSArray *arr = [NSArray new];
+    BOOL isFirstCreatDone = [[NSUserDefaults standardUserDefaults] objectForKey:KisFirstCreateWalletDone];
+    
+    if (arr.count == 0 && !isFirstCreatDone) {
+        UchainWalletInitViewController *walletInitViewController = [[UchainWalletInitViewController alloc] init];
+        walletInitViewController.didFinishCreatSub = [RACSubject subject];
+        [walletInitViewController.didFinishCreatSub subscribeNext:^(id  _Nullable x) {
+            self.window.rootViewController = _sideViewController;
+        }];
+        
+        self.window.rootViewController = [[UchainNavigationViewController alloc] initWithRootViewController:walletInitViewController];
+    }
+    else {
+        self.window.rootViewController = _sideViewController;
+    }
+}
+
+- (BOOL)isOpenInNewVersion
+{
+    NSString *isOpenedApp = [[NSUserDefaults standardUserDefaults] objectForKey:@"is_open_app"];
+    if (!isOpenedApp) {
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"is_open_app"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        return YES;
+    }
+    
+    return NO;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -59,6 +59,7 @@
 		9D131FE121904D6D0068B36C /* Neomobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D131FE021904D6D0068B36C /* Neomobile.framework */; };
 		9D131FE421904EAA0068B36C /* UIViewController+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FE321904EAA0068B36C /* UIViewController+Toast.m */; };
 		9D131FE821904F2C0068B36C /* PDKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FE721904F2C0068B36C /* PDKeyChain.m */; };
+		9D131FEC219168390068B36C /* UchainWelcomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FEB219168390068B36C /* UchainWelcomePageViewController.m */; };
 		F506AF8A11147E314A1F51F2 /* libPods-UchainWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +172,8 @@
 		9D131FE321904EAA0068B36C /* UIViewController+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Toast.m"; sourceTree = "<group>"; };
 		9D131FE621904F2C0068B36C /* PDKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeyChain.h; sourceTree = "<group>"; };
 		9D131FE721904F2C0068B36C /* PDKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeyChain.m; sourceTree = "<group>"; };
+		9D131FEA219168390068B36C /* UchainWelcomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainWelcomePageViewController.h; sourceTree = "<group>"; };
+		9D131FEB219168390068B36C /* UchainWelcomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainWelcomePageViewController.m; sourceTree = "<group>"; };
 		B3C00042EC786C0C4FEBD697 /* Pods-UchainWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.release.xcconfig"; sourceTree = "<group>"; };
 		FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UchainWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -226,6 +229,7 @@
 		9D131EAD2189A8730068B36C /* UchainWallet */ = {
 			isa = PBXGroup;
 			children = (
+				9D131FE9219168170068B36C /* Welcome */,
 				9D131FBC21902D8B0068B36C /* Tools */,
 				9D131F29218AA3A20068B36C /* Utils */,
 				9D131F25218AA1B80068B36C /* Categories */,
@@ -558,6 +562,15 @@
 			path = keyChain;
 			sourceTree = "<group>";
 		};
+		9D131FE9219168170068B36C /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				9D131FEA219168390068B36C /* UchainWelcomePageViewController.h */,
+				9D131FEB219168390068B36C /* UchainWelcomePageViewController.m */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -723,6 +736,7 @@
 				9D131F32218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.m in Sources */,
 				9D131F19218A99AD0068B36C /* UchainNewsViewController.m in Sources */,
 				9D131F28218AA1B80068B36C /* UIResponder+Router.m in Sources */,
+				9D131FEC219168390068B36C /* UchainWelcomePageViewController.m in Sources */,
 				9D131FC621902E5B0068B36C /* LXDScanView.m in Sources */,
 				9D131F16218A998C0068B36C /* UchainMineViewController.m in Sources */,
 				9D131F0A218A98480068B36C /* UIBarItem+SOLocalization.m in Sources */,

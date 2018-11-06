@@ -14,7 +14,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) YRSideViewController *sideViewController;
 @property (nonatomic, strong) RDVTabBarController *mainTabBarController;
-//@property (nonatomic, strong) UINavigationController *mainNavigationController;
 
 + (AppDelegate *)sharedApplicationDelegate;
 
