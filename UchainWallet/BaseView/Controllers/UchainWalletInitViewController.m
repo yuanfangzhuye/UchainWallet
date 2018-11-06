@@ -135,7 +135,7 @@
 {
     if (!_backgroundImageView) {
         _backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
-        _backgroundImageView.image = [UIImage imageNamed:@""];
+        _backgroundImageView.image = [UIImage imageNamed:@"walletBackgroundImage"];
     }
     return _backgroundImageView;
 }

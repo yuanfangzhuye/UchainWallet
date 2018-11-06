@@ -11,11 +11,13 @@
 
 /** <头文件>*/
 #import "UchainConstants.h"
+#import "PublicEnum.h"
 
 /**< framework */
 #import <ReactiveObjC.h>
 #import <Masonry.h>
-//#import <Neomobile/Neomobile.h>
+#import <Neomobile/Neomobile.h>
+#import <AFNetworking/AFNetworking.h>
 #import <YYModel/YYModel.h>
 #import <MJRefresh.h>
 
@@ -25,24 +27,27 @@
 #import "UIViewController+NetLoadIndicator.h"
 //#import "UIViewController+Apex.h"
 #import "UIColor+HYF.h"
-//#import "UIViewController+Toast.h"
+#import "UIViewController+Toast.h"
 #import "UIViewController+UchainNavigationColor.h"
 #import "UINavigationController+ApexNavigationBar.h"
 //#import "UIView+Common.h"
 //#import "UIButton+EnlargeTouchArea.h"
 //#import "DateTools.h"
 //#import "UITextView+placeholder.h"
-//#import "PublicEnum.h"
 //#import "NSBundle+MJLocalization.h"
 //#import "NSString+Tool.h"
 //#import "NSString+Encypte.h"
 
 /**< tools */
+#import "PDKeyChain.h"
 #import "UchainUtil.h"
 #import "SOLocalization.h"
 #import "RDVTabBarController.h"
 #import "YRSideViewController.h"
 #import "AppDelegate.h"
+
+/**< models */
+#import "UchainWalletModel.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
