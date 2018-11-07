@@ -10,22 +10,178 @@
 #import "UchainImportWalletController.h"
 #import "UchainWalletManager.h"
 
-#define RouteEventName_CallCreatWalletApi @"RouteEventName_CallCreatWalletApi"
-#define RouteNameEvent_GoToImportWallet @"RouteNameEvent_GoToImportWallet"
+#import "UchainCreateBottomView.h"
+#import "UchainCreateWalletTipsHeaderView.h"
+#import "UchainPrivacyAgreeFooterView.h"
+#import "UchainCreateWalletNameCell.h"
+#import "UchainCreateWalletPasswordCell.h"
 
-@interface UchainCreatWalletController ()
+@interface UchainCreatWalletController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UILabel *navigationBarTitle;
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UchainCreateBottomView *bottomView;
 @property (nonatomic, strong) RACSignal *combineSignal;
 
 @end
 
 @implementation UchainCreatWalletController
 
-- (void)viewDidLoad {
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController lt_setBackgroundColor:[UIColor blueColor]];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+}
+
+- (void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
+    [self initNavigationBar];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.view addSubview:self.tableView];
+    [self.view addSubview:self.bottomView];
+    
+    [self.tableView registerClass:[UchainCreateWalletNameCell class] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerClass:[UchainCreateWalletPasswordCell class] forCellReuseIdentifier:@"cell2"];
+    [self.tableView registerClass:[UchainCreateWalletTipsHeaderView class] forHeaderFooterViewReuseIdentifier:@"header"];
+    [self.tableView registerClass:[UchainPrivacyAgreeFooterView class] forHeaderFooterViewReuseIdentifier:@"footer"];
+    
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).with.offset([UchainUtil naviBarHeight]);
+        make.left.equalTo(self.view).with.offset(15.0f);
+        make.right.equalTo(self.view).with.offset(-15.0f);
+        make.bottom.equalTo(self.view).offset(-(iPhoneX ? 83.0f : 49.0f));
+    }];
+    
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.equalTo(self.view);
+        make.height.mas_equalTo(iPhoneX ? 83.0f : 49.0f);
+    }];
+}
+
+- (void)initNavigationBar
+{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-back-white"]  style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    self.navigationItem.titleView = self.navigationBarTitle;
+}
+
+#pragma mark ------ UITableViewDelegate,UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 1) {
+        return 1;
+    }
+    else if (section == 2) {
+        return 1;
+    }
+    return 0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1) {
+        return 70.0f;
+    }
+    else if (indexPath.section == 2) {
+        return 140.0f;
+    }
+    return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        UchainCreateWalletTipsHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
+        return headerView;
+    }
+    
+    return nil;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (section == 2) {
+        UchainPrivacyAgreeFooterView *footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"footer"];
+        return footerView;
+    }
+    
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return [UchainCreateWalletTipsHeaderView getTipsContentHeight];
+    }
+    
+    return 20.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+   if (section == 2) {
+        return 40.0f;
+    }
+    
+    return 0.01f;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1) {
+        UchainCreateWalletNameCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return cell;
+    }
+    else if (indexPath.section == 2) {
+        UchainCreateWalletPasswordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return cell;
+    }
+    
+    return nil;
+}
+
+- (NSString *)getWalletName
+{
+    UchainCreateWalletNameCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    return cell.inputTextField.text;
+}
+
+- (NSString *)getWalletPassword
+{
+    UchainCreateWalletPasswordCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+    return cell.passwordTextField.text;
+}
+
+- (NSString *)getRepeatPassword
+{
+    UchainCreateWalletPasswordCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+    return cell.repeteTextField.text;
+}
+
+- (void)goToImportWallet
+{
+    UchainImportWalletController *importWalletController = [[UchainImportWalletController alloc] init];
+    [self.navigationController pushViewController:importWalletController animated:YES];
 }
 
 - (void)createEthWalletWithPassword:(NSString *)password walletName:(NSString *)walletname
@@ -47,14 +203,39 @@
     }];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark ------ getter,setter
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UILabel *)navigationBarTitle
+{
+    if (!_navigationBarTitle) {
+        _navigationBarTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
+        _navigationBarTitle.text = SOLocalizedStringFromTable(@"Create Wallet", nil);
+        _navigationBarTitle.textAlignment = NSTextAlignmentCenter;
+        _navigationBarTitle.textColor = [UIColor whiteColor];
+    }
+    return _navigationBarTitle;
 }
-*/
+
+- (UITableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView.backgroundColor = [UIColor clearColor];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    return _tableView;
+}
+
+- (UchainCreateBottomView *)bottomView
+{
+    if (!_bottomView) {
+        _bottomView = [[UchainCreateBottomView alloc] init];
+//        _bottomView.delegate = self;
+    }
+    
+    return _bottomView;
+}
 
 @end

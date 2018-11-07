@@ -13,4 +13,11 @@
 "Create Wallet" = "Create Wallet";
 "Import Wallet" = "Import Wallet";
 
+"CreatWalletTip01" = "Password Is Used To Encrypt Private Key And Authorize Transaction. So It's Very Important To Set A Invulnerable Password";
+"CreatWalletTip02" = "Apex Wallet Neither Store Your Password Nor Retrieve Them For You. Please Keep It In A Safe Place";
+"I agree to the Service and Privacy Policy" = "I Agree to the Service and Privacy Policy";
+
+"Wallet Name" = "Wallet Name";
+"Login Password" = "Login Password";
+
 "LanguageSetting" = "LanguageSetting";

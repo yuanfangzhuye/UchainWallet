@@ -11,7 +11,7 @@ target 'UchainWallet' do
   pod 'pop'
   pod 'MBProgressHUD'
   pod 'JVFloatLabeledTextField'
-  pod 'IQKeyboardManager'
+  pod 'IQKeyboardManager', '5.0.8'
   pod 'YYModel'
   pod 'MJRefresh'
   pod 'FMDB'

@@ -30,9 +30,7 @@
 #import <UIKit/UITextView.h>
 #import <UIKit/UITextField.h>
 #import <UIKit/UISearchBar.h>
-#import <UIKit/UINavigationController.h>
-#import <UIKit/UITabBarController.h>
-#import <UIKit/UISplitViewController.h>
+#import <UIKit/UIViewController.h>
 #import <UIKit/UIWindow.h>
 
 #import <objc/runtime.h>
@@ -41,7 +39,7 @@
 
 @implementation UIView (IQ_UIView_Hierarchy)
 
--(UIViewController*)viewContainingController
+-(UIViewController*)viewController
 {
     UIResponder *nextResponder =  self;
     
@@ -52,7 +50,7 @@
         if ([nextResponder isKindOfClass:[UIViewController class]])
             return (UIViewController*)nextResponder;
 
-    } while (nextResponder);
+    } while (nextResponder != nil);
 
     return nil;
 }
@@ -74,86 +72,18 @@
         [controllersHierarchy addObject:topController];
     }
     
-    UIViewController *matchController = [self viewContainingController];
+    UIViewController *matchController = [self viewController];
     
-    while (matchController && [controllersHierarchy containsObject:matchController] == NO)
+    while (matchController != nil && [controllersHierarchy containsObject:matchController] == NO)
     {
         do
         {
             matchController = (UIViewController*)[matchController nextResponder];
             
-        } while (matchController && [matchController isKindOfClass:[UIViewController class]] == NO);
+        } while (matchController != nil && [matchController isKindOfClass:[UIViewController class]] == NO);
     }
     
-    return matchController;
-}
-
--(UIViewController *)parentContainerViewController
-{
-    UIViewController *matchController = [self viewContainingController];
-    
-    UIViewController *parentContainerViewController = nil;
-    
-    if (matchController.navigationController)
-    {
-        UINavigationController *navController = matchController.navigationController;
-        
-        while (navController.navigationController) {
-            navController = navController.navigationController;
-        }
-        
-        UIViewController *parentController = navController;
-        
-        UIViewController *parentParentController = parentController.parentViewController;
-        
-        while (parentParentController &&
-               ([parentParentController isKindOfClass:[UINavigationController class]] == NO &&
-                [parentParentController isKindOfClass:[UITabBarController class]] == NO &&
-                [parentParentController isKindOfClass:[UISplitViewController class]] == NO))
-        {
-            parentController = parentParentController;
-            parentParentController = parentController.parentViewController;
-        }
-
-        if (navController == parentController)
-        {
-            parentContainerViewController = navController.topViewController;
-        }
-        else
-        {
-            parentContainerViewController = parentController;
-        }
-    }
-    else if (matchController.tabBarController)
-    {
-        if ([matchController.tabBarController.selectedViewController isKindOfClass:[UINavigationController class]])
-        {
-            parentContainerViewController = [(UINavigationController*)matchController.tabBarController.selectedViewController topViewController];
-        }
-        else
-        {
-            parentContainerViewController = matchController.tabBarController.selectedViewController;
-        }
-    }
-    else
-    {
-        UIViewController *matchParentController = matchController.parentViewController;
-
-        while (matchParentController &&
-               ([matchParentController isKindOfClass:[UINavigationController class]] == NO &&
-                [matchParentController isKindOfClass:[UITabBarController class]] == NO &&
-                [matchParentController isKindOfClass:[UISplitViewController class]] == NO))
-        {
-            matchController = matchParentController;
-            matchParentController = matchController.parentViewController;
-        }
-        
-        parentContainerViewController = matchController;
-    }
-    
-    UIViewController *finalController = [parentContainerViewController parentIQContainerViewController] ?: parentContainerViewController;
-    
-    return finalController;
+    return (UIViewController*)matchController;
 }
 
 -(UIView*)superviewOfClassType:(Class)classType
@@ -206,16 +136,16 @@
 
     if (_IQcanBecomeFirstResponder == YES)
     {
-        _IQcanBecomeFirstResponder = ([self isUserInteractionEnabled] && ![self isHidden] && [self alpha]!=0.0 && ![self isAlertViewTextField]  && !self.textFieldSearchBar);
+        _IQcanBecomeFirstResponder = ([self isUserInteractionEnabled] && ![self isHidden] && [self alpha]!=0.0 && ![self isAlertViewTextField]  && ![self isSearchBarTextField]);
     }
     
     return _IQcanBecomeFirstResponder;
 }
 
-- (NSArray<UIView*>*)responderSiblings
+- (NSArray*)responderSiblings
 {
     //	Getting all siblings
-    NSArray<UIView*> *siblings = self.superview.subviews;
+    NSArray *siblings = self.superview.subviews;
     
     //Array of (UITextField/UITextView's).
     NSMutableArray<UIView*> *tempTextFields = [[NSMutableArray alloc] init];
@@ -227,7 +157,7 @@
     return tempTextFields;
 }
 
-- (NSArray<UIView*>*)deepResponderViews
+- (NSArray*)deepResponderViews
 {
     NSMutableArray<UIView*> *textFields = [[NSMutableArray alloc] init];
     
@@ -376,15 +306,17 @@
     return debugInfo;
 }
 
--(UISearchBar *)textFieldSearchBar
+-(BOOL)isSearchBarTextField
 {
     UIResponder *searchBar = [self nextResponder];
     
-    while (searchBar)
+    BOOL isSearchBarTextField = NO;
+    while (searchBar && isSearchBarTextField == NO)
     {
         if ([searchBar isKindOfClass:[UISearchBar class]])
         {
-            return (UISearchBar*)searchBar;
+            isSearchBarTextField = YES;
+            break;
         }
         else if ([searchBar isKindOfClass:[UIViewController class]])    //If found viewcontroller but still not found UISearchBar then it's not the search bar textfield
         {
@@ -394,12 +326,12 @@
         searchBar = [searchBar nextResponder];
     }
     
-    return nil;
+    return isSearchBarTextField;
 }
 
 -(BOOL)isAlertViewTextField
 {
-    UIResponder *alertViewController = [self viewContainingController];
+    UIResponder *alertViewController = [self viewController];
     
     BOOL isAlertViewTextField = NO;
     while (alertViewController && isAlertViewTextField == NO)
@@ -418,14 +350,6 @@
 
 @end
 
-@implementation UIViewController (IQ_UIView_Hierarchy)
-
--(nullable UIViewController*)parentIQContainerViewController
-{
-    return self;
-}
-
-@end
 
 @implementation NSObject (IQ_Logging)
 

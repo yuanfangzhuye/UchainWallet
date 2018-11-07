@@ -30,33 +30,9 @@
 #import <UIKit/UITextView.h>
 #import <UIKit/UIViewController.h>
 
-@interface IQTextFieldViewInfoModal : NSObject
-
-@property(nullable, nonatomic, weak) UIView *textFieldView;
-@property(nullable, nonatomic, weak) id<UITextFieldDelegate> textFieldDelegate;
-@property(nullable, nonatomic, weak) id<UITextViewDelegate> textViewDelegate;
-@property(nonatomic) UIReturnKeyType originalReturnKeyType;
-
-@end
-
-@implementation IQTextFieldViewInfoModal
-
--(instancetype)initWithTextFieldView:(UIView*)textFieldView textFieldDelegate:(id<UITextFieldDelegate>)textFieldDelegate textViewDelegate:(id<UITextViewDelegate>)textViewDelegate originalReturnKey:(UIReturnKeyType)returnKeyType
-{
-    self = [super init];
-    
-    if (self)
-    {
-        _textFieldView = textFieldView;
-        _textFieldDelegate = textFieldDelegate;
-        _textViewDelegate = textViewDelegate;
-        _originalReturnKeyType = returnKeyType;
-    }
-    
-    return self;
-}
-
-@end
+NSString *const kIQTextField                =   @"kIQTextField";
+NSString *const kIQTextFieldDelegate        =   @"kIQTextFieldDelegate";
+NSString *const kIQTextFieldReturnKeyType   =   @"kIQTextFieldReturnKeyType";
 
 
 @interface IQKeyboardReturnKeyHandler ()<UITextFieldDelegate,UITextViewDelegate>
@@ -67,7 +43,7 @@
 
 @implementation IQKeyboardReturnKeyHandler
 {
-    NSMutableSet<IQTextFieldViewInfoModal*> *textFieldInfoCache;
+    NSMutableSet *textFieldInfoCache;
 }
 
 @synthesize lastTextFieldReturnKeyType = _lastTextFieldReturnKeyType;
@@ -96,10 +72,10 @@
     return self;
 }
 
--(IQTextFieldViewInfoModal*)textFieldViewCachedInfo:(UIView*)textField
+-(NSDictionary*)textFieldViewCachedInfo:(UIView*)textField
 {
-    for (IQTextFieldViewInfoModal *modal in textFieldInfoCache)
-        if (modal.textFieldView == textField)  return modal;
+    for (NSDictionary *infoDict in textFieldInfoCache)
+        if (infoDict[kIQTextField] == textField)  return infoDict;
     
     return nil;
 }
@@ -107,61 +83,49 @@
 #pragma mark - Add/Remove TextFields
 -(void)addResponderFromView:(UIView*)view
 {
-    NSArray<UIView*> *textFields = [view deepResponderViews];
+    NSArray *textFields = [view deepResponderViews];
     
     for (UIView *textField in textFields)  [self addTextFieldView:textField];
 }
 
 -(void)removeResponderFromView:(UIView*)view
 {
-    NSArray<UIView*> *textFields = [view deepResponderViews];
+    NSArray *textFields = [view deepResponderViews];
     
     for (UIView *textField in textFields)  [self removeTextFieldView:textField];
 }
 
 -(void)removeTextFieldView:(UIView*)view
 {
-    IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:view];
+    NSDictionary *dict = [self textFieldViewCachedInfo:view];
     
-    if (modal)
+    if (dict)
     {
-        if ([view isKindOfClass:[UITextField class]])
+        if ([view isKindOfClass:[UITextField class]] || [view isKindOfClass:[UITextView class]])
         {
             UITextField *textField = (UITextField*)view;
-            textField.returnKeyType = modal.originalReturnKeyType;
-            textField.delegate = modal.textFieldDelegate;
+            textField.returnKeyType = (UIReturnKeyType)[dict[kIQTextFieldReturnKeyType] integerValue];
+            textField.delegate = dict[kIQTextFieldDelegate];
         }
-        else if ([view isKindOfClass:[UITextView class]])
-        {
-            UITextView *textView = (UITextView*)view;
-            textView.returnKeyType = modal.originalReturnKeyType;
-            textView.delegate = modal.textViewDelegate;
-        }
-        
-        [textFieldInfoCache removeObject:modal];
+        [textFieldInfoCache removeObject:dict];
     }
 }
 
 -(void)addTextFieldView:(UIView*)view
 {
-    IQTextFieldViewInfoModal *modal = [[IQTextFieldViewInfoModal alloc] initWithTextFieldView:view textFieldDelegate:nil textViewDelegate:nil originalReturnKey:UIReturnKeyDefault];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     
-    if ([view isKindOfClass:[UITextField class]])
+    dict[kIQTextField] = view;
+    
+    if ([view isKindOfClass:[UITextField class]] || [view isKindOfClass:[UITextView class]])
     {
         UITextField *textField = (UITextField*)view;
-        modal.originalReturnKeyType = textField.returnKeyType;
-        modal.textFieldDelegate = textField.delegate;
+        dict[kIQTextFieldReturnKeyType] = @(textField.returnKeyType);
+        if (textField.delegate) dict[kIQTextFieldDelegate] = textField.delegate;
         [textField setDelegate:self];
     }
-    else if ([view isKindOfClass:[UITextView class]])
-    {
-        UITextView *textView = (UITextView*)view;
-        modal.originalReturnKeyType = textView.returnKeyType;
-        modal.textViewDelegate = textView.delegate;
-        [textView setDelegate:self];
-    }
 
-    [textFieldInfoCache addObject:modal];
+    [textFieldInfoCache addObject:dict];
 }
 
 -(void)updateReturnKeyTypeOnTextField:(UIView*)textField
@@ -173,11 +137,11 @@
     {
         superConsideredView = [textField superviewOfClassType:consideredClass];
         
-        if (superConsideredView)
+        if (superConsideredView != nil)
             break;
     }
 
-    NSArray<UIView*> *textFields = nil;
+    NSArray *textFields = nil;
 
     //If there is a tableView in view's hierarchy, then fetching all it's subview that responds. No sorting for tableView, it's by subView position.
     if (superConsideredView)  //     //   (Enhancement ID: #22)
@@ -222,11 +186,11 @@
     {
         superConsideredView = [textField superviewOfClassType:consideredClass];
         
-        if (superConsideredView)
+        if (superConsideredView != nil)
             break;
     }
     
-    NSArray<UIView*> *textFields = nil;
+    NSArray *textFields = nil;
     
     //If there is a tableView in view's hierarchy, then fetching all it's subview that responds. No sorting for tableView, it's by subView position.
     if (superConsideredView)  //     //   (Enhancement ID: #22)
@@ -279,8 +243,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textField];
-        delegate = modal.textFieldDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textField];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textFieldShouldBeginEditing:)])
@@ -297,8 +261,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textField];
-        delegate = modal.textFieldDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textField];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textFieldDidBeginEditing:)])
@@ -311,8 +275,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textField];
-        delegate = modal.textFieldDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textField];
+        delegate = dict[kIQTextFieldDelegate];
     }
 
     if ([delegate respondsToSelector:@selector(textFieldShouldEndEditing:)])
@@ -327,8 +291,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textField];
-        delegate = modal.textFieldDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textField];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textFieldDidEndEditing:)])
@@ -341,8 +305,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textField];
-        delegate = modal.textFieldDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textField];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
 #ifdef __IPHONE_11_0
@@ -361,8 +325,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textField];
-        delegate = modal.textFieldDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textField];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textField:shouldChangeCharactersInRange:replacementString:)])
@@ -377,8 +341,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textField];
-        delegate = modal.textFieldDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textField];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textFieldShouldClear:)])
@@ -393,8 +357,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textField];
-        delegate = modal.textFieldDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textField];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textFieldShouldReturn:)])
@@ -422,8 +386,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textView];
-        delegate = modal.textViewDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textView];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textViewShouldBeginEditing:)])
@@ -438,8 +402,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textView];
-        delegate = modal.textViewDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textView];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textViewShouldEndEditing:)])
@@ -456,8 +420,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textView];
-        delegate = modal.textViewDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textView];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textViewDidBeginEditing:)])
@@ -470,8 +434,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textView];
-        delegate = modal.textViewDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textView];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textViewDidEndEditing:)])
@@ -484,8 +448,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textView];
-        delegate = modal.textViewDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textView];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     BOOL shouldReturn = YES;
@@ -507,8 +471,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textView];
-        delegate = modal.textViewDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textView];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textViewDidChange:)])
@@ -521,8 +485,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textView];
-        delegate = modal.textViewDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textView];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
     if ([delegate respondsToSelector:@selector(textViewDidChangeSelection:)])
@@ -535,8 +499,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textView];
-        delegate = modal.textViewDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textView];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
 #ifdef __IPHONE_11_0
@@ -557,8 +521,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textView];
-        delegate = modal.textViewDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textView];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
 #ifdef __IPHONE_11_0
@@ -579,8 +543,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textView];
-        delegate = modal.textViewDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textView];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
 #pragma clang diagnostic push
@@ -598,8 +562,8 @@
     
     if (delegate == nil)
     {
-        IQTextFieldViewInfoModal *modal = [self textFieldViewCachedInfo:textView];
-        delegate = modal.textViewDelegate;
+        NSDictionary *dict = [self textFieldViewCachedInfo:textView];
+        delegate = dict[kIQTextFieldDelegate];
     }
     
 #pragma clang diagnostic push
@@ -613,21 +577,15 @@
 
 -(void)dealloc
 {
-    for (IQTextFieldViewInfoModal *modal in textFieldInfoCache)
+    for (NSDictionary *dict in textFieldInfoCache)
     {
-        UIView *textFieldView = modal.textFieldView;
-        if ([textFieldView isKindOfClass:[UITextField class]])
+        UIView *view  = dict[kIQTextField];
+        
+        if ([view isKindOfClass:[UITextField class]] || [view isKindOfClass:[UITextView class]])
         {
-            UITextField *textField = (UITextField*)textFieldView;
-            textField.returnKeyType = modal.originalReturnKeyType;
-            textField.delegate = modal.textFieldDelegate
-            ;
-        }
-        else if ([textFieldView isKindOfClass:[UITextView class]])
-        {
-            UITextView *textView = (UITextView*)textFieldView;
-            textView.returnKeyType = modal.originalReturnKeyType;
-            textView.delegate = modal.textViewDelegate;
+            UITextField *textField = (UITextField*)view;
+            textField.returnKeyType  = (UIReturnKeyType)[dict[kIQTextFieldReturnKeyType] integerValue];
+            textField.delegate      = dict[kIQTextFieldDelegate];
         }
     }
 
