@@ -32,25 +32,6 @@
     [self.view addSubview:_scrollView];
 }
 
-- (instancetype)initWithWelcomeController
-{
-    self = [super init];
-    if (self) {
-//        _scrollView = [[UIScrollView alloc] init];
-//        _scrollView.pagingEnabled = YES;
-//        _scrollView.bounces = NO;
-//        _scrollView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
-//        _scrollView.backgroundColor = [UIColor whiteColor];
-//        _scrollView.showsHorizontalScrollIndicator = NO;
-//        _scrollView.showsVerticalScrollIndicator = NO;
-//
-//        [self loadIntroduceWelcomePage];
-//        [self.view addSubview:_scrollView];
-    }
-    
-    return self;
-}
-
 - (void)loadIntroduceWelcomePage
 {
     NSArray *imageArray;
@@ -112,15 +93,6 @@
     if (self.didFinishScrollerWelcomeSub) {
         [self.didFinishScrollerWelcomeSub sendNext:@""];
     }
-    
-//    if (_returnWelcomePageBlock != nil) {
-//        _returnWelcomePageBlock();
-//    }
-}
-
-- (void)returnWelcomePageBlock:(ReturnWelcomePageBlock)block
-{
-    _returnWelcomePageBlock = block;
 }
 
 - (void)didReceiveMemoryWarning

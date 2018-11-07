@@ -43,7 +43,7 @@
     BOOL isFirstOpenApp = [self isOpenInNewVersion];
     
     if (isFirstOpenApp) {
-        UchainWelcomePageViewController *welcomePageViewController = [[UchainWelcomePageViewController alloc] initWithWelcomeController];
+        UchainWelcomePageViewController *welcomePageViewController = [[UchainWelcomePageViewController alloc] init];
         welcomePageViewController.didFinishScrollerWelcomeSub = [RACSubject subject];
         [welcomePageViewController.didFinishScrollerWelcomeSub subscribeNext:^(id  _Nullable x) {
             [self targetRootViewControllerSet];
