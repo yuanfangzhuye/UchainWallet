@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "UchainAssetModel.h"
+#import "ApexWalletManagerProtocal.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UchainWalletManager : NSObject
+@interface UchainWalletManager : NSObject <ApexWalletManagerProtocal>
 
 + (instancetype)shareInstanceManager;
 

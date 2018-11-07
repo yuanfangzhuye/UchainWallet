@@ -31,7 +31,6 @@
     self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:self.backShadowView];
         [self.backShadowView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));

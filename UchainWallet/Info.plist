@@ -27,6 +27,16 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+    <key>NSCameraUsageDescription</key>
+    <string>Camera</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Location</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>We need your consent to access the microphone and play music</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>AddUsage</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Usage</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -8,6 +8,8 @@
 
 #import "UchainCreatWalletController.h"
 #import "UchainImportWalletController.h"
+#import "UchainPrepareBackUpController.h"
+
 #import "UchainWalletManager.h"
 
 #import "UchainCreateBottomView.h"
@@ -23,6 +25,8 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UchainCreateBottomView *bottomView;
 @property (nonatomic, strong) RACSignal *combineSignal;
+
+@property (nonatomic, strong) id createWalletModel;
 
 @end
 
@@ -178,12 +182,6 @@
     return cell.repeteTextField.text;
 }
 
-- (void)goToImportWallet
-{
-    UchainImportWalletController *importWalletController = [[UchainImportWalletController alloc] init];
-    [self.navigationController pushViewController:importWalletController animated:YES];
-}
-
 - (void)createEthWalletWithPassword:(NSString *)password walletName:(NSString *)walletname
 {
     [UchainWalletManager creatETHWalletSuccess:^(EthmobileWallet *wallet) {
@@ -196,11 +194,41 @@
         NSString *address = wallet.address;
         [PDKeyChain save:[NSString stringWithFormat:@"%@", address] data:ks];
         
-//        [[UchainWalletManager shareInstanceManager] saveWallet:address name:walletname];
-//        self.createdWallet = wallet;
+        [[UchainWalletManager shareInstanceManager] saveWallet:address name:walletname];
+        self.createWalletModel = wallet;
+        
     } failed:^(NSError *error) {
         [self showMessage:[NSString stringWithFormat:@"%@",SOLocalizedStringFromTable(@"Create Wallet Failed", nil)]];
     }];
+}
+
+- (void)createETHWallet
+{
+    [self createEthWalletWithPassword:[self getWalletPassword] walletName:[self getWalletName]];
+    UchainPrepareBackUpController *vc = [[UchainPrepareBackUpController alloc] init];
+    EthmobileWallet *wallet = (EthmobileWallet*)_createWalletModel;
+    
+    NSArray *walletArray = [[UchainWalletManager shareInstanceManager] getWalletsArr];
+    for (UchainWalletModel *model in walletArray) {
+        if ([model.address isEqualToString:wallet.address]) {
+            vc.model = model;
+            break;
+        }
+    }
+    
+    vc.isFromCreat = YES;
+    vc.BackupCompleteBlock = ^{
+        if (self.didFinishCreatSub) {
+            [self.didFinishCreatSub sendNext:@""];
+        }
+    };
+    [self directlyPushToViewControllerWithSelfDeleted:vc];
+}
+
+- (void)importETHWallet
+{
+    UchainImportWalletController *importWalletController = [[UchainImportWalletController alloc] init];
+    [self.navigationController pushViewController:importWalletController animated:YES];
 }
 
 #pragma mark ------ getter,setter

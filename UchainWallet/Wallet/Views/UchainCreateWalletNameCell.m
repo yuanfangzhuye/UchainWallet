@@ -30,27 +30,29 @@
             make.height.mas_equalTo(20.0f);
         }];
         
-        _inputTextField = [[ApexAlertTextField alloc] initWithFrame:CGRectZero];
-        _inputTextField.font = [UIFont systemFontOfSize:13];
-        _inputTextField.floatingLabelYPadding = 5;
-        _inputTextField.placeholder = SOLocalizedStringFromTable(@" 请输入", nil);
-        
-        _inputTextField.floatingLabelTextColor = [UIColor colorWithHexString:@"555555"];
-        _inputTextField.floatingLabelActiveTextColor = [UchainUtil mainThemeColor];
-        
-        _inputTextField.keepBaseline = YES;
-        _inputTextField.isHiddenBottomLine = NO;
-        _inputTextField.secureTextEntry = NO;
-        _inputTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-        
-        _inputTextField.alertString = SOLocalizedStringFromTable(@"请输入正确的钱包名称", nil);
-        _inputTextField.alertShowConditionBlock = ^BOOL(NSString *text) {
-            
-            if (text.length > 0) {
-                return false;
-            }
-            return true;
-        };
+        _inputTextField = [[UITextField alloc] init];
+        _inputTextField.placeholder = @"测试";
+//        _inputTextField = [[ApexAlertTextField alloc] initWithFrame:CGRectZero];
+//        _inputTextField.font = [UIFont systemFontOfSize:13];
+//        _inputTextField.floatingLabelYPadding = 5;
+//        _inputTextField.placeholder = SOLocalizedStringFromTable(@" 请输入", nil);
+//
+//        _inputTextField.floatingLabelTextColor = [UIColor colorWithHexString:@"555555"];
+//        _inputTextField.floatingLabelActiveTextColor = [UchainUtil mainThemeColor];
+//
+//        _inputTextField.keepBaseline = YES;
+//        _inputTextField.isHiddenBottomLine = NO;
+//        _inputTextField.secureTextEntry = NO;
+//        _inputTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+//
+//        _inputTextField.alertString = SOLocalizedStringFromTable(@"请输入正确的钱包名称", nil);
+//        _inputTextField.alertShowConditionBlock = ^BOOL(NSString *text) {
+//
+//            if (text.length > 0) {
+//                return false;
+//            }
+//            return true;
+//        };
         
         [self.contentView addSubview:_inputTextField];
         [_inputTextField mas_makeConstraints:^(MASConstraintMaker *make) {

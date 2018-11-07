@@ -10,8 +10,8 @@
 #define UchainPrefixHeader_pch
 
 /** <头文件>*/
-#import "UchainConstants.h"
 #import "PublicEnum.h"
+#import "UchainConstants.h"
 
 /**< framework */
 #import <ReactiveObjC.h>
@@ -20,13 +20,13 @@
 #import <AFNetworking/AFNetworking.h>
 #import <YYModel/YYModel.h>
 #import <MJRefresh.h>
-#import <IQKeyboardManager.h>
+//#import <IQKeyboardManager.h>
 
 /**< catogary */
 #import "UIView+TKFrame.h"
 #import "UIResponder+Router.h"
 #import "UIViewController+NetLoadIndicator.h"
-//#import "UIViewController+Apex.h"
+#import "UIViewController+Apex.h"
 #import "UIColor+HYF.h"
 #import "UIViewController+Toast.h"
 #import "UIViewController+UchainNavigationColor.h"
