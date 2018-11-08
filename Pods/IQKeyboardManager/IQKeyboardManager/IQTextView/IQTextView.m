@@ -29,15 +29,16 @@
 
 @interface IQTextView ()
 
-@property(nonatomic, strong) UILabel *placeholderLabel;
+-(void)refreshPlaceholder;
 
 @end
 
 @implementation IQTextView
+{
+    UILabel *placeHolderLabel;
+}
 
 @synthesize placeholder = _placeholder;
-@synthesize placeholderLabel = _placeholderLabel;
-@synthesize placeholderTextColor = _placeholderTextColor;
 
 -(void)initialize
 {
@@ -46,8 +47,8 @@
 
 -(void)dealloc
 {
-    [_placeholderLabel removeFromSuperview];
-    _placeholderLabel = nil;
+    [placeHolderLabel removeFromSuperview];
+    placeHolderLabel = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -68,13 +69,13 @@
 
 -(void)refreshPlaceholder
 {
-    if([[self text] length] || [[self attributedText] length])
+    if([[self text] length])
     {
-        [_placeholderLabel setAlpha:0];
+        [placeHolderLabel setAlpha:0];
     }
     else
     {
-        [_placeholderLabel setAlpha:1];
+        [placeHolderLabel setAlpha:1];
     }
     
     [self setNeedsLayout];
@@ -87,16 +88,10 @@
     [self refreshPlaceholder];
 }
 
--(void)setAttributedText:(NSAttributedString *)attributedText
-{
-    [super setAttributedText:attributedText];
-    [self refreshPlaceholder];
-}
-
 -(void)setFont:(UIFont *)font
 {
     [super setFont:font];
-    self.placeholderLabel.font = self.font;
+    placeHolderLabel.font = self.font;
     
     [self setNeedsLayout];
     [self layoutIfNeeded];
@@ -105,7 +100,7 @@
 -(void)setTextAlignment:(NSTextAlignment)textAlignment
 {
     [super setTextAlignment:textAlignment];
-    self.placeholderLabel.textAlignment = textAlignment;
+    placeHolderLabel.textAlignment = textAlignment;
     
     [self setNeedsLayout];
     [self layoutIfNeeded];
@@ -114,63 +109,36 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    self.placeholderLabel.frame = [self placeholderExpectedFrame];
+
+    CGFloat offsetLeft = self.textContainerInset.left + self.textContainer.lineFragmentPadding;
+    CGFloat offsetRight = self.textContainerInset.right + self.textContainer.lineFragmentPadding;
+    CGFloat offsetTop = self.textContainerInset.top;
+    CGFloat offsetBottom = self.textContainerInset.bottom;
+
+    CGSize expectedSize = [placeHolderLabel sizeThatFits:CGSizeMake(CGRectGetWidth(self.frame)-offsetLeft-offsetRight, CGRectGetHeight(self.frame)-offsetTop-offsetBottom)];
+    placeHolderLabel.frame = CGRectMake(offsetLeft, offsetTop, expectedSize.width, expectedSize.height);
 }
 
 -(void)setPlaceholder:(NSString *)placeholder
 {
     _placeholder = placeholder;
     
-    self.placeholderLabel.text = placeholder;
-    [self refreshPlaceholder];
-}
-
--(void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholder
-{
-    _attributedPlaceholder = attributedPlaceholder;
-    
-    self.placeholderLabel.attributedText = attributedPlaceholder;
-    [self refreshPlaceholder];
-}
-
--(void)setPlaceholderTextColor:(UIColor*)placeholderTextColor
-{
-    _placeholderTextColor = placeholderTextColor;
-    self.placeholderLabel.textColor = placeholderTextColor;
-}
-
--(UIEdgeInsets)placeholderInsets
-{
-    return UIEdgeInsetsMake(self.textContainerInset.top, self.textContainerInset.left + self.textContainer.lineFragmentPadding, self.textContainerInset.bottom, self.textContainerInset.right + self.textContainer.lineFragmentPadding);
-}
-
--(CGRect)placeholderExpectedFrame
-{
-    UIEdgeInsets placeholderInsets = [self placeholderInsets];
-    CGFloat maxWidth = CGRectGetWidth(self.frame)-placeholderInsets.left-placeholderInsets.right;
-    
-    CGSize expectedSize = [self.placeholderLabel sizeThatFits:CGSizeMake(maxWidth, CGRectGetHeight(self.frame)-placeholderInsets.top-placeholderInsets.bottom)];
-    
-    return CGRectMake(placeholderInsets.left, placeholderInsets.top, maxWidth, expectedSize.height);
-}
-
--(UILabel*)placeholderLabel
-{
-    if (_placeholderLabel == nil)
+    if ( placeHolderLabel == nil )
     {
-        _placeholderLabel = [[UILabel alloc] init];
-        _placeholderLabel.autoresizingMask = (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight);
-        _placeholderLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        _placeholderLabel.numberOfLines = 0;
-        _placeholderLabel.font = self.font;
-        _placeholderLabel.textAlignment = self.textAlignment;
-        _placeholderLabel.backgroundColor = [UIColor clearColor];
-        _placeholderLabel.textColor = [UIColor colorWithWhite:0.7 alpha:1.0];
-        _placeholderLabel.alpha = 0;
-        [self addSubview:_placeholderLabel];
+        placeHolderLabel = [[UILabel alloc] init];
+        placeHolderLabel.autoresizingMask = (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight);
+        placeHolderLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        placeHolderLabel.numberOfLines = 0;
+        placeHolderLabel.font = self.font;
+        placeHolderLabel.textAlignment = self.textAlignment;
+        placeHolderLabel.backgroundColor = [UIColor clearColor];
+        placeHolderLabel.textColor = [UIColor colorWithWhite:0.7 alpha:1.0];
+        placeHolderLabel.alpha = 0;
+        [self addSubview:placeHolderLabel];
     }
     
-    return _placeholderLabel;
+    placeHolderLabel.text = self.placeholder;
+    [self refreshPlaceholder];
 }
 
 //When any text changes on textField, the delegate getter is called. At this time we refresh the textView's placeholder
@@ -178,20 +146,6 @@
 {
     [self refreshPlaceholder];
     return [super delegate];
-}
-
--(CGSize)intrinsicContentSize
-{
-    if (self.hasText) {
-        return [super intrinsicContentSize];
-    }
-    
-    UIEdgeInsets placeholderInsets = [self placeholderInsets];
-    CGSize newSize = [super intrinsicContentSize];
-    
-    newSize.height = [self placeholderExpectedFrame].size.height + placeholderInsets.top + placeholderInsets.bottom;
-    
-    return newSize;
 }
 
 @end

@@ -63,6 +63,15 @@
 		9D131FE121904D6D0068B36C /* Neomobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D131FE021904D6D0068B36C /* Neomobile.framework */; };
 		9D131FE421904EAA0068B36C /* UIViewController+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FE321904EAA0068B36C /* UIViewController+Toast.m */; };
 		9D131FE821904F2C0068B36C /* PDKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FE721904F2C0068B36C /* PDKeyChain.m */; };
+		9D131FEC219168390068B36C /* UchainWelcomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FEB219168390068B36C /* UchainWelcomePageViewController.m */; };
+		9D131FEF219283CB0068B36C /* UchainCreateWalletTipsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FEE219283CB0068B36C /* UchainCreateWalletTipsHeaderView.m */; };
+		9D131FF321929A7C0068B36C /* ApexAlertTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FF221929A7B0068B36C /* ApexAlertTextField.m */; };
+		9D131FF62192ADA40068B36C /* UchainCreateWalletNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FF52192ADA40068B36C /* UchainCreateWalletNameCell.m */; };
+		9D131FF92192ADC90068B36C /* UchainCreateWalletPasswordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FF82192ADC90068B36C /* UchainCreateWalletPasswordCell.m */; };
+		9D131FFC2192B29C0068B36C /* UchainPrivacyAgreeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FFB2192B29C0068B36C /* UchainPrivacyAgreeFooterView.m */; };
+		9D131FFF2192B9300068B36C /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FFE2192B9300068B36C /* UIButton+EnlargeTouchArea.m */; };
+		9D1320022192BA220068B36C /* UchainCreateBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320012192BA220068B36C /* UchainCreateBottomView.m */; };
+		9D1320092192EC0E0068B36C /* UchainPrepareBackUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320082192EC0E0068B36C /* UchainPrepareBackUpController.m */; };
 		F506AF8A11147E314A1F51F2 /* libPods-UchainWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */; };
 /* End PBXBuildFile section */
 
@@ -183,6 +192,26 @@
 		9D131FE321904EAA0068B36C /* UIViewController+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Toast.m"; sourceTree = "<group>"; };
 		9D131FE621904F2C0068B36C /* PDKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeyChain.h; sourceTree = "<group>"; };
 		9D131FE721904F2C0068B36C /* PDKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeyChain.m; sourceTree = "<group>"; };
+		9D131FEA219168390068B36C /* UchainWelcomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainWelcomePageViewController.h; sourceTree = "<group>"; };
+		9D131FEB219168390068B36C /* UchainWelcomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainWelcomePageViewController.m; sourceTree = "<group>"; };
+		9D131FED219283CB0068B36C /* UchainCreateWalletTipsHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainCreateWalletTipsHeaderView.h; sourceTree = "<group>"; };
+		9D131FEE219283CB0068B36C /* UchainCreateWalletTipsHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainCreateWalletTipsHeaderView.m; sourceTree = "<group>"; };
+		9D131FF121929A7B0068B36C /* ApexAlertTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexAlertTextField.h; sourceTree = "<group>"; };
+		9D131FF221929A7B0068B36C /* ApexAlertTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexAlertTextField.m; sourceTree = "<group>"; };
+		9D131FF42192ADA40068B36C /* UchainCreateWalletNameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainCreateWalletNameCell.h; sourceTree = "<group>"; };
+		9D131FF52192ADA40068B36C /* UchainCreateWalletNameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainCreateWalletNameCell.m; sourceTree = "<group>"; };
+		9D131FF72192ADC90068B36C /* UchainCreateWalletPasswordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainCreateWalletPasswordCell.h; sourceTree = "<group>"; };
+		9D131FF82192ADC90068B36C /* UchainCreateWalletPasswordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainCreateWalletPasswordCell.m; sourceTree = "<group>"; };
+		9D131FFA2192B29C0068B36C /* UchainPrivacyAgreeFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainPrivacyAgreeFooterView.h; sourceTree = "<group>"; };
+		9D131FFB2192B29C0068B36C /* UchainPrivacyAgreeFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainPrivacyAgreeFooterView.m; sourceTree = "<group>"; };
+		9D131FFD2192B92F0068B36C /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		9D131FFE2192B9300068B36C /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
+		9D1320002192BA220068B36C /* UchainCreateBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainCreateBottomView.h; sourceTree = "<group>"; };
+		9D1320012192BA220068B36C /* UchainCreateBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainCreateBottomView.m; sourceTree = "<group>"; };
+		9D1320032192DF820068B36C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9D1320052192E7010068B36C /* ApexWalletManagerProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexWalletManagerProtocal.h; sourceTree = "<group>"; };
+		9D1320072192EC0E0068B36C /* UchainPrepareBackUpController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainPrepareBackUpController.h; sourceTree = "<group>"; };
+		9D1320082192EC0E0068B36C /* UchainPrepareBackUpController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainPrepareBackUpController.m; sourceTree = "<group>"; };
 		B3C00042EC786C0C4FEBD697 /* Pods-UchainWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.release.xcconfig"; sourceTree = "<group>"; };
 		FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UchainWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -212,6 +241,7 @@
 		3865545503DA0A5CC30EC7CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D1320032192DF820068B36C /* SystemConfiguration.framework */,
 				FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */,
 			);
 			name = Frameworks;
@@ -274,6 +304,7 @@
 		9D131EAD2189A8730068B36C /* UchainWallet */ = {
 			isa = PBXGroup;
 			children = (
+				9D131FE9219168170068B36C /* Welcome */,
 				9D131FBC21902D8B0068B36C /* Tools */,
 				9D131F29218AA3A20068B36C /* Utils */,
 				9D131F25218AA1B80068B36C /* Categories */,
@@ -395,6 +426,7 @@
 		9D131ED02189B53D0068B36C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9D1320052192E7010068B36C /* ApexWalletManagerProtocal.h */,
 				9D131FDD21904BDA0068B36C /* UchainWalletManager.h */,
 				9D131FDE21904BDA0068B36C /* UchainWalletManager.m */,
 			);
@@ -404,6 +436,16 @@
 		9D131ED12189B53D0068B36C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D131FED219283CB0068B36C /* UchainCreateWalletTipsHeaderView.h */,
+				9D131FEE219283CB0068B36C /* UchainCreateWalletTipsHeaderView.m */,
+				9D131FFA2192B29C0068B36C /* UchainPrivacyAgreeFooterView.h */,
+				9D131FFB2192B29C0068B36C /* UchainPrivacyAgreeFooterView.m */,
+				9D131FF42192ADA40068B36C /* UchainCreateWalletNameCell.h */,
+				9D131FF52192ADA40068B36C /* UchainCreateWalletNameCell.m */,
+				9D131FF72192ADC90068B36C /* UchainCreateWalletPasswordCell.h */,
+				9D131FF82192ADC90068B36C /* UchainCreateWalletPasswordCell.m */,
+				9D1320002192BA220068B36C /* UchainCreateBottomView.h */,
+				9D1320012192BA220068B36C /* UchainCreateBottomView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -490,6 +532,8 @@
 				9D131F1B218A99C40068B36C /* UchainWalletViewController.m */,
 				9D131F48218B060A0068B36C /* UchainCreatWalletController.h */,
 				9D131F49218B060A0068B36C /* UchainCreatWalletController.m */,
+				9D1320072192EC0E0068B36C /* UchainPrepareBackUpController.h */,
+				9D1320082192EC0E0068B36C /* UchainPrepareBackUpController.m */,
 				9D131F4B218B06230068B36C /* UchainImportWalletController.h */,
 				9D131F4C218B06230068B36C /* UchainImportWalletController.m */,
 				9D131FD1219040180068B36C /* UchainSendMoneyController.h */,
@@ -507,6 +551,8 @@
 				9D131F2F218AA6CA0068B36C /* UIColor+HYF.m */,
 				9D131F33218ACE190068B36C /* UIView+TKFrame.h */,
 				9D131F34218ACE190068B36C /* UIView+TKFrame.m */,
+				9D131FFD2192B92F0068B36C /* UIButton+EnlargeTouchArea.h */,
+				9D131FFE2192B9300068B36C /* UIButton+EnlargeTouchArea.m */,
 				9D131F3A218ADE6B0068B36C /* UIViewController+Apex.h */,
 				9D131F39218ADE6B0068B36C /* UIViewController+Apex.m */,
 				9D131FE221904EAA0068B36C /* UIViewController+Toast.h */,
@@ -558,6 +604,7 @@
 			isa = PBXGroup;
 			children = (
 				58E5A6A02192787900F04459 /* JXLayoutButton */,
+				9D131FF021929A7B0068B36C /* TextField */,
 				9D131FE521904F2C0068B36C /* keyChain */,
 				9D131FBD21902E5B0068B36C /* ScanTool */,
 			);
@@ -584,6 +631,24 @@
 				9D131FE721904F2C0068B36C /* PDKeyChain.m */,
 			);
 			path = keyChain;
+			sourceTree = "<group>";
+		};
+		9D131FE9219168170068B36C /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				9D131FEA219168390068B36C /* UchainWelcomePageViewController.h */,
+				9D131FEB219168390068B36C /* UchainWelcomePageViewController.m */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		9D131FF021929A7B0068B36C /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				9D131FF121929A7B0068B36C /* ApexAlertTextField.h */,
+				9D131FF221929A7B0068B36C /* ApexAlertTextField.m */,
+			);
+			path = TextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -710,11 +775,13 @@
 			files = (
 				9D131FDF21904BDA0068B36C /* UchainWalletManager.m in Sources */,
 				9D131F0C218A98480068B36C /* UINavigationItem+SOLocalization.m in Sources */,
+				9D131FFF2192B9300068B36C /* UIButton+EnlargeTouchArea.m in Sources */,
 				9D131FDC219046D60068B36C /* BalanceObject.m in Sources */,
 				9D131EDA2189B68E0068B36C /* UchainNavigationViewController.m in Sources */,
 				58E5A6A32192789900F04459 /* JXLayoutButton.m in Sources */,
 				9D131F3E218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m in Sources */,
 				9D131FB221900EC70068B36C /* UchainLanguageSettingCell.m in Sources */,
+				9D131FEF219283CB0068B36C /* UchainCreateWalletTipsHeaderView.m in Sources */,
 				9D131F0B218A98480068B36C /* UIView+SOLocalization.m in Sources */,
 				9D131FE821904F2C0068B36C /* PDKeyChain.m in Sources */,
 				9D131F10218A98480068B36C /* UITextField+SOLocalization.m in Sources */,
@@ -740,26 +807,33 @@
 				9D131F75218C3AFE0068B36C /* RDVTabBarController.m in Sources */,
 				9D131F76218C3AFE0068B36C /* RDVTabBarItem.m in Sources */,
 				9D131F2C218AA3CC0068B36C /* UchainUtil.m in Sources */,
+				9D1320092192EC0E0068B36C /* UchainPrepareBackUpController.m in Sources */,
 				9D131FCC21902FBC0068B36C /* UchainTransactionModel.m in Sources */,
+				9D131FFC2192B29C0068B36C /* UchainPrivacyAgreeFooterView.m in Sources */,
 				9D131F4A218B060A0068B36C /* UchainCreatWalletController.m in Sources */,
 				9D131FD3219040180068B36C /* UchainSendMoneyController.m in Sources */,
 				9D131FD92190429B0068B36C /* UchainAssetModel.m in Sources */,
 				58E5A6B12192C1E500F04459 /* UchainNewModel.m in Sources */,
+				9D131FF321929A7C0068B36C /* ApexAlertTextField.m in Sources */,
 				9D131F35218ACE190068B36C /* UIView+TKFrame.m in Sources */,
 				9D131F0F218A98480068B36C /* UILabel+SOLocalization.m in Sources */,
 				9D131F5B218BEBD30068B36C /* YRSideViewController.m in Sources */,
 				9D131F74218C3AFE0068B36C /* RDVTabBar.m in Sources */,
+				9D131FF62192ADA40068B36C /* UchainCreateWalletNameCell.m in Sources */,
 				9D131F0E218A98480068B36C /* UIButton+SOLocalization.m in Sources */,
 				9D131F32218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.m in Sources */,
 				9D131F19218A99AD0068B36C /* UchainNewsViewController.m in Sources */,
 				9D131F28218AA1B80068B36C /* UIResponder+Router.m in Sources */,
 				58E5A6B52192C6E700F04459 /* UchainNewsViewModel.m in Sources */,
+				9D131FEC219168390068B36C /* UchainWelcomePageViewController.m in Sources */,
 				9D131FC621902E5B0068B36C /* LXDScanView.m in Sources */,
 				9D131F16218A998C0068B36C /* UchainMineViewController.m in Sources */,
 				58E5A6AD2192BA8300F04459 /* UchainNewsTableViewCell.m in Sources */,
 				9D131F0A218A98480068B36C /* UIBarItem+SOLocalization.m in Sources */,
+				9D131FF92192ADC90068B36C /* UchainCreateWalletPasswordCell.m in Sources */,
 				9D131FCF219030670068B36C /* UchainTransferModel.m in Sources */,
 				9D131F09218A98480068B36C /* UIViewController+SOLocalizations.m in Sources */,
+				9D1320022192BA220068B36C /* UchainCreateBottomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,8 +982,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2WU6NZ66PC;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UchainWallet",
@@ -935,8 +1011,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2WU6NZ66PC;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UchainWallet",

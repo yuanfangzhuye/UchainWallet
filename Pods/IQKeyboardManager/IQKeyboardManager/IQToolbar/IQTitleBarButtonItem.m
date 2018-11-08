@@ -28,14 +28,12 @@
 #import <UIKit/UILabel.h>
 #import <UIKit/UIButton.h>
 
-@interface IQTitleBarButtonItem ()
-
-@property(nonatomic, strong) UIView *titleView;
-@property(nonatomic, strong) UIButton *titleButton;
-
-@end
-
 @implementation IQTitleBarButtonItem
+{
+    UIView *_titleView;
+    UIButton *_titleButton;
+}
+@synthesize titleFont = _titleFont;
 
 -(nonnull instancetype)initWithTitle:(nullable NSString *)title
 {
@@ -112,16 +110,10 @@
     [_titleButton setTitle:title forState:UIControlStateNormal];
 }
 
--(void)setTitleColor:(UIColor*)titleColor
+-(void)setSelectableTextColor:(UIColor*)selectableTextColor
 {
-    _titleColor = titleColor;
-    [_titleButton setTitleColor:_titleColor?:[UIColor lightGrayColor] forState:UIControlStateDisabled];
-}
-
--(void)setSelectableTitleColor:(UIColor*)selectableTitleColor
-{
-    _selectableTitleColor = selectableTitleColor;
-    [_titleButton setTitleColor:_selectableTitleColor?:[UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0] forState:UIControlStateNormal];
+    _selectableTextColor = selectableTextColor;
+    [_titleButton setTitleColor:_selectableTextColor forState:UIControlStateNormal];
 }
 
 -(void)setInvocation:(NSInvocation *)invocation

@@ -20,6 +20,11 @@
 "MyAccount" = "我的账户";
 "ManagemetWallet" = "管理钱包";
 "TransactionRecord" = "交易记录";
+"CreatWalletTip01" = "密码用于加密私钥和交易授权，非常重要，请勿设定的过于简单。";
+"CreatWalletTip02" = "Apex Wallet不存储密码，也无法帮你找回，请务必牢记。";
+"I agree to the Service and Privacy Policy" = "我已经仔细阅读并同意 服务及隐私条款";
+"Wallet Name" = "钱包名称";
+"Login Password" = "登陆密码";
 "LanguageSetting" = "语言设置";
 "Manual" = "使用手册";
 "AboutUS" = "关于我们";

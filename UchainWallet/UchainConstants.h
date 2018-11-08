@@ -16,6 +16,8 @@
 #define scaleWidth375(w) w/375.0 * kScreenWidth
 #define scaleHeight667(h) h/667.0 * kScreenHeight
 
+#define kWelcomePageNumber 2
+
 #define iPhoneX \
 ({BOOL isPhoneX = NO;\
 if (@available(iOS 11.0, *)) {\

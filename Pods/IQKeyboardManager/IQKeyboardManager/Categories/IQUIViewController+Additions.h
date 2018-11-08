@@ -30,8 +30,8 @@
 /**
  Top/Bottom Layout constraint which help library to manage keyboardTextField distance
 
- @deprecated    Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview.
+ @message   Library is internally handle Safe Area in iOS11 if `canAdjustAdditionalSafeAreaInsets = YES` and there is no need to do any tweak if you already migrated to use Safe Area
 */
-@property(nullable, nonatomic, strong) IBOutlet NSLayoutConstraint *IQLayoutGuideConstraint __attribute__((deprecated("Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview.")));
+@property(nullable, nonatomic, strong) IBOutlet NSLayoutConstraint *IQLayoutGuideConstraint;
 
 @end
