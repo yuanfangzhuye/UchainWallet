@@ -13,4 +13,20 @@
 "Create Wallet" = "创建钱包";
 "Import Wallet" = "导入钱包";
 
+
+/*
+ *我的模块
+ */
+"MyAccount" = "我的账户";
+"ManagemetWallet" = "管理钱包";
+"TransactionRecord" = "交易记录";
 "LanguageSetting" = "语言设置";
+"Manual" = "使用手册";
+"AboutUS" = "关于我们";
+"MoreOption" = "更多功能";
+
+/*
+ *快讯模块
+ */
+"NewsLetter" = "快讯";
+

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58E5A6A32192789900F04459 /* JXLayoutButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6A22192789900F04459 /* JXLayoutButton.m */; };
+		58E5A6AD2192BA8300F04459 /* UchainNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6AC2192BA8300F04459 /* UchainNewsTableViewCell.m */; };
+		58E5A6B12192C1E500F04459 /* UchainNewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6B02192C1E500F04459 /* UchainNewModel.m */; };
+		58E5A6B52192C6E700F04459 /* UchainNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6B42192C6E700F04459 /* UchainNewsViewModel.m */; };
 		9D131EB02189A8730068B36C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EAF2189A8730068B36C /* AppDelegate.m */; };
 		9D131EB82189A8730068B36C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D131EB72189A8730068B36C /* Assets.xcassets */; };
 		9D131EBE2189A8730068B36C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EBD2189A8730068B36C /* main.m */; };
@@ -63,6 +67,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58E5A6A12192789900F04459 /* JXLayoutButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXLayoutButton.h; sourceTree = "<group>"; };
+		58E5A6A22192789900F04459 /* JXLayoutButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXLayoutButton.m; sourceTree = "<group>"; };
+		58E5A6AB2192BA8300F04459 /* UchainNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainNewsTableViewCell.h; sourceTree = "<group>"; };
+		58E5A6AC2192BA8300F04459 /* UchainNewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainNewsTableViewCell.m; sourceTree = "<group>"; };
+		58E5A6AF2192C1E500F04459 /* UchainNewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainNewModel.h; sourceTree = "<group>"; };
+		58E5A6B02192C1E500F04459 /* UchainNewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainNewModel.m; sourceTree = "<group>"; };
+		58E5A6B32192C6E700F04459 /* UchainNewsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainNewsViewModel.h; sourceTree = "<group>"; };
+		58E5A6B42192C6E700F04459 /* UchainNewsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainNewsViewModel.m; sourceTree = "<group>"; };
 		9A3212DDC04BBAFC80C9CFD1 /* Pods-UchainWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		9D131EAB2189A8730068B36C /* UchainWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UchainWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D131EAE2189A8730068B36C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -205,6 +217,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		58E5A6A02192787900F04459 /* JXLayoutButton */ = {
+			isa = PBXGroup;
+			children = (
+				58E5A6A12192789900F04459 /* JXLayoutButton.h */,
+				58E5A6A22192789900F04459 /* JXLayoutButton.m */,
+			);
+			path = JXLayoutButton;
+			sourceTree = "<group>";
+		};
+		58E5A6AA2192BA6F00F04459 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58E5A6AB2192BA8300F04459 /* UchainNewsTableViewCell.h */,
+				58E5A6AC2192BA8300F04459 /* UchainNewsTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		58E5A6AE2192C1AD00F04459 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				58E5A6AF2192C1E500F04459 /* UchainNewModel.h */,
+				58E5A6B02192C1E500F04459 /* UchainNewModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		58E5A6B22192C61300F04459 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				58E5A6B32192C6E700F04459 /* UchainNewsViewModel.h */,
+				58E5A6B42192C6E700F04459 /* UchainNewsViewModel.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		9D131EA22189A8730068B36C = {
 			isa = PBXGroup;
 			children = (
@@ -251,10 +299,10 @@
 		9D131EC42189B1820068B36C /* News */ = {
 			isa = PBXGroup;
 			children = (
+				58E5A6B22192C61300F04459 /* ViewModels */,
+				58E5A6AE2192C1AD00F04459 /* Models */,
+				58E5A6AA2192BA6F00F04459 /* Views */,
 				9D131F12218A994F0068B36C /* Controllers */,
-				9D131ECE2189B5330068B36C /* Models */,
-				9D131ECD2189B5330068B36C /* ViewModel */,
-				9D131ECC2189B5330068B36C /* Views */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -323,27 +371,6 @@
 				9D131FB121900EC70068B36C /* UchainLanguageSettingCell.m */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		9D131ECC2189B5330068B36C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		9D131ECD2189B5330068B36C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		9D131ECE2189B5330068B36C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		9D131ECF2189B53D0068B36C /* Models */ = {
@@ -530,6 +557,7 @@
 		9D131FBC21902D8B0068B36C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				58E5A6A02192787900F04459 /* JXLayoutButton */,
 				9D131FE521904F2C0068B36C /* keyChain */,
 				9D131FBD21902E5B0068B36C /* ScanTool */,
 			);
@@ -684,6 +712,7 @@
 				9D131F0C218A98480068B36C /* UINavigationItem+SOLocalization.m in Sources */,
 				9D131FDC219046D60068B36C /* BalanceObject.m in Sources */,
 				9D131EDA2189B68E0068B36C /* UchainNavigationViewController.m in Sources */,
+				58E5A6A32192789900F04459 /* JXLayoutButton.m in Sources */,
 				9D131F3E218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m in Sources */,
 				9D131FB221900EC70068B36C /* UchainLanguageSettingCell.m in Sources */,
 				9D131F0B218A98480068B36C /* UIView+SOLocalization.m in Sources */,
@@ -715,6 +744,7 @@
 				9D131F4A218B060A0068B36C /* UchainCreatWalletController.m in Sources */,
 				9D131FD3219040180068B36C /* UchainSendMoneyController.m in Sources */,
 				9D131FD92190429B0068B36C /* UchainAssetModel.m in Sources */,
+				58E5A6B12192C1E500F04459 /* UchainNewModel.m in Sources */,
 				9D131F35218ACE190068B36C /* UIView+TKFrame.m in Sources */,
 				9D131F0F218A98480068B36C /* UILabel+SOLocalization.m in Sources */,
 				9D131F5B218BEBD30068B36C /* YRSideViewController.m in Sources */,
@@ -723,8 +753,10 @@
 				9D131F32218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.m in Sources */,
 				9D131F19218A99AD0068B36C /* UchainNewsViewController.m in Sources */,
 				9D131F28218AA1B80068B36C /* UIResponder+Router.m in Sources */,
+				58E5A6B52192C6E700F04459 /* UchainNewsViewModel.m in Sources */,
 				9D131FC621902E5B0068B36C /* LXDScanView.m in Sources */,
 				9D131F16218A998C0068B36C /* UchainMineViewController.m in Sources */,
+				58E5A6AD2192BA8300F04459 /* UchainNewsTableViewCell.m in Sources */,
 				9D131F0A218A98480068B36C /* UIBarItem+SOLocalization.m in Sources */,
 				9D131FCF219030670068B36C /* UchainTransferModel.m in Sources */,
 				9D131F09218A98480068B36C /* UIViewController+SOLocalizations.m in Sources */,

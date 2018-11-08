@@ -13,4 +13,19 @@
 "Create Wallet" = "Create Wallet";
 "Import Wallet" = "Import Wallet";
 
+
+/*
+ *我的模块
+ */
+"MyAccount" = "MyAccount";
+"ManagemetWallet" = "Managemet Wallet";
+"TransactionRecord" = "Transaction Record";
 "LanguageSetting" = "LanguageSetting";
+"Manual" = "Manual";
+"AboutUS" = "AboutUS";
+"MoreOption" = "OtherOption";
+
+/*
+ *快讯模块
+ */
+"NewsLetter" = "NewsLetter";
