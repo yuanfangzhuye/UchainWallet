@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BalanceObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *walletName;
 @property (nonatomic, strong) NSString *walletAddress;
 @property (nonatomic, strong) BalanceObject *balanceModel;
-//@property (nonatomic, strong) id<ApexWalletManagerProtocal> walletManager; /**<  */
 @property (nonatomic, strong) NSString *toAddressIfHave;
 @property (nonatomic, strong) NSString *unit;
 

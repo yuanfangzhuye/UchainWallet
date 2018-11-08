@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BalanceObject.h"
 
 @interface ApexScanAction : NSObject
 //@property (nonatomic, strong) UchainWalletModel *curWallet;

@@ -19,8 +19,8 @@
 {
     [super viewDidLoad];
     
-//    self.navigationBar.titleTextAttributes= [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
-//    self.interactivePopGestureRecognizer.delegate = self;
+    self.navigationBar.titleTextAttributes= [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
+    self.interactivePopGestureRecognizer.delegate = self;
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer

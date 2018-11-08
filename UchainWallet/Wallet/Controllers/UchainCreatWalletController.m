@@ -11,7 +11,8 @@
 #import "UchainPrepareBackUpController.h"
 #import "UchainProlicyController.h"
 
-#import "UchainWalletManager.h"
+#import "ApexWalletManager.h"
+#import "ETHWalletManager.h"
 
 #import "UchainCreateBottomView.h"
 #import "UchainCreateWalletTipsHeaderView.h"
@@ -36,8 +37,7 @@
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController lt_setBackgroundColor:[UIColor blueColor]];
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-back-black"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
 }
 
 - (void)back
@@ -50,7 +50,6 @@
     [super viewDidLoad];
     
     [self initNavigationBar];
-    self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.bottomView];
@@ -78,7 +77,6 @@
 
 - (void)initNavigationBar
 {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-back-white"]  style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.titleView = self.navigationBarTitle;
 }
 
@@ -169,20 +167,23 @@
 
 - (NSString *)getWalletName
 {
-    UchainCreateWalletNameCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-    return cell.inputTextField.text;
+//    UchainCreateWalletNameCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+//    return cell.inputTextField.text;
+    return @"测试";
 }
 
 - (NSString *)getWalletPassword
 {
-    UchainCreateWalletPasswordCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
-    return cell.passwordTextField.text;
+//    UchainCreateWalletPasswordCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+//    return cell.passwordTextField.text;
+    return @"123456";
 }
 
 - (NSString *)getRepeatPassword
 {
-    UchainCreateWalletPasswordCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
-    return cell.repeteTextField.text;
+//    UchainCreateWalletPasswordCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+//    return cell.repeteTextField.text;
+    return @"123456";
 }
 
 - (BOOL)getPrivacySelected
@@ -200,13 +201,6 @@
         vc.html = htmlString;
         [self.navigationController pushViewController:vc animated:YES];
     }
-}
-
-#pragma mark ------ PrivacyAgreeDelegate
-
-- (void)goToHtmlWithString:(NSString *)htmlString
-{
-    
 }
 
 - (void)createWallet
@@ -228,17 +222,17 @@
 
 - (void)createEthWalletWithPassword:(NSString *)password walletName:(NSString *)walletname
 {
-    [UchainWalletManager creatETHWalletSuccess:^(EthmobileWallet *wallet) {
+    [ETHWalletManager creatETHWalletSuccess:^(EthmobileWallet *wallet) {
         
         NSError *ksErr = nil;
-        NSString *ks = [wallet toKeyStore:@"" error:&ksErr];
+        NSString *ks = [wallet toKeyStore:@"123456" error:&ksErr];
         if (ksErr) {
             [self showMessage:[NSString stringWithFormat:@"%@: %@",SOLocalizedStringFromTable(@"Create Keystore Failed", nil),ksErr]];
         }
         NSString *address = wallet.address;
         [PDKeyChain save:[NSString stringWithFormat:@"%@", address] data:ks];
         
-        [[UchainWalletManager shareInstanceManager] saveWallet:address name:walletname];
+        [[ETHWalletManager shareManager] saveWallet:address name:walletname];
         self.createWalletModel = wallet;
         
     } failed:^(NSError *error) {
@@ -252,12 +246,16 @@
     UchainPrepareBackUpController *vc = [[UchainPrepareBackUpController alloc] init];
     EthmobileWallet *wallet = (EthmobileWallet*)_createWalletModel;
     
-    NSArray *walletArray = [[UchainWalletManager shareInstanceManager] getWalletsArr];
-    for (UchainWalletModel *model in walletArray) {
+    NSArray *walletArray = [[ETHWalletManager shareManager] getWalletsArr];
+    for (ETHWalletModel *model in walletArray) {
         if ([model.address isEqualToString:wallet.address]) {
             vc.model = model;
             break;
         }
+    }
+    
+    if (_createWalletModel == nil) {
+        return;
     }
     
     vc.isFromCreat = YES;
@@ -266,7 +264,8 @@
             [self.didFinishCreatSub sendNext:@""];
         }
     };
-    [self directlyPushToViewControllerWithSelfDeleted:vc];
+//    [self directlyPushToViewControllerWithSelfDeleted:vc];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark ------ getter,setter
@@ -277,7 +276,7 @@
         _navigationBarTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
         _navigationBarTitle.text = SOLocalizedStringFromTable(@"Create Wallet", nil);
         _navigationBarTitle.textAlignment = NSTextAlignmentCenter;
-        _navigationBarTitle.textColor = [UIColor whiteColor];
+        _navigationBarTitle.textColor = [UIColor blackColor];
     }
     return _navigationBarTitle;
 }
