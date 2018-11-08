@@ -583,11 +583,8 @@
 				9D131FF82192ADC90068B36C /* UchainCreateWalletPasswordCell.m */,
 				9D1320002192BA220068B36C /* UchainCreateBottomView.h */,
 				9D1320012192BA220068B36C /* UchainCreateBottomView.m */,
-
-
 				9D132050219402710068B36C /* UchainPassWordConfirmAlertView.h */,
 				9D132051219402710068B36C /* UchainPassWordConfirmAlertView.m */,
-
 				58E5A6C1219419AD00F04459 /* UchainWalletTableViewCell.h */,
 				58E5A6C2219419AD00F04459 /* UchainWalletTableViewCell.m */,
 				58E5A6C421941E4B00F04459 /* UchainAccountListCell.h */,
@@ -1064,7 +1061,6 @@
 				9D131FFF2192B9300068B36C /* UIButton+EnlargeTouchArea.m in Sources */,
 				9D132052219402710068B36C /* UchainPassWordConfirmAlertView.m in Sources */,
 				9D13206D2194063D0068B36C /* ApexBackUpController.m in Sources */,
-				9D131FDC219046D60068B36C /* BalanceObject.m in Sources */,
 				58E5A6C02194178200F04459 /* UchainAccountListViewController.m in Sources */,
 				9D131EDA2189B68E0068B36C /* UchainNavigationViewController.m in Sources */,
 				9D1320AA219409550068B36C /* NSString+Tool.m in Sources */,
@@ -1138,7 +1134,6 @@
 				9D1320A1219408890068B36C /* ApexTransHistoryDataBaseHelper.m in Sources */,
 				9D131F19218A99AD0068B36C /* UchainNewsViewController.m in Sources */,
 				9D131F28218AA1B80068B36C /* UIResponder+Router.m in Sources */,
-
 				9D132079219406F40068B36C /* ApexMnemonicFlowLayout.m in Sources */,
 				58E5A6C3219419AD00F04459 /* UchainWalletTableViewCell.m in Sources */,
 				58E5A6B52192C6E700F04459 /* UchainNewsViewModel.m in Sources */,
@@ -1305,7 +1300,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2WU6NZ66PC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1335,7 +1330,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2WU6NZ66PC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

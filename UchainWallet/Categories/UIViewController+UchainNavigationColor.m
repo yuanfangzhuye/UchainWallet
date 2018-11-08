@@ -14,25 +14,30 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
         [UchainMethodSwizzlingUtil methodSwizzle:self origin:@selector(viewWillDisappear:) new:@selector(uchain_viewWillDisappear:)];
         [UchainMethodSwizzlingUtil methodSwizzle:self origin:@selector(viewDidLoad) new:@selector(uchain_viewDidLoad)];
-        
     });
 }
 
 - (void)uchain_viewWillDisappear:(BOOL)animated
 {
-    [self.navigationController lt_setBackgroundColor:[UIColor clearColor]];
-    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    
+    Class class = NSClassFromString(@"UIInputWindowController");
+    if (self.class != class) {
+        [self.navigationController lt_setBackgroundColor:[UIColor clearColor]];
+        [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    }
     
     [self uchain_viewWillDisappear:animated];
 }
 
 - (void)uchain_viewDidLoad
 {
-    self.view.backgroundColor = [UIColor whiteColor];
+    Class class = NSClassFromString(@"UIInputWindowController");
+    if (self.class != class) {
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
     
     [self uchain_viewDidLoad];
 }
