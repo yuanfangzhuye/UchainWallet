@@ -54,34 +54,37 @@ static CGFloat kMargin = 15;
     [self.dataArray removeAllObjects];
     [self.tableView.mj_footer resetNoMoreData];
     
-    UchainNewModel *newModel = [[UchainNewModel alloc]init];
-    newModel.cellTitle = @"特斯拉私有化后怎么样？看看SpaceX就知道了";
-    newModel.cellDate = @"08-18";
-    newModel.imageUrl = @"icon-wallet-selected";
-    [self.dataArray addObject:newModel];
+    [self.ucNewViewModel.tableCommand execute:nil];
     
-    [self.tableView.mj_header endRefreshing];
-    if(self.dataArray.count<20){
-        [self.tableView.mj_footer endRefreshingWithNoMoreData];
-    }
-    [self.tableView reloadData];
+//    UchainNewModel *newModel = [[UchainNewModel alloc]init];
+//    newModel.cellTitle = @"特斯拉私有化后怎么样？看看SpaceX就知道了";
+//    newModel.cellDate = @"08-18";
+//    newModel.imageUrl = @"icon-wallet-selected";
+//    [self.dataArray addObject:newModel];
+    
+//    [self.tableView.mj_header endRefreshing];
+//    if(self.dataArray.count<20){
+//        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+//    }
+//    [self.tableView reloadData];
 }
 
 - (void)p_getFootdata{
+    [self.ucNewViewModel.tableCommand execute:nil];
 
-    UchainNewModel *newModel = [[UchainNewModel alloc]init];
-    newModel.cellTitle = @"特斯拉私有化后怎么样？看看SpaceX就知道了?";
-    newModel.cellDate = @"08-18";
-    newModel.imageUrl = @"icon-wallet-selected";
-    NSArray *arr =@[newModel];
-    
-    [self.dataArray addObjectsFromArray:arr];
-    [self.tableView.mj_footer endRefreshing];
-    if(arr.count < 20)
-    {
-        [self.tableView.mj_footer endRefreshingWithNoMoreData];
-    }
-    [self.tableView reloadData];
+//    UchainNewModel *newModel = [[UchainNewModel alloc]init];
+//    newModel.cellTitle = @"特斯拉私有化后怎么样？看看SpaceX就知道了?";
+//    newModel.cellDate = @"08-18";
+//    newModel.imageUrl = @"icon-wallet-selected";
+//    NSArray *arr =@[newModel];
+//
+//    [self.dataArray addObjectsFromArray:arr];
+//    [self.tableView.mj_footer endRefreshing];
+//    if(arr.count < 20)
+//    {
+//        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+//    }
+//    [self.tableView reloadData];
 }
 
 #pragma mark - BindingData
@@ -90,6 +93,7 @@ static CGFloat kMargin = 15;
     [[[self.ucNewViewModel.tableCommand executionSignals] switchToLatest]subscribeNext:^(id  _Nullable x) {
         NSArray *array = x;
         [self.dataArray addObjectsFromArray:array];
+        [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         if(array.count < 20)
         {
@@ -148,6 +152,10 @@ static CGFloat kMargin = 15;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 110 + kMargin;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
 }
 
 #pragma mark - getter

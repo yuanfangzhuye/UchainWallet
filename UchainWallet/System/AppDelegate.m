@@ -69,7 +69,7 @@
 
 - (void)targetRootViewControllerSet
 {
-    NSArray *arr = [NSArray new];
+    NSArray *arr = [NSArray arrayWithObjects:@"1", nil];
     BOOL isFirstCreatDone = [[NSUserDefaults standardUserDefaults] objectForKey:KisFirstCreateWalletDone];
     
     if (arr.count == 0 && !isFirstCreatDone) {

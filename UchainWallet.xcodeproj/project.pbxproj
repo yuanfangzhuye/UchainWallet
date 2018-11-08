@@ -11,6 +11,8 @@
 		58E5A6AD2192BA8300F04459 /* UchainNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6AC2192BA8300F04459 /* UchainNewsTableViewCell.m */; };
 		58E5A6B12192C1E500F04459 /* UchainNewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6B02192C1E500F04459 /* UchainNewModel.m */; };
 		58E5A6B52192C6E700F04459 /* UchainNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6B42192C6E700F04459 /* UchainNewsViewModel.m */; };
+		58E5A6B92193DC5300F04459 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6B72193DC5300F04459 /* AboutUsViewController.m */; };
+		58E5A6BA2193DC5300F04459 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58E5A6B82193DC5300F04459 /* AboutUsViewController.xib */; };
 		9D131EB02189A8730068B36C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EAF2189A8730068B36C /* AppDelegate.m */; };
 		9D131EB82189A8730068B36C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D131EB72189A8730068B36C /* Assets.xcassets */; };
 		9D131EBE2189A8730068B36C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EBD2189A8730068B36C /* main.m */; };
@@ -84,6 +86,9 @@
 		58E5A6B02192C1E500F04459 /* UchainNewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainNewModel.m; sourceTree = "<group>"; };
 		58E5A6B32192C6E700F04459 /* UchainNewsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainNewsViewModel.h; sourceTree = "<group>"; };
 		58E5A6B42192C6E700F04459 /* UchainNewsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainNewsViewModel.m; sourceTree = "<group>"; };
+		58E5A6B62193DC5300F04459 /* AboutUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		58E5A6B72193DC5300F04459 /* AboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		58E5A6B82193DC5300F04459 /* AboutUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutUsViewController.xib; sourceTree = "<group>"; };
 		9A3212DDC04BBAFC80C9CFD1 /* Pods-UchainWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		9D131EAB2189A8730068B36C /* UchainWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UchainWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D131EAE2189A8730068B36C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -512,6 +517,9 @@
 				9D131F15218A998C0068B36C /* UchainMineViewController.m */,
 				9D131FAD218FEBC90068B36C /* UchainLanguageSettingController.h */,
 				9D131FAE218FEBC90068B36C /* UchainLanguageSettingController.m */,
+				58E5A6B62193DC5300F04459 /* AboutUsViewController.h */,
+				58E5A6B72193DC5300F04459 /* AboutUsViewController.m */,
+				58E5A6B82193DC5300F04459 /* AboutUsViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -711,6 +719,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58E5A6BA2193DC5300F04459 /* AboutUsViewController.xib in Resources */,
 				9D131EB82189A8730068B36C /* Assets.xcassets in Resources */,
 				9D131EEF218A97FE0068B36C /* Localizable.strings in Resources */,
 				9D131EE9218A97D90068B36C /* InfoPlist.strings in Resources */,
@@ -781,6 +790,7 @@
 				58E5A6A32192789900F04459 /* JXLayoutButton.m in Sources */,
 				9D131F3E218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m in Sources */,
 				9D131FB221900EC70068B36C /* UchainLanguageSettingCell.m in Sources */,
+				58E5A6B92193DC5300F04459 /* AboutUsViewController.m in Sources */,
 				9D131FEF219283CB0068B36C /* UchainCreateWalletTipsHeaderView.m in Sources */,
 				9D131F0B218A98480068B36C /* UIView+SOLocalization.m in Sources */,
 				9D131FE821904F2C0068B36C /* PDKeyChain.m in Sources */,
@@ -993,6 +1003,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/UchainWallet/UchainPrefixHeader.pch";
 				INFOPLIST_FILE = UchainWallet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1022,6 +1033,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/UchainWallet/UchainPrefixHeader.pch";
 				INFOPLIST_FILE = UchainWallet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
