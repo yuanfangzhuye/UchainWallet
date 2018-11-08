@@ -9,7 +9,7 @@
 #import "UchainMineViewController.h"
 #import "UchainLanguageSettingController.h"
 #import "JXLayoutButton.h"
-
+#import "AboutUsViewController.h"
 static CGFloat kMargin = 15;
 
 @interface UchainMineViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -156,13 +156,14 @@ static CGFloat kMargin = 15;
             
         case 1:
             {
-            
+                
             }
             break;
             
         case 2:
             {
-            
+                AboutUsViewController *aboutUsVC = [[AboutUsViewController alloc]init];
+                [self.navigationController pushViewController:aboutUsVC animated:YES];
             }
             break;
             
