@@ -28,6 +28,8 @@
             make.left.equalTo(self.privacyAgreeBtn.mas_right).offset(15);
             make.centerY.equalTo(self.privacyAgreeBtn.mas_centerY);
         }];
+        
+        [self handleEvent];
     }
     return self;
 }
@@ -62,6 +64,23 @@
         _privacyAgreeLable.attributedText = str;
     }
     return _privacyAgreeLable;
+}
+
+- (void)handleEvent
+{
+    self.privacyAgreeLable.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+    [[tap rac_gestureSignal] subscribeNext:^(__kindof UIGestureRecognizer * _Nullable x) {
+        NSString *filePath = @"";
+        if ([[SOLocalization sharedLocalization].region isEqualToString:SOLocalizationEnglish]) {
+            filePath = [[NSBundle mainBundle] pathForResource:@"useprotocol_en" ofType:@"html"];
+        }else{
+            filePath = [[NSBundle mainBundle] pathForResource:@"useprotocol" ofType:@"html"];
+        }
+        NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+        [self routeEventWithName:@"11111" userInfo:@{@"html": htmlString}];
+    }];
+    [self.privacyAgreeLable addGestureRecognizer:tap];
 }
 
 @end

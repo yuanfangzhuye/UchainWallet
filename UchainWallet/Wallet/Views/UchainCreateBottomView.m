@@ -21,6 +21,7 @@
         
         [self addSubview:self.importButton];
         [self.importButton addSubview:self.importLabel];
+        
         [self addSubview:self.createButton];
         [self.createButton addSubview:self.createLabel];
         

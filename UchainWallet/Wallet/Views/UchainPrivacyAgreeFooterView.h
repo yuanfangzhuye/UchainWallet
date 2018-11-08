@@ -10,10 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+//@protocol  PrivacyAgreeDelegate <NSObject>
+//
+//- (void)goToHtmlWithString:(NSString *)htmlString;
+//
+//@end
+
 @interface UchainPrivacyAgreeFooterView : UITableViewHeaderFooterView
 
 @property (nonatomic, strong) UIButton *privacyAgreeBtn;
 @property (nonatomic, strong) UILabel *privacyAgreeLable;
+
+//@property (nonatomic, strong) id <PrivacyAgreeDelegate> delegate;
 
 @end
 

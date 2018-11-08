@@ -72,6 +72,9 @@
 		9D131FFF2192B9300068B36C /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FFE2192B9300068B36C /* UIButton+EnlargeTouchArea.m */; };
 		9D1320022192BA220068B36C /* UchainCreateBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320012192BA220068B36C /* UchainCreateBottomView.m */; };
 		9D1320092192EC0E0068B36C /* UchainPrepareBackUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320082192EC0E0068B36C /* UchainPrepareBackUpController.m */; };
+		9D13200C2193DBE90068B36C /* UchainProlicyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D13200B2193DBE90068B36C /* UchainProlicyController.m */; };
+		9D13200F2193E5050068B36C /* useprotocol.html in Resources */ = {isa = PBXBuildFile; fileRef = 9D13200D2193E5050068B36C /* useprotocol.html */; };
+		9D1320102193E5050068B36C /* useprotocol_en.html in Resources */ = {isa = PBXBuildFile; fileRef = 9D13200E2193E5050068B36C /* useprotocol_en.html */; };
 		F506AF8A11147E314A1F51F2 /* libPods-UchainWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */; };
 /* End PBXBuildFile section */
 
@@ -212,6 +215,10 @@
 		9D1320052192E7010068B36C /* ApexWalletManagerProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexWalletManagerProtocal.h; sourceTree = "<group>"; };
 		9D1320072192EC0E0068B36C /* UchainPrepareBackUpController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainPrepareBackUpController.h; sourceTree = "<group>"; };
 		9D1320082192EC0E0068B36C /* UchainPrepareBackUpController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainPrepareBackUpController.m; sourceTree = "<group>"; };
+		9D13200A2193DBE90068B36C /* UchainProlicyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainProlicyController.h; sourceTree = "<group>"; };
+		9D13200B2193DBE90068B36C /* UchainProlicyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainProlicyController.m; sourceTree = "<group>"; };
+		9D13200D2193E5050068B36C /* useprotocol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = useprotocol.html; sourceTree = "<group>"; };
+		9D13200E2193E5050068B36C /* useprotocol_en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = useprotocol_en.html; sourceTree = "<group>"; };
 		B3C00042EC786C0C4FEBD697 /* Pods-UchainWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.release.xcconfig"; sourceTree = "<group>"; };
 		FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UchainWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -319,6 +326,8 @@
 				9D131FD0219031030068B36C /* PublicEnum.h */,
 				9D131F24218A9C9E0068B36C /* UchainConstants.h */,
 				9D131F23218A9C5B0068B36C /* UchainPrefixHeader.pch */,
+				9D13200E2193E5050068B36C /* useprotocol_en.html */,
+				9D13200D2193E5050068B36C /* useprotocol.html */,
 				9D131FE021904D6D0068B36C /* Neomobile.framework */,
 				9D131EF1218A97FE0068B36C /* Localizable.strings */,
 				9D131EEB218A97D90068B36C /* InfoPlist.strings */,
@@ -532,6 +541,8 @@
 				9D131F1B218A99C40068B36C /* UchainWalletViewController.m */,
 				9D131F48218B060A0068B36C /* UchainCreatWalletController.h */,
 				9D131F49218B060A0068B36C /* UchainCreatWalletController.m */,
+				9D13200A2193DBE90068B36C /* UchainProlicyController.h */,
+				9D13200B2193DBE90068B36C /* UchainProlicyController.m */,
 				9D1320072192EC0E0068B36C /* UchainPrepareBackUpController.h */,
 				9D1320082192EC0E0068B36C /* UchainPrepareBackUpController.m */,
 				9D131F4B218B06230068B36C /* UchainImportWalletController.h */,
@@ -711,8 +722,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1320102193E5050068B36C /* useprotocol_en.html in Resources */,
 				9D131EB82189A8730068B36C /* Assets.xcassets in Resources */,
 				9D131EEF218A97FE0068B36C /* Localizable.strings in Resources */,
+				9D13200F2193E5050068B36C /* useprotocol.html in Resources */,
 				9D131EE9218A97D90068B36C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -799,6 +812,7 @@
 				9D131F3B218ADE6B0068B36C /* UIViewController+Apex.m in Sources */,
 				9D131FD6219041F60068B36C /* UchainAccountStateModel.m in Sources */,
 				9D131FAF218FEBC90068B36C /* UchainLanguageSettingController.m in Sources */,
+				9D13200C2193DBE90068B36C /* UchainProlicyController.m in Sources */,
 				9D131F0D218A98480068B36C /* SOSwizzle.m in Sources */,
 				9D131F46218B020D0068B36C /* UchainWalletInitViewController.m in Sources */,
 				9D131FE421904EAA0068B36C /* UIViewController+Toast.m in Sources */,

@@ -10,22 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol CreateBottomViewDelegate <NSObject>
-
-- (void)createWallet;
-
-- (void)importWallet;
-
-@end
-
 @interface UchainCreateBottomView : UIView
 
 @property (nonatomic, strong) UIButton *importButton;
 @property (nonatomic, strong) UILabel *importLabel;
 @property (nonatomic, strong) UIButton *createButton;
 @property (nonatomic, strong) UILabel *createLabel;
-
-@property (nonatomic, strong) id <CreateBottomViewDelegate>delegate;
 
 @end
 
