@@ -13,7 +13,13 @@
 "Create Wallet" = "Create Wallet";
 "Import Wallet" = "Import Wallet";
 
-<<<<<<< HEAD
+"CreatWalletTip01" = "Password Is Used To Encrypt Private Key And Authorize Transaction. So It's Very Important To Set A Invulnerable Password";
+"CreatWalletTip02" = "Apex Wallet Neither Store Your Password Nor Retrieve Them For You. Please Keep It In A Safe Place";
+"I agree to the Service and Privacy Policy" = "I Agree to the Service and Privacy Policy";
+
+"Wallet Name" = "Wallet Name";
+"Login Password" = "Login Password";
+"LanguageSetting" = "LanguageSetting";
 
 /*
  *我的模块
@@ -21,16 +27,10 @@
 "MyAccount" = "MyAccount";
 "ManagemetWallet" = "Managemet Wallet";
 "TransactionRecord" = "Transaction Record";
-=======
-"CreatWalletTip01" = "Password Is Used To Encrypt Private Key And Authorize Transaction. So It's Very Important To Set A Invulnerable Password";
-"CreatWalletTip02" = "Apex Wallet Neither Store Your Password Nor Retrieve Them For You. Please Keep It In A Safe Place";
-"I agree to the Service and Privacy Policy" = "I Agree to the Service and Privacy Policy";
 
 "Wallet Name" = "Wallet Name";
 "Login Password" = "Login Password";
 
->>>>>>> 80784bc700675853d643b95c345b9c68de4b149a
-"LanguageSetting" = "LanguageSetting";
 "Manual" = "Manual";
 "AboutUS" = "AboutUS";
 "MoreOption" = "OtherOption";
