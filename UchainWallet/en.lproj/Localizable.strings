@@ -24,18 +24,14 @@
 /*
  *我的模块
  */
-"MyAccount" = "MyAccount";
+"MyAccount" = "My Account";
 "ManagemetWallet" = "Managemet Wallet";
 "TransactionRecord" = "Transaction Record";
-
-"Wallet Name" = "Wallet Name";
-"Login Password" = "Login Password";
-
 "Manual" = "Manual";
 "AboutUS" = "AboutUS";
-"MoreOption" = "OtherOption";
+"MoreOption" = "Other Option";
 
 /*
  *快讯模块
  */
-"NewsLetter" = "NewsLetter";
+"NewsLetter" = "News Letter";
