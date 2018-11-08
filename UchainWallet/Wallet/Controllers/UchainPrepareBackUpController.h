@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UchainPrepareBackUpController : UIViewController
 
-@property (nonatomic, strong) UchainWalletModel *model;
+@property (nonatomic, strong) ApexWalletModel *model;
 @property (nonatomic, copy) dispatch_block_t BackupCompleteBlock;
 @property (nonatomic, assign) BOOL isFromCreat; /**<  */
 

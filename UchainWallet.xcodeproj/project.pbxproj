@@ -54,14 +54,7 @@
 		9D131FC421902E5B0068B36C /* LXDScanCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FC121902E5B0068B36C /* LXDScanCodeController.m */; };
 		9D131FC521902E5B0068B36C /* ApexScanAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FC221902E5B0068B36C /* ApexScanAction.m */; };
 		9D131FC621902E5B0068B36C /* LXDScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FC321902E5B0068B36C /* LXDScanView.m */; };
-		9D131FC921902F240068B36C /* UchainWalletModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FC821902F240068B36C /* UchainWalletModel.m */; };
-		9D131FCC21902FBC0068B36C /* UchainTransactionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FCB21902FBC0068B36C /* UchainTransactionModel.m */; };
-		9D131FCF219030670068B36C /* UchainTransferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FCE219030670068B36C /* UchainTransferModel.m */; };
 		9D131FD3219040180068B36C /* UchainSendMoneyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FD2219040180068B36C /* UchainSendMoneyController.m */; };
-		9D131FD6219041F60068B36C /* UchainAccountStateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FD5219041F60068B36C /* UchainAccountStateModel.m */; };
-		9D131FD92190429B0068B36C /* UchainAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FD82190429B0068B36C /* UchainAssetModel.m */; };
-		9D131FDC219046D60068B36C /* BalanceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FDB219046D60068B36C /* BalanceObject.m */; };
-		9D131FDF21904BDA0068B36C /* UchainWalletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FDE21904BDA0068B36C /* UchainWalletManager.m */; };
 		9D131FE121904D6D0068B36C /* Neomobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D131FE021904D6D0068B36C /* Neomobile.framework */; };
 		9D131FE421904EAA0068B36C /* UIViewController+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FE321904EAA0068B36C /* UIViewController+Toast.m */; };
 		9D131FE821904F2C0068B36C /* PDKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131FE721904F2C0068B36C /* PDKeyChain.m */; };
@@ -77,6 +70,50 @@
 		9D13200C2193DBE90068B36C /* UchainProlicyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D13200B2193DBE90068B36C /* UchainProlicyController.m */; };
 		9D13200F2193E5050068B36C /* useprotocol.html in Resources */ = {isa = PBXBuildFile; fileRef = 9D13200D2193E5050068B36C /* useprotocol.html */; };
 		9D1320102193E5050068B36C /* useprotocol_en.html in Resources */ = {isa = PBXBuildFile; fileRef = 9D13200E2193E5050068B36C /* useprotocol_en.html */; };
+		9D132052219402710068B36C /* UchainPassWordConfirmAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132051219402710068B36C /* UchainPassWordConfirmAlertView.m */; };
+		9D13205F219403220068B36C /* FCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132055219403220068B36C /* FCAlertView.m */; };
+		9D132061219403220068B36C /* alert-round.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D132059219403220068B36C /* alert-round.png */; };
+		9D132062219403220068B36C /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 9D13205A219403220068B36C /* .gitkeep */; };
+		9D132063219403220068B36C /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D13205B219403220068B36C /* heart.png */; };
+		9D132064219403220068B36C /* close-round.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D13205C219403220068B36C /* close-round.png */; };
+		9D132065219403220068B36C /* checkmark-round.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D13205D219403220068B36C /* checkmark-round.png */; };
+		9D132066219403220068B36C /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D13205E219403220068B36C /* star.png */; };
+		9D13206D2194063D0068B36C /* ApexBackUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320672194063C0068B36C /* ApexBackUpController.m */; };
+		9D13206E2194063D0068B36C /* ApexMnemonicConfirmController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1320692194063C0068B36C /* ApexMnemonicConfirmController.xib */; };
+		9D1320702194063D0068B36C /* ApexMnemonicConfirmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D13206C2194063D0068B36C /* ApexMnemonicConfirmController.m */; };
+		9D132077219406F40068B36C /* ApexMnenonicShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132071219406F30068B36C /* ApexMnenonicShowView.m */; };
+		9D132078219406F40068B36C /* ApexMnemonicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132073219406F30068B36C /* ApexMnemonicCell.m */; };
+		9D132079219406F40068B36C /* ApexMnemonicFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132074219406F40068B36C /* ApexMnemonicFlowLayout.m */; };
+		9D13207C219407380068B36C /* ApexMnemonicShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D13207B219407380068B36C /* ApexMnemonicShowCell.m */; };
+		9D13207F219407540068B36C /* UILabel+Spacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D13207E219407540068B36C /* UILabel+Spacing.m */; };
+		9D13209C219408890068B36C /* ApexTransferHistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132083219408890068B36C /* ApexTransferHistoryManager.m */; };
+		9D13209D219408890068B36C /* ApexWalletModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132084219408890068B36C /* ApexWalletModel.m */; };
+		9D13209E219408890068B36C /* ApexNeoTxStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132085219408890068B36C /* ApexNeoTxStatusManager.m */; };
+		9D13209F219408890068B36C /* ApexWalletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132086219408890068B36C /* ApexWalletManager.m */; };
+		9D1320A0219408890068B36C /* ApexTransferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132088219408890068B36C /* ApexTransferModel.m */; };
+		9D1320A1219408890068B36C /* ApexTransHistoryDataBaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D13208C219408890068B36C /* ApexTransHistoryDataBaseHelper.m */; };
+		9D1320A2219408890068B36C /* ETHTransferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132090219408890068B36C /* ETHTransferModel.m */; };
+		9D1320A3219408890068B36C /* ApexETHTransactionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132091219408890068B36C /* ApexETHTransactionModel.m */; };
+		9D1320A4219408890068B36C /* ETHWalletModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132095219408890068B36C /* ETHWalletModel.m */; };
+		9D1320A5219408890068B36C /* ETHTransferHistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132098219408890068B36C /* ETHTransferHistoryManager.m */; };
+		9D1320A6219408890068B36C /* ETHTxStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D132099219408890068B36C /* ETHTxStatusManager.m */; };
+		9D1320A7219408890068B36C /* ETHWalletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D13209B219408890068B36C /* ETHWalletManager.m */; };
+		9D1320AA219409550068B36C /* NSString+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320A9219409550068B36C /* NSString+Tool.m */; };
+		9D1320AE21940A7F0068B36C /* SystemConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320AC21940A7E0068B36C /* SystemConvert.m */; };
+		9D1320B721940CA40068B36C /* ApexAssetModelManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320AF21940CA20068B36C /* ApexAssetModelManage.m */; };
+		9D1320B821940CA40068B36C /* ApexAccountStateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320B021940CA30068B36C /* ApexAccountStateModel.m */; };
+		9D1320B921940CA40068B36C /* ApexTXIDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320B121940CA30068B36C /* ApexTXIDModel.m */; };
+		9D1320BA21940CA40068B36C /* ApexTXRecorderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320B321940CA30068B36C /* ApexTXRecorderModel.m */; };
+		9D1320C321940D130068B36C /* NSString+Encypte.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320BB21940D120068B36C /* NSString+Encypte.m */; };
+		9D1320C421940D130068B36C /* NSBundle+MJLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320C021940D130068B36C /* NSBundle+MJLocalization.m */; };
+		9D1320C521940D130068B36C /* UITextView+placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320C121940D130068B36C /* UITextView+placeholder.m */; };
+		9D1320C621940D130068B36C /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320C221940D130068B36C /* UIView+Common.m */; };
+		9D1320C821940E080068B36C /* CYLAppBaseFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1320C721940E080068B36C /* CYLAppBaseFrameWork.framework */; };
+		9D1320CB2194105E0068B36C /* ApexThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320CA2194105E0068B36C /* ApexThread.m */; };
+		9D1320D12194110A0068B36C /* ApexNeoClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320CD2194110A0068B36C /* ApexNeoClient.m */; };
+		9D1320D22194110A0068B36C /* ApexETHClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320CE2194110A0068B36C /* ApexETHClient.m */; };
+		9D1320D5219412930068B36C /* ApexNetWorkCommonConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320D4219412930068B36C /* ApexNetWorkCommonConfig.m */; };
+		9D1320D9219414480068B36C /* ApexBlockChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320D7219414480068B36C /* ApexBlockChainManager.m */; };
 		F506AF8A11147E314A1F51F2 /* libPods-UchainWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */; };
 /* End PBXBuildFile section */
 
@@ -178,23 +215,9 @@
 		9D131FC121902E5B0068B36C /* LXDScanCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDScanCodeController.m; sourceTree = "<group>"; };
 		9D131FC221902E5B0068B36C /* ApexScanAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexScanAction.m; sourceTree = "<group>"; };
 		9D131FC321902E5B0068B36C /* LXDScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDScanView.m; sourceTree = "<group>"; };
-		9D131FC721902F240068B36C /* UchainWalletModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainWalletModel.h; sourceTree = "<group>"; };
-		9D131FC821902F240068B36C /* UchainWalletModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainWalletModel.m; sourceTree = "<group>"; };
-		9D131FCA21902FBC0068B36C /* UchainTransactionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainTransactionModel.h; sourceTree = "<group>"; };
-		9D131FCB21902FBC0068B36C /* UchainTransactionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainTransactionModel.m; sourceTree = "<group>"; };
-		9D131FCD219030670068B36C /* UchainTransferModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainTransferModel.h; sourceTree = "<group>"; };
-		9D131FCE219030670068B36C /* UchainTransferModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainTransferModel.m; sourceTree = "<group>"; };
 		9D131FD0219031030068B36C /* PublicEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicEnum.h; sourceTree = "<group>"; };
 		9D131FD1219040180068B36C /* UchainSendMoneyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainSendMoneyController.h; sourceTree = "<group>"; };
 		9D131FD2219040180068B36C /* UchainSendMoneyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainSendMoneyController.m; sourceTree = "<group>"; };
-		9D131FD4219041F60068B36C /* UchainAccountStateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainAccountStateModel.h; sourceTree = "<group>"; };
-		9D131FD5219041F60068B36C /* UchainAccountStateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainAccountStateModel.m; sourceTree = "<group>"; };
-		9D131FD72190429B0068B36C /* UchainAssetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainAssetModel.h; sourceTree = "<group>"; };
-		9D131FD82190429B0068B36C /* UchainAssetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainAssetModel.m; sourceTree = "<group>"; };
-		9D131FDA219046D60068B36C /* BalanceObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BalanceObject.h; sourceTree = "<group>"; };
-		9D131FDB219046D60068B36C /* BalanceObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceObject.m; sourceTree = "<group>"; };
-		9D131FDD21904BDA0068B36C /* UchainWalletManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainWalletManager.h; sourceTree = "<group>"; };
-		9D131FDE21904BDA0068B36C /* UchainWalletManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainWalletManager.m; sourceTree = "<group>"; };
 		9D131FE021904D6D0068B36C /* Neomobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Neomobile.framework; sourceTree = "<group>"; };
 		9D131FE221904EAA0068B36C /* UIViewController+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Toast.h"; sourceTree = "<group>"; };
 		9D131FE321904EAA0068B36C /* UIViewController+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Toast.m"; sourceTree = "<group>"; };
@@ -217,13 +240,95 @@
 		9D1320002192BA220068B36C /* UchainCreateBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainCreateBottomView.h; sourceTree = "<group>"; };
 		9D1320012192BA220068B36C /* UchainCreateBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainCreateBottomView.m; sourceTree = "<group>"; };
 		9D1320032192DF820068B36C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		9D1320052192E7010068B36C /* ApexWalletManagerProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexWalletManagerProtocal.h; sourceTree = "<group>"; };
 		9D1320072192EC0E0068B36C /* UchainPrepareBackUpController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainPrepareBackUpController.h; sourceTree = "<group>"; };
 		9D1320082192EC0E0068B36C /* UchainPrepareBackUpController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainPrepareBackUpController.m; sourceTree = "<group>"; };
 		9D13200A2193DBE90068B36C /* UchainProlicyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainProlicyController.h; sourceTree = "<group>"; };
 		9D13200B2193DBE90068B36C /* UchainProlicyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainProlicyController.m; sourceTree = "<group>"; };
 		9D13200D2193E5050068B36C /* useprotocol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = useprotocol.html; sourceTree = "<group>"; };
 		9D13200E2193E5050068B36C /* useprotocol_en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = useprotocol_en.html; sourceTree = "<group>"; };
+		9D132050219402710068B36C /* UchainPassWordConfirmAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainPassWordConfirmAlertView.h; sourceTree = "<group>"; };
+		9D132051219402710068B36C /* UchainPassWordConfirmAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainPassWordConfirmAlertView.m; sourceTree = "<group>"; };
+		9D132055219403220068B36C /* FCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAlertView.m; sourceTree = "<group>"; };
+		9D132056219403220068B36C /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		9D132057219403220068B36C /* FCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAlertView.h; sourceTree = "<group>"; };
+		9D132059219403220068B36C /* alert-round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-round.png"; sourceTree = "<group>"; };
+		9D13205A219403220068B36C /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		9D13205B219403220068B36C /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		9D13205C219403220068B36C /* close-round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-round.png"; sourceTree = "<group>"; };
+		9D13205D219403220068B36C /* checkmark-round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark-round.png"; sourceTree = "<group>"; };
+		9D13205E219403220068B36C /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		9D1320672194063C0068B36C /* ApexBackUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexBackUpController.m; sourceTree = "<group>"; };
+		9D1320682194063C0068B36C /* ApexMnemonicConfirmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexMnemonicConfirmController.h; sourceTree = "<group>"; };
+		9D1320692194063C0068B36C /* ApexMnemonicConfirmController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApexMnemonicConfirmController.xib; sourceTree = "<group>"; };
+		9D13206A2194063D0068B36C /* ApexBackUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexBackUpController.h; sourceTree = "<group>"; };
+		9D13206C2194063D0068B36C /* ApexMnemonicConfirmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexMnemonicConfirmController.m; sourceTree = "<group>"; };
+		9D132071219406F30068B36C /* ApexMnenonicShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexMnenonicShowView.m; sourceTree = "<group>"; };
+		9D132072219406F30068B36C /* ApexMnemonicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexMnemonicCell.h; sourceTree = "<group>"; };
+		9D132073219406F30068B36C /* ApexMnemonicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexMnemonicCell.m; sourceTree = "<group>"; };
+		9D132074219406F40068B36C /* ApexMnemonicFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexMnemonicFlowLayout.m; sourceTree = "<group>"; };
+		9D132075219406F40068B36C /* ApexMnenonicShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexMnenonicShowView.h; sourceTree = "<group>"; };
+		9D132076219406F40068B36C /* ApexMnemonicFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexMnemonicFlowLayout.h; sourceTree = "<group>"; };
+		9D13207A219407380068B36C /* ApexMnemonicShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexMnemonicShowCell.h; sourceTree = "<group>"; };
+		9D13207B219407380068B36C /* ApexMnemonicShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexMnemonicShowCell.m; sourceTree = "<group>"; };
+		9D13207D219407540068B36C /* UILabel+Spacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Spacing.h"; sourceTree = "<group>"; };
+		9D13207E219407540068B36C /* UILabel+Spacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Spacing.m"; sourceTree = "<group>"; };
+		9D132080219408880068B36C /* ApexTransHistoryDataBaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexTransHistoryDataBaseHelper.h; sourceTree = "<group>"; };
+		9D132082219408890068B36C /* ApexTransferModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexTransferModel.h; sourceTree = "<group>"; };
+		9D132083219408890068B36C /* ApexTransferHistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexTransferHistoryManager.m; sourceTree = "<group>"; };
+		9D132084219408890068B36C /* ApexWalletModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexWalletModel.m; sourceTree = "<group>"; };
+		9D132085219408890068B36C /* ApexNeoTxStatusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexNeoTxStatusManager.m; sourceTree = "<group>"; };
+		9D132086219408890068B36C /* ApexWalletManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexWalletManager.m; sourceTree = "<group>"; };
+		9D132087219408890068B36C /* ApexTransferHistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexTransferHistoryManager.h; sourceTree = "<group>"; };
+		9D132088219408890068B36C /* ApexTransferModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexTransferModel.m; sourceTree = "<group>"; };
+		9D132089219408890068B36C /* ApexNeoTxStatusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexNeoTxStatusManager.h; sourceTree = "<group>"; };
+		9D13208A219408890068B36C /* ApexWalletModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexWalletModel.h; sourceTree = "<group>"; };
+		9D13208B219408890068B36C /* ApexWalletManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexWalletManager.h; sourceTree = "<group>"; };
+		9D13208C219408890068B36C /* ApexTransHistoryDataBaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexTransHistoryDataBaseHelper.m; sourceTree = "<group>"; };
+		9D13208D219408890068B36C /* ApexTransHistoryProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexTransHistoryProtocal.h; sourceTree = "<group>"; };
+		9D13208E219408890068B36C /* ApexWalletManagerProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexWalletManagerProtocal.h; sourceTree = "<group>"; };
+		9D132090219408890068B36C /* ETHTransferModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETHTransferModel.m; sourceTree = "<group>"; };
+		9D132091219408890068B36C /* ApexETHTransactionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexETHTransactionModel.m; sourceTree = "<group>"; };
+		9D132092219408890068B36C /* ETHTransferHistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETHTransferHistoryManager.h; sourceTree = "<group>"; };
+		9D132093219408890068B36C /* ETHTxStatusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETHTxStatusManager.h; sourceTree = "<group>"; };
+		9D132094219408890068B36C /* ETHWalletManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETHWalletManager.h; sourceTree = "<group>"; };
+		9D132095219408890068B36C /* ETHWalletModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETHWalletModel.m; sourceTree = "<group>"; };
+		9D132096219408890068B36C /* ApexETHTransactionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexETHTransactionModel.h; sourceTree = "<group>"; };
+		9D132097219408890068B36C /* ETHTransferModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETHTransferModel.h; sourceTree = "<group>"; };
+		9D132098219408890068B36C /* ETHTransferHistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETHTransferHistoryManager.m; sourceTree = "<group>"; };
+		9D132099219408890068B36C /* ETHTxStatusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETHTxStatusManager.m; sourceTree = "<group>"; };
+		9D13209A219408890068B36C /* ETHWalletModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETHWalletModel.h; sourceTree = "<group>"; };
+		9D13209B219408890068B36C /* ETHWalletManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETHWalletManager.m; sourceTree = "<group>"; };
+		9D1320A8219409550068B36C /* NSString+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tool.h"; sourceTree = "<group>"; };
+		9D1320A9219409550068B36C /* NSString+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tool.m"; sourceTree = "<group>"; };
+		9D1320AC21940A7E0068B36C /* SystemConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemConvert.m; sourceTree = "<group>"; };
+		9D1320AD21940A7E0068B36C /* SystemConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemConvert.h; sourceTree = "<group>"; };
+		9D1320AF21940CA20068B36C /* ApexAssetModelManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexAssetModelManage.m; sourceTree = "<group>"; };
+		9D1320B021940CA30068B36C /* ApexAccountStateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexAccountStateModel.m; sourceTree = "<group>"; };
+		9D1320B121940CA30068B36C /* ApexTXIDModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexTXIDModel.m; sourceTree = "<group>"; };
+		9D1320B221940CA30068B36C /* ApexTXIDModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexTXIDModel.h; sourceTree = "<group>"; };
+		9D1320B321940CA30068B36C /* ApexTXRecorderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexTXRecorderModel.m; sourceTree = "<group>"; };
+		9D1320B421940CA30068B36C /* ApexTXRecorderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexTXRecorderModel.h; sourceTree = "<group>"; };
+		9D1320B521940CA40068B36C /* ApexAssetModelManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexAssetModelManage.h; sourceTree = "<group>"; };
+		9D1320B621940CA40068B36C /* ApexAccountStateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexAccountStateModel.h; sourceTree = "<group>"; };
+		9D1320BB21940D120068B36C /* NSString+Encypte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encypte.m"; sourceTree = "<group>"; };
+		9D1320BC21940D120068B36C /* UITextView+placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+placeholder.h"; sourceTree = "<group>"; };
+		9D1320BD21940D130068B36C /* NSBundle+MJLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+MJLocalization.h"; sourceTree = "<group>"; };
+		9D1320BE21940D130068B36C /* NSString+Encypte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encypte.h"; sourceTree = "<group>"; };
+		9D1320BF21940D130068B36C /* UIView+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Common.h"; sourceTree = "<group>"; };
+		9D1320C021940D130068B36C /* NSBundle+MJLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+MJLocalization.m"; sourceTree = "<group>"; };
+		9D1320C121940D130068B36C /* UITextView+placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+placeholder.m"; sourceTree = "<group>"; };
+		9D1320C221940D130068B36C /* UIView+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Common.m"; sourceTree = "<group>"; };
+		9D1320C721940E080068B36C /* CYLAppBaseFrameWork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CYLAppBaseFrameWork.framework; sourceTree = "<group>"; };
+		9D1320C92194105E0068B36C /* ApexThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexThread.h; sourceTree = "<group>"; };
+		9D1320CA2194105E0068B36C /* ApexThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexThread.m; sourceTree = "<group>"; };
+		9D1320CD2194110A0068B36C /* ApexNeoClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexNeoClient.m; sourceTree = "<group>"; };
+		9D1320CE2194110A0068B36C /* ApexETHClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexETHClient.m; sourceTree = "<group>"; };
+		9D1320CF2194110A0068B36C /* ApexNeoClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexNeoClient.h; sourceTree = "<group>"; };
+		9D1320D02194110A0068B36C /* ApexETHClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexETHClient.h; sourceTree = "<group>"; };
+		9D1320D3219412930068B36C /* ApexNetWorkCommonConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexNetWorkCommonConfig.h; sourceTree = "<group>"; };
+		9D1320D4219412930068B36C /* ApexNetWorkCommonConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexNetWorkCommonConfig.m; sourceTree = "<group>"; };
+		9D1320D7219414480068B36C /* ApexBlockChainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexBlockChainManager.m; sourceTree = "<group>"; };
+		9D1320D8219414480068B36C /* ApexBlockChainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexBlockChainManager.h; sourceTree = "<group>"; };
 		B3C00042EC786C0C4FEBD697 /* Pods-UchainWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.release.xcconfig"; sourceTree = "<group>"; };
 		FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UchainWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -234,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F506AF8A11147E314A1F51F2 /* libPods-UchainWallet.a in Frameworks */,
+				9D1320C821940E080068B36C /* CYLAppBaseFrameWork.framework in Frameworks */,
 				9D131FE121904D6D0068B36C /* Neomobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +439,7 @@
 				9D131F23218A9C5B0068B36C /* UchainPrefixHeader.pch */,
 				9D13200E2193E5050068B36C /* useprotocol_en.html */,
 				9D13200D2193E5050068B36C /* useprotocol.html */,
+				9D1320C721940E080068B36C /* CYLAppBaseFrameWork.framework */,
 				9D131FE021904D6D0068B36C /* Neomobile.framework */,
 				9D131EF1218A97FE0068B36C /* Localizable.strings */,
 				9D131EEB218A97D90068B36C /* InfoPlist.strings */,
@@ -421,18 +528,20 @@
 		9D131ECF2189B53D0068B36C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9D131FC721902F240068B36C /* UchainWalletModel.h */,
-				9D131FC821902F240068B36C /* UchainWalletModel.m */,
-				9D131FD72190429B0068B36C /* UchainAssetModel.h */,
-				9D131FD82190429B0068B36C /* UchainAssetModel.m */,
-				9D131FDA219046D60068B36C /* BalanceObject.h */,
-				9D131FDB219046D60068B36C /* BalanceObject.m */,
-				9D131FCD219030670068B36C /* UchainTransferModel.h */,
-				9D131FCE219030670068B36C /* UchainTransferModel.m */,
-				9D131FCA21902FBC0068B36C /* UchainTransactionModel.h */,
-				9D131FCB21902FBC0068B36C /* UchainTransactionModel.m */,
-				9D131FD4219041F60068B36C /* UchainAccountStateModel.h */,
-				9D131FD5219041F60068B36C /* UchainAccountStateModel.m */,
+				9D1320B621940CA40068B36C /* ApexAccountStateModel.h */,
+				9D1320B021940CA30068B36C /* ApexAccountStateModel.m */,
+				9D1320B521940CA40068B36C /* ApexAssetModelManage.h */,
+				9D1320AF21940CA20068B36C /* ApexAssetModelManage.m */,
+				9D1320B221940CA30068B36C /* ApexTXIDModel.h */,
+				9D1320B121940CA30068B36C /* ApexTXIDModel.m */,
+				9D1320B421940CA30068B36C /* ApexTXRecorderModel.h */,
+				9D1320B321940CA30068B36C /* ApexTXRecorderModel.m */,
+				9D132080219408880068B36C /* ApexTransHistoryDataBaseHelper.h */,
+				9D13208C219408890068B36C /* ApexTransHistoryDataBaseHelper.m */,
+				9D13208D219408890068B36C /* ApexTransHistoryProtocal.h */,
+				9D13208E219408890068B36C /* ApexWalletManagerProtocal.h */,
+				9D13208F219408890068B36C /* EthWalletModel */,
+				9D132081219408890068B36C /* NeoWalletModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -440,9 +549,6 @@
 		9D131ED02189B53D0068B36C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				9D1320052192E7010068B36C /* ApexWalletManagerProtocal.h */,
-				9D131FDD21904BDA0068B36C /* UchainWalletManager.h */,
-				9D131FDE21904BDA0068B36C /* UchainWalletManager.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -450,6 +556,14 @@
 		9D131ED12189B53D0068B36C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D13207A219407380068B36C /* ApexMnemonicShowCell.h */,
+				9D13207B219407380068B36C /* ApexMnemonicShowCell.m */,
+				9D132072219406F30068B36C /* ApexMnemonicCell.h */,
+				9D132073219406F30068B36C /* ApexMnemonicCell.m */,
+				9D132076219406F40068B36C /* ApexMnemonicFlowLayout.h */,
+				9D132074219406F40068B36C /* ApexMnemonicFlowLayout.m */,
+				9D132075219406F40068B36C /* ApexMnenonicShowView.h */,
+				9D132071219406F30068B36C /* ApexMnenonicShowView.m */,
 				9D131FED219283CB0068B36C /* UchainCreateWalletTipsHeaderView.h */,
 				9D131FEE219283CB0068B36C /* UchainCreateWalletTipsHeaderView.m */,
 				9D131FFA2192B29C0068B36C /* UchainPrivacyAgreeFooterView.h */,
@@ -460,6 +574,8 @@
 				9D131FF82192ADC90068B36C /* UchainCreateWalletPasswordCell.m */,
 				9D1320002192BA220068B36C /* UchainCreateBottomView.h */,
 				9D1320012192BA220068B36C /* UchainCreateBottomView.m */,
+				9D132050219402710068B36C /* UchainPassWordConfirmAlertView.h */,
+				9D132051219402710068B36C /* UchainPassWordConfirmAlertView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -553,6 +669,11 @@
 				9D13200B2193DBE90068B36C /* UchainProlicyController.m */,
 				9D1320072192EC0E0068B36C /* UchainPrepareBackUpController.h */,
 				9D1320082192EC0E0068B36C /* UchainPrepareBackUpController.m */,
+				9D13206A2194063D0068B36C /* ApexBackUpController.h */,
+				9D1320672194063C0068B36C /* ApexBackUpController.m */,
+				9D1320682194063C0068B36C /* ApexMnemonicConfirmController.h */,
+				9D13206C2194063D0068B36C /* ApexMnemonicConfirmController.m */,
+				9D1320692194063C0068B36C /* ApexMnemonicConfirmController.xib */,
 				9D131F4B218B06230068B36C /* UchainImportWalletController.h */,
 				9D131F4C218B06230068B36C /* UchainImportWalletController.m */,
 				9D131FD1219040180068B36C /* UchainSendMoneyController.h */,
@@ -570,12 +691,24 @@
 				9D131F2F218AA6CA0068B36C /* UIColor+HYF.m */,
 				9D131F33218ACE190068B36C /* UIView+TKFrame.h */,
 				9D131F34218ACE190068B36C /* UIView+TKFrame.m */,
+				9D13207D219407540068B36C /* UILabel+Spacing.h */,
+				9D13207E219407540068B36C /* UILabel+Spacing.m */,
+				9D1320A8219409550068B36C /* NSString+Tool.h */,
+				9D1320A9219409550068B36C /* NSString+Tool.m */,
 				9D131FFD2192B92F0068B36C /* UIButton+EnlargeTouchArea.h */,
 				9D131FFE2192B9300068B36C /* UIButton+EnlargeTouchArea.m */,
 				9D131F3A218ADE6B0068B36C /* UIViewController+Apex.h */,
 				9D131F39218ADE6B0068B36C /* UIViewController+Apex.m */,
 				9D131FE221904EAA0068B36C /* UIViewController+Toast.h */,
 				9D131FE321904EAA0068B36C /* UIViewController+Toast.m */,
+				9D1320BD21940D130068B36C /* NSBundle+MJLocalization.h */,
+				9D1320C021940D130068B36C /* NSBundle+MJLocalization.m */,
+				9D1320BE21940D130068B36C /* NSString+Encypte.h */,
+				9D1320BB21940D120068B36C /* NSString+Encypte.m */,
+				9D1320BC21940D120068B36C /* UITextView+placeholder.h */,
+				9D1320C121940D130068B36C /* UITextView+placeholder.m */,
+				9D1320BF21940D130068B36C /* UIView+Common.h */,
+				9D1320C221940D130068B36C /* UIView+Common.m */,
 				9D131FB62190198A0068B36C /* UIViewController+NetLoadIndicator.h */,
 				9D131FB72190198B0068B36C /* UIViewController+NetLoadIndicator.m */,
 				9D131F3C218ADEFE0068B36C /* UIViewController+UchainNavigationColor.h */,
@@ -591,6 +724,8 @@
 			children = (
 				9D131F2A218AA3CC0068B36C /* UchainUtil.h */,
 				9D131F2B218AA3CC0068B36C /* UchainUtil.m */,
+				9D1320C92194105E0068B36C /* ApexThread.h */,
+				9D1320CA2194105E0068B36C /* ApexThread.m */,
 				9D131F6A218C2DB30068B36C /* UchainMethodSwizzlingUtil.h */,
 				9D131F6B218C2DB30068B36C /* UchainMethodSwizzlingUtil.m */,
 			);
@@ -622,6 +757,10 @@
 		9D131FBC21902D8B0068B36C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9D1320D6219414480068B36C /* BlockChain */,
+				9D1320CC2194110A0068B36C /* Network */,
+				9D1320AB21940A7E0068B36C /* Convert */,
+				9D132053219403220068B36C /* FCAlertView */,
 				58E5A6A02192787900F04459 /* JXLayoutButton */,
 				9D131FF021929A7B0068B36C /* TextField */,
 				9D131FE521904F2C0068B36C /* keyChain */,
@@ -668,6 +807,105 @@
 				9D131FF221929A7B0068B36C /* ApexAlertTextField.m */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		9D132053219403220068B36C /* FCAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				9D132054219403220068B36C /* Classes */,
+				9D132058219403220068B36C /* Assets */,
+			);
+			path = FCAlertView;
+			sourceTree = "<group>";
+		};
+		9D132054219403220068B36C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9D132055219403220068B36C /* FCAlertView.m */,
+				9D132056219403220068B36C /* .gitkeep */,
+				9D132057219403220068B36C /* FCAlertView.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9D132058219403220068B36C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9D132059219403220068B36C /* alert-round.png */,
+				9D13205A219403220068B36C /* .gitkeep */,
+				9D13205B219403220068B36C /* heart.png */,
+				9D13205C219403220068B36C /* close-round.png */,
+				9D13205D219403220068B36C /* checkmark-round.png */,
+				9D13205E219403220068B36C /* star.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		9D132081219408890068B36C /* NeoWalletModel */ = {
+			isa = PBXGroup;
+			children = (
+				9D132082219408890068B36C /* ApexTransferModel.h */,
+				9D132083219408890068B36C /* ApexTransferHistoryManager.m */,
+				9D132084219408890068B36C /* ApexWalletModel.m */,
+				9D132085219408890068B36C /* ApexNeoTxStatusManager.m */,
+				9D132086219408890068B36C /* ApexWalletManager.m */,
+				9D132087219408890068B36C /* ApexTransferHistoryManager.h */,
+				9D132088219408890068B36C /* ApexTransferModel.m */,
+				9D132089219408890068B36C /* ApexNeoTxStatusManager.h */,
+				9D13208A219408890068B36C /* ApexWalletModel.h */,
+				9D13208B219408890068B36C /* ApexWalletManager.h */,
+			);
+			path = NeoWalletModel;
+			sourceTree = "<group>";
+		};
+		9D13208F219408890068B36C /* EthWalletModel */ = {
+			isa = PBXGroup;
+			children = (
+				9D132090219408890068B36C /* ETHTransferModel.m */,
+				9D132091219408890068B36C /* ApexETHTransactionModel.m */,
+				9D132092219408890068B36C /* ETHTransferHistoryManager.h */,
+				9D132093219408890068B36C /* ETHTxStatusManager.h */,
+				9D132094219408890068B36C /* ETHWalletManager.h */,
+				9D132095219408890068B36C /* ETHWalletModel.m */,
+				9D132096219408890068B36C /* ApexETHTransactionModel.h */,
+				9D132097219408890068B36C /* ETHTransferModel.h */,
+				9D132098219408890068B36C /* ETHTransferHistoryManager.m */,
+				9D132099219408890068B36C /* ETHTxStatusManager.m */,
+				9D13209A219408890068B36C /* ETHWalletModel.h */,
+				9D13209B219408890068B36C /* ETHWalletManager.m */,
+			);
+			path = EthWalletModel;
+			sourceTree = "<group>";
+		};
+		9D1320AB21940A7E0068B36C /* Convert */ = {
+			isa = PBXGroup;
+			children = (
+				9D1320AC21940A7E0068B36C /* SystemConvert.m */,
+				9D1320AD21940A7E0068B36C /* SystemConvert.h */,
+			);
+			path = Convert;
+			sourceTree = "<group>";
+		};
+		9D1320CC2194110A0068B36C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9D1320CD2194110A0068B36C /* ApexNeoClient.m */,
+				9D1320CE2194110A0068B36C /* ApexETHClient.m */,
+				9D1320CF2194110A0068B36C /* ApexNeoClient.h */,
+				9D1320D02194110A0068B36C /* ApexETHClient.h */,
+				9D1320D3219412930068B36C /* ApexNetWorkCommonConfig.h */,
+				9D1320D4219412930068B36C /* ApexNetWorkCommonConfig.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9D1320D6219414480068B36C /* BlockChain */ = {
+			isa = PBXGroup;
+			children = (
+				9D1320D7219414480068B36C /* ApexBlockChainManager.m */,
+				9D1320D8219414480068B36C /* ApexBlockChainManager.h */,
+			);
+			path = BlockChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -732,10 +970,17 @@
 			files = (
 				58E5A6BA2193DC5300F04459 /* AboutUsViewController.xib in Resources */,
 				9D1320102193E5050068B36C /* useprotocol_en.html in Resources */,
+				9D132063219403220068B36C /* heart.png in Resources */,
 				9D131EB82189A8730068B36C /* Assets.xcassets in Resources */,
+				9D132062219403220068B36C /* .gitkeep in Resources */,
 				9D131EEF218A97FE0068B36C /* Localizable.strings in Resources */,
+				9D13206E2194063D0068B36C /* ApexMnemonicConfirmController.xib in Resources */,
 				9D13200F2193E5050068B36C /* useprotocol.html in Resources */,
+				9D132064219403220068B36C /* close-round.png in Resources */,
+				9D132065219403220068B36C /* checkmark-round.png in Resources */,
+				9D132066219403220068B36C /* star.png in Resources */,
 				9D131EE9218A97D90068B36C /* InfoPlist.strings in Resources */,
+				9D132061219403220068B36C /* alert-round.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,14 +1040,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D131FDF21904BDA0068B36C /* UchainWalletManager.m in Sources */,
+				9D13209F219408890068B36C /* ApexWalletManager.m in Sources */,
+				9D1320A3219408890068B36C /* ApexETHTransactionModel.m in Sources */,
 				9D131F0C218A98480068B36C /* UINavigationItem+SOLocalization.m in Sources */,
 				9D131FFF2192B9300068B36C /* UIButton+EnlargeTouchArea.m in Sources */,
-				9D131FDC219046D60068B36C /* BalanceObject.m in Sources */,
+				9D132052219402710068B36C /* UchainPassWordConfirmAlertView.m in Sources */,
+				9D13206D2194063D0068B36C /* ApexBackUpController.m in Sources */,
 				9D131EDA2189B68E0068B36C /* UchainNavigationViewController.m in Sources */,
+				9D1320AA219409550068B36C /* NSString+Tool.m in Sources */,
+				9D13209C219408890068B36C /* ApexTransferHistoryManager.m in Sources */,
+				9D1320B721940CA40068B36C /* ApexAssetModelManage.m in Sources */,
+				9D1320B921940CA40068B36C /* ApexTXIDModel.m in Sources */,
 				58E5A6A32192789900F04459 /* JXLayoutButton.m in Sources */,
 				9D131F3E218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m in Sources */,
+				9D1320CB2194105E0068B36C /* ApexThread.m in Sources */,
 				9D131FB221900EC70068B36C /* UchainLanguageSettingCell.m in Sources */,
+				9D132077219406F40068B36C /* ApexMnenonicShowView.m in Sources */,
+				9D1320C521940D130068B36C /* UITextView+placeholder.m in Sources */,
 				58E5A6B92193DC5300F04459 /* AboutUsViewController.m in Sources */,
 				9D131FEF219283CB0068B36C /* UchainCreateWalletTipsHeaderView.m in Sources */,
 				9D131F0B218A98480068B36C /* UIView+SOLocalization.m in Sources */,
@@ -810,53 +1064,73 @@
 				9D131F10218A98480068B36C /* UITextField+SOLocalization.m in Sources */,
 				9D131FC421902E5B0068B36C /* LXDScanCodeController.m in Sources */,
 				9D131EBE2189A8730068B36C /* main.m in Sources */,
+				9D1320A7219408890068B36C /* ETHWalletManager.m in Sources */,
 				9D131F4D218B06230068B36C /* UchainImportWalletController.m in Sources */,
+				9D1320A5219408890068B36C /* ETHTransferHistoryManager.m in Sources */,
 				9D131FB82190198B0068B36C /* UIViewController+NetLoadIndicator.m in Sources */,
 				9D131F08218A98480068B36C /* SOLocalization.m in Sources */,
 				9D131EB02189A8730068B36C /* AppDelegate.m in Sources */,
+				9D1320C421940D130068B36C /* NSBundle+MJLocalization.m in Sources */,
+				9D1320A0219408890068B36C /* ApexTransferModel.m in Sources */,
+				9D1320D22194110A0068B36C /* ApexETHClient.m in Sources */,
 				9D131F31218AA6CA0068B36C /* UIColor+HYF.m in Sources */,
 				9D131F1C218A99C40068B36C /* UchainWalletViewController.m in Sources */,
+				9D1320D12194110A0068B36C /* ApexNeoClient.m in Sources */,
+				9D1320AE21940A7F0068B36C /* SystemConvert.m in Sources */,
 				9D131FBB219023530068B36C /* AppDelegate+UchainUI.m in Sources */,
 				9D131F6C218C2DB30068B36C /* UchainMethodSwizzlingUtil.m in Sources */,
+				9D13207F219407540068B36C /* UILabel+Spacing.m in Sources */,
 				9D131F38218AD9DF0068B36C /* UchainSideViewController.m in Sources */,
 				9D131F3B218ADE6B0068B36C /* UIViewController+Apex.m in Sources */,
-				9D131FD6219041F60068B36C /* UchainAccountStateModel.m in Sources */,
 				9D131FAF218FEBC90068B36C /* UchainLanguageSettingController.m in Sources */,
 				9D13200C2193DBE90068B36C /* UchainProlicyController.m in Sources */,
 				9D131F0D218A98480068B36C /* SOSwizzle.m in Sources */,
+				9D1320D5219412930068B36C /* ApexNetWorkCommonConfig.m in Sources */,
+				9D1320A6219408890068B36C /* ETHTxStatusManager.m in Sources */,
 				9D131F46218B020D0068B36C /* UchainWalletInitViewController.m in Sources */,
+				9D1320B821940CA40068B36C /* ApexAccountStateModel.m in Sources */,
 				9D131FE421904EAA0068B36C /* UIViewController+Toast.m in Sources */,
-				9D131FC921902F240068B36C /* UchainWalletModel.m in Sources */,
 				9D131FC521902E5B0068B36C /* ApexScanAction.m in Sources */,
 				9D131F75218C3AFE0068B36C /* RDVTabBarController.m in Sources */,
 				9D131F76218C3AFE0068B36C /* RDVTabBarItem.m in Sources */,
 				9D131F2C218AA3CC0068B36C /* UchainUtil.m in Sources */,
 				9D1320092192EC0E0068B36C /* UchainPrepareBackUpController.m in Sources */,
-				9D131FCC21902FBC0068B36C /* UchainTransactionModel.m in Sources */,
 				9D131FFC2192B29C0068B36C /* UchainPrivacyAgreeFooterView.m in Sources */,
 				9D131F4A218B060A0068B36C /* UchainCreatWalletController.m in Sources */,
 				9D131FD3219040180068B36C /* UchainSendMoneyController.m in Sources */,
-				9D131FD92190429B0068B36C /* UchainAssetModel.m in Sources */,
 				58E5A6B12192C1E500F04459 /* UchainNewModel.m in Sources */,
 				9D131FF321929A7C0068B36C /* ApexAlertTextField.m in Sources */,
 				9D131F35218ACE190068B36C /* UIView+TKFrame.m in Sources */,
+				9D1320D9219414480068B36C /* ApexBlockChainManager.m in Sources */,
 				9D131F0F218A98480068B36C /* UILabel+SOLocalization.m in Sources */,
 				9D131F5B218BEBD30068B36C /* YRSideViewController.m in Sources */,
+				9D13207C219407380068B36C /* ApexMnemonicShowCell.m in Sources */,
+				9D1320A2219408890068B36C /* ETHTransferModel.m in Sources */,
+				9D1320C621940D130068B36C /* UIView+Common.m in Sources */,
 				9D131F74218C3AFE0068B36C /* RDVTabBar.m in Sources */,
+				9D132078219406F40068B36C /* ApexMnemonicCell.m in Sources */,
 				9D131FF62192ADA40068B36C /* UchainCreateWalletNameCell.m in Sources */,
 				9D131F0E218A98480068B36C /* UIButton+SOLocalization.m in Sources */,
+				9D13209D219408890068B36C /* ApexWalletModel.m in Sources */,
+				9D1320BA21940CA40068B36C /* ApexTXRecorderModel.m in Sources */,
 				9D131F32218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.m in Sources */,
+				9D1320A1219408890068B36C /* ApexTransHistoryDataBaseHelper.m in Sources */,
 				9D131F19218A99AD0068B36C /* UchainNewsViewController.m in Sources */,
 				9D131F28218AA1B80068B36C /* UIResponder+Router.m in Sources */,
+				9D132079219406F40068B36C /* ApexMnemonicFlowLayout.m in Sources */,
 				58E5A6B52192C6E700F04459 /* UchainNewsViewModel.m in Sources */,
 				9D131FEC219168390068B36C /* UchainWelcomePageViewController.m in Sources */,
 				9D131FC621902E5B0068B36C /* LXDScanView.m in Sources */,
 				9D131F16218A998C0068B36C /* UchainMineViewController.m in Sources */,
 				58E5A6AD2192BA8300F04459 /* UchainNewsTableViewCell.m in Sources */,
+				9D1320A4219408890068B36C /* ETHWalletModel.m in Sources */,
+				9D1320702194063D0068B36C /* ApexMnemonicConfirmController.m in Sources */,
 				9D131F0A218A98480068B36C /* UIBarItem+SOLocalization.m in Sources */,
 				9D131FF92192ADC90068B36C /* UchainCreateWalletPasswordCell.m in Sources */,
-				9D131FCF219030670068B36C /* UchainTransferModel.m in Sources */,
 				9D131F09218A98480068B36C /* UIViewController+SOLocalizations.m in Sources */,
+				9D1320C321940D130068B36C /* NSString+Encypte.m in Sources */,
+				9D13209E219408890068B36C /* ApexNeoTxStatusManager.m in Sources */,
+				9D13205F219403220068B36C /* FCAlertView.m in Sources */,
 				9D1320022192BA220068B36C /* UchainCreateBottomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

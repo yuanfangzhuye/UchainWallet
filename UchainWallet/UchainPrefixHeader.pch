@@ -14,6 +14,7 @@
 #import "UchainConstants.h"
 
 /**< framework */
+#import <CYLAppBaseFrameWork/CYLAppBaseFrameWork.h>
 #import <ReactiveObjC.h>
 #import <Masonry.h>
 #import <Neomobile/Neomobile.h>
@@ -37,9 +38,10 @@
 //#import "UITextView+placeholder.h"
 //#import "NSBundle+MJLocalization.h"
 //#import "NSString+Tool.h"
-//#import "NSString+Encypte.h"
+#import "NSString+Encypte.h"
 
 /**< tools */
+#import "ApexThread.h"
 #import "PDKeyChain.h"
 #import "UchainUtil.h"
 #import "SOLocalization.h"
@@ -47,9 +49,17 @@
 #import "YRSideViewController.h"
 #import "AppDelegate.h"
 #import "ApexAlertTextField.h"
+#import "ApexNeoClient.h"
 
 /**< models */
-#import "UchainWalletModel.h"
+#import "ApexWalletManager.h"
+#import "ETHWalletManager.h"
+#import "ApexWalletModel.h"
+#import "ETHWalletModel.h"
+#import "ApexAccountStateModel.h"
+#import "ApexAssetModelManage.h"
+#import "ApexAccountStateModel.h"
+#import "ApexBlockChainManager.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ApexMnemonicConfirmController">
+            <connections>
+                <outlet property="collectionView" destination="mbm-Hg-IUV" id="wAC-fJ-eFq"/>
+                <outlet property="confirmBtn" destination="WOR-am-rfz" id="VTN-FI-S9c"/>
+                <outlet property="flowLayout" destination="Tci-x6-Tvi" id="jl7-m1-MGe"/>
+                <outlet property="showCollectionView" destination="bGM-4W-mhZ" id="Rhc-fe-SZe"/>
+                <outlet property="tipLable0" destination="69i-Ul-eOG" id="qey-dq-i8Q"/>
+                <outlet property="tipLable1" destination="Od5-zH-Zvn" id="ByE-Y5-PyL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="确定你的钱包助记词" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69i-Ul-eOG">
+                    <rect key="frame" x="15" y="60" width="345" height="21.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21.5" id="jOj-f3-Gsc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please click on the mnemonic in order, make sure you backup correctly." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Od5-zH-Zvn">
+                    <rect key="frame" x="25" y="101.5" width="325" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Jkr-NV-AqT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOR-am-rfz">
+                    <rect key="frame" x="35" y="541.5" width="305" height="40"/>
+                    <color key="backgroundColor" red="0.070588235289999995" green="0.32549019610000002" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="8R6-vY-UqJ"/>
+                        <constraint firstAttribute="height" constant="40" id="Exj-R3-mmx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="确定">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="confirmAction:" destination="-1" eventType="touchUpInside" id="V5t-6p-eTW"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bGM-4W-mhZ" customClass="ApexMnenonicShowView">
+                    <rect key="frame" x="15" y="151.5" width="345" height="160"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="Qej-oL-faw"/>
+                    </constraints>
+                    <collectionViewLayout key="collectionViewLayout" id="NfS-DU-QNp" customClass="ApexMnemonicFlowLayout"/>
+                </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mbm-Hg-IUV">
+                    <rect key="frame" x="25" y="331.5" width="325" height="180"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="k4Z-Ov-aTA"/>
+                    </constraints>
+                    <collectionViewLayout key="collectionViewLayout" id="Tci-x6-Tvi" customClass="ApexMnemonicFlowLayout"/>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WOR-am-rfz" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="35" id="1WQ-EL-oZg"/>
+                <constraint firstItem="Od5-zH-Zvn" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="25" id="2Rz-8M-IE4"/>
+                <constraint firstItem="WOR-am-rfz" firstAttribute="top" relation="lessThanOrEqual" secondItem="mbm-Hg-IUV" secondAttribute="bottom" constant="60" id="5Mp-MS-vRS"/>
+                <constraint firstItem="bGM-4W-mhZ" firstAttribute="top" secondItem="Od5-zH-Zvn" secondAttribute="bottom" constant="20" id="DUf-av-lFP"/>
+                <constraint firstItem="mbm-Hg-IUV" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="25" id="Gfg-mY-AIw"/>
+                <constraint firstItem="69i-Ul-eOG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="J2X-zt-XJr"/>
+                <constraint firstItem="mbm-Hg-IUV" firstAttribute="top" secondItem="bGM-4W-mhZ" secondAttribute="bottom" constant="20" id="JcP-3S-ccz"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="mbm-Hg-IUV" secondAttribute="trailing" constant="25" id="N19-PH-dLh"/>
+                <constraint firstItem="WOR-am-rfz" firstAttribute="top" secondItem="mbm-Hg-IUV" secondAttribute="bottom" constant="30" id="NDQ-wh-DWE"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WOR-am-rfz" secondAttribute="bottom" constant="40" id="V4s-dm-vVi"/>
+                <constraint firstItem="Od5-zH-Zvn" firstAttribute="top" secondItem="69i-Ul-eOG" secondAttribute="bottom" constant="20" id="ZnZ-za-Nuu"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Od5-zH-Zvn" secondAttribute="trailing" constant="25" id="ZqF-Zm-3CE"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="bGM-4W-mhZ" secondAttribute="trailing" constant="15" id="ewb-Bt-o59"/>
+                <constraint firstItem="69i-Ul-eOG" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="40" id="h69-M0-PiO"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="WOR-am-rfz" secondAttribute="trailing" constant="35" id="jCX-Kw-0yq"/>
+                <constraint firstItem="bGM-4W-mhZ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="m0s-aQ-pDC"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="69i-Ul-eOG" secondAttribute="trailing" constant="15" id="w8s-nu-w8G"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

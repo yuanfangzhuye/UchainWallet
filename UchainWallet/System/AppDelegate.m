@@ -40,27 +40,27 @@
 //    [arr addObjectsFromArray:[[ETHWalletManager shareManager] getWalletsArr]];
 //    NSArray *arr = [NSArray arrayWithObject:@"1"];
     
-    BOOL isFirstOpenApp = [self isOpenInNewVersion];
-    
-    if (isFirstOpenApp) {
-        UchainWelcomePageViewController *welcomePageViewController = [[UchainWelcomePageViewController alloc] init];
-        welcomePageViewController.didFinishScrollerWelcomeSub = [RACSubject subject];
-        [welcomePageViewController.didFinishScrollerWelcomeSub subscribeNext:^(id  _Nullable x) {
-            [self targetRootViewControllerSet];
-        }];
-        
-        self.window.rootViewController = welcomePageViewController;
-    }
-    else {
-        [self targetRootViewControllerSet];
-    }
+//    BOOL firstOpenApp = [self isOpenInNewVersion];
+//
+//    if (firstOpenApp) {
+//        UchainWelcomePageViewController *welcomePageViewController = [[UchainWelcomePageViewController alloc] init];
+//        welcomePageViewController.didFinishScrollerWelcomeSub = [RACSubject subject];
+//        [welcomePageViewController.didFinishScrollerWelcomeSub subscribeNext:^(id  _Nullable x) {
+//            [self targetRootViewControllerSet];
+//        }];
+//
+//        self.window.rootViewController = welcomePageViewController;
+//    }
+//    else {
+//        [self targetRootViewControllerSet];
+//    }
 //
 //    [ApexAppConfig configAll];
-    [UchainUtil configKeyBoard];
+//    [UchainUtil configKeyBoard];
 //    if (@available(iOS 11.0, *)) {
 //        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
 //    }
-    
+    [self targetRootViewControllerSet];
     [self.window makeKeyAndVisible];
     
 //    [self showWelcomePage];
@@ -69,7 +69,7 @@
 
 - (void)targetRootViewControllerSet
 {
-    NSArray *arr = [NSArray arrayWithObjects:@"1", nil];
+    NSArray *arr = [[ETHWalletManager shareManager] getWalletsArr];
     BOOL isFirstCreatDone = [[NSUserDefaults standardUserDefaults] objectForKey:KisFirstCreateWalletDone];
     
     if (arr.count == 0 && !isFirstCreatDone) {
