@@ -9,6 +9,7 @@
 #import "UchainCreatWalletController.h"
 #import "UchainImportWalletController.h"
 #import "UchainPrepareBackUpController.h"
+#import "UchainProlicyController.h"
 
 #import "UchainWalletManager.h"
 
@@ -24,7 +25,6 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UchainCreateBottomView *bottomView;
-@property (nonatomic, strong) RACSignal *combineSignal;
 
 @property (nonatomic, strong) id createWalletModel;
 
@@ -54,6 +54,9 @@
     
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.bottomView];
+    
+    [self.bottomView.createButton addTarget:self action:@selector(createWallet) forControlEvents:UIControlEventTouchUpInside];
+    [self.bottomView.importButton addTarget:self action:@selector(importWallet) forControlEvents:UIControlEventTouchUpInside];
     
     [self.tableView registerClass:[UchainCreateWalletNameCell class] forCellReuseIdentifier:@"cell"];
     [self.tableView registerClass:[UchainCreateWalletPasswordCell class] forCellReuseIdentifier:@"cell2"];
@@ -182,6 +185,47 @@
     return cell.repeteTextField.text;
 }
 
+- (BOOL)getPrivacySelected
+{
+    UchainPrivacyAgreeFooterView *footerView = (UchainPrivacyAgreeFooterView *)[self.tableView footerViewForSection:2];
+    return footerView.privacyAgreeBtn.selected;
+}
+
+- (void)routeEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userinfo
+{
+    if ([eventName isEqualToString:@"11111"]) {
+        NSString *htmlString = [userinfo objectForKey:@"html"];
+        
+        UchainProlicyController *vc = [[UchainProlicyController alloc] init];
+        vc.html = htmlString;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+#pragma mark ------ PrivacyAgreeDelegate
+
+- (void)goToHtmlWithString:(NSString *)htmlString
+{
+    
+}
+
+- (void)createWallet
+{
+    NSString *walletNameString = [self getWalletName];
+    NSString *PasswordString = [self getWalletPassword];
+    NSString *repeatPasswordString = [self getRepeatPassword];
+    
+    if (walletNameString.length != 0 && PasswordString.length >= 6 && [repeatPasswordString isEqualToString:PasswordString] && [self getPrivacySelected]) {
+        [self createETHWallet];
+    }
+}
+
+- (void)importWallet
+{
+    UchainImportWalletController *importWalletController = [[UchainImportWalletController alloc] init];
+    [self.navigationController pushViewController:importWalletController animated:YES];
+}
+
 - (void)createEthWalletWithPassword:(NSString *)password walletName:(NSString *)walletname
 {
     [UchainWalletManager creatETHWalletSuccess:^(EthmobileWallet *wallet) {
@@ -225,12 +269,6 @@
     [self directlyPushToViewControllerWithSelfDeleted:vc];
 }
 
-- (void)importETHWallet
-{
-    UchainImportWalletController *importWalletController = [[UchainImportWalletController alloc] init];
-    [self.navigationController pushViewController:importWalletController animated:YES];
-}
-
 #pragma mark ------ getter,setter
 
 - (UILabel *)navigationBarTitle
@@ -260,7 +298,6 @@
 {
     if (!_bottomView) {
         _bottomView = [[UchainCreateBottomView alloc] init];
-//        _bottomView.delegate = self;
     }
     
     return _bottomView;
