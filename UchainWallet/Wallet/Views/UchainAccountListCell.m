@@ -1,21 +1,25 @@
 //
-//  UchainWalletTableViewCell.m
+//  UchainAccountListCell.m
 //  UchainWallet
 //
 //  Created by 马晨曦 on 2018/11/8.
 //  Copyright © 2018 uwallet. All rights reserved.
 //
 
-#import "UchainWalletTableViewCell.h"
+#import "UchainAccountListCell.h"
+
 static CGFloat kCellMargin = 15;
-@interface UchainWalletTableViewCell()
+
+@interface UchainAccountListCell()
 
 @property (nonatomic,strong) UIImageView *cellImageView;
 @property (nonatomic,strong) UILabel *cellTitleLabel;
+@property (nonatomic,strong) UILabel *balanceLabel;
 @property (nonatomic,strong) UIImageView *arrowImageView;
 
 @end
-@implementation UchainWalletTableViewCell
+
+@implementation UchainAccountListCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -26,25 +30,28 @@ static CGFloat kCellMargin = 15;
 - (void)creatUI{
     
     self.backgroundColor = [UIColor clearColor];
-    CGFloat backLayerW = 38;
     CALayer *backLayer = [CALayer layer];
-    backLayer.frame = CGRectMake(backLayerW, kCellMargin, kScreenWidth - backLayerW - kCellMargin, 60);
+    backLayer.frame = CGRectMake(kCellMargin, kCellMargin, kScreenWidth - kCellMargin*2, 70);
     backLayer.cornerRadius = 2;
     backLayer.backgroundColor = [UIColor whiteColor].CGColor;
+    backLayer.shadowColor = [UIColor colorWithHexString:@"#14000E5E"].CGColor;
+    backLayer.opacity = 0.8f;
+    backLayer.shadowOffset = CGSizeMake(0, 1);
+    backLayer.shadowRadius = 15.f;
     [self.contentView.layer addSublayer:backLayer];
-    int arcX = arc4random()%5 + 1;
+    
     self.cellImageView = [[UIImageView alloc]init];
     self.cellImageView.layer.contentsGravity = @"resizeAspect";
-    self.cellImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d",arcX]];
+    self.cellImageView.image = [UIImage imageNamed:@"acountwallet-cell-icon"];
     [self.contentView addSubview:self.cellImageView];
     [self.cellImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.contentView.mas_left).with.offset(backLayerW);
-        make.centerY.equalTo(self.contentView.mas_top).with.offset(kCellMargin + 30);
+        make.left.equalTo(self.contentView.mas_left).with.offset(kCellMargin*2);
+        make.centerY.equalTo(self.contentView.mas_top).with.offset(kCellMargin + 35);
     }];
     
     self.cellTitleLabel = [[UILabel alloc]init];
-    self.cellTitleLabel.font = UWFont(15);
-    self.cellTitleLabel.text = @"Oamul Lu的钱包";
+    self.cellTitleLabel.font = UWFont(13);
+    self.cellTitleLabel.text = @"ETH";
     [self.contentView addSubview:self.cellTitleLabel];
     [self.cellTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.cellImageView.mas_right).with.offset(kCellMargin);
@@ -61,7 +68,18 @@ static CGFloat kCellMargin = 15;
         make.top.equalTo(self.contentView.mas_top).with.offset(kCellMargin*2);
         make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kCellMargin);
     }];
+    
+    self.balanceLabel = [[UILabel alloc]init];
+    self.balanceLabel.font = [UIFont systemFontOfSize:15 weight:3];
+    self.balanceLabel.text = @"0000.0";
+    [self.contentView addSubview:self.balanceLabel];
+    [self.balanceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.arrowImageView.mas_left).with.offset(-kCellMargin);
+        make.top.equalTo(self.contentView.mas_top).with.offset(kCellMargin*2);
+        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kCellMargin);
+    }];
 }
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

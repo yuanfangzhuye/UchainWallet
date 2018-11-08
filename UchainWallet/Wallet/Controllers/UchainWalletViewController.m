@@ -10,6 +10,8 @@
 #import "UchainSideViewController.h"
 #import "UchainNavigationViewController.h"
 #import "UchainWalletTableViewCell.h"
+#import "UchainAccountListViewController.h"
+
 static CGFloat kMargin = 15;
 
 #define RouteNameEvent_ShowMorePanel @"RouteNameEvent_ShowMorePanel"
@@ -42,6 +44,13 @@ static CGFloat kMargin = 15;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [[[AppDelegate sharedApplicationDelegate] mainTabBarController] setTabBarHidden:NO animated:animated];
     [self initNavigationBar];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
+    [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = NO;
+
 }
 
 - (void)initNavigationBar
@@ -109,7 +118,8 @@ static CGFloat kMargin = 15;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    UchainAccountListViewController *acountVC = [[UchainAccountListViewController alloc]init];
+    [self.navigationController pushViewController:acountVC animated:YES];
 }
 
 

@@ -15,6 +15,7 @@
 		58E5A6BA2193DC5300F04459 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58E5A6B82193DC5300F04459 /* AboutUsViewController.xib */; };
 		58E5A6C02194178200F04459 /* UchainAccountListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6BF2194178200F04459 /* UchainAccountListViewController.m */; };
 		58E5A6C3219419AD00F04459 /* UchainWalletTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6C2219419AD00F04459 /* UchainWalletTableViewCell.m */; };
+		58E5A6C621941E4B00F04459 /* UchainAccountListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6C521941E4B00F04459 /* UchainAccountListCell.m */; };
 		9D131EB02189A8730068B36C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EAF2189A8730068B36C /* AppDelegate.m */; };
 		9D131EB82189A8730068B36C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D131EB72189A8730068B36C /* Assets.xcassets */; };
 		9D131EBE2189A8730068B36C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EBD2189A8730068B36C /* main.m */; };
@@ -98,6 +99,8 @@
 		58E5A6BF2194178200F04459 /* UchainAccountListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainAccountListViewController.m; sourceTree = "<group>"; };
 		58E5A6C1219419AD00F04459 /* UchainWalletTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainWalletTableViewCell.h; sourceTree = "<group>"; };
 		58E5A6C2219419AD00F04459 /* UchainWalletTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainWalletTableViewCell.m; sourceTree = "<group>"; };
+		58E5A6C421941E4B00F04459 /* UchainAccountListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainAccountListCell.h; sourceTree = "<group>"; };
+		58E5A6C521941E4B00F04459 /* UchainAccountListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainAccountListCell.m; sourceTree = "<group>"; };
 		9A3212DDC04BBAFC80C9CFD1 /* Pods-UchainWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		9D131EAB2189A8730068B36C /* UchainWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UchainWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D131EAE2189A8730068B36C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -468,6 +471,8 @@
 				9D1320012192BA220068B36C /* UchainCreateBottomView.m */,
 				58E5A6C1219419AD00F04459 /* UchainWalletTableViewCell.h */,
 				58E5A6C2219419AD00F04459 /* UchainWalletTableViewCell.m */,
+				58E5A6C421941E4B00F04459 /* UchainAccountListCell.h */,
+				58E5A6C521941E4B00F04459 /* UchainAccountListCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -830,6 +835,7 @@
 				9D131FBB219023530068B36C /* AppDelegate+UchainUI.m in Sources */,
 				9D131F6C218C2DB30068B36C /* UchainMethodSwizzlingUtil.m in Sources */,
 				9D131F38218AD9DF0068B36C /* UchainSideViewController.m in Sources */,
+				58E5A6C621941E4B00F04459 /* UchainAccountListCell.m in Sources */,
 				9D131F3B218ADE6B0068B36C /* UIViewController+Apex.m in Sources */,
 				9D131FD6219041F60068B36C /* UchainAccountStateModel.m in Sources */,
 				9D131FAF218FEBC90068B36C /* UchainLanguageSettingController.m in Sources */,
