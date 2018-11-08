@@ -33,7 +33,7 @@
 #pragma mark - ------private------
 - (void)initUI
 {
-    self.title = SOLocalizedStringFromTable(@"备份钱包", nil);
+    self.title = SOLocalizedStringFromTable(@"Backup Wallet", nil);
     
     [self.view addSubview:self.imageV];
     [self.view addSubview:self.tipL];
@@ -52,7 +52,7 @@
         make.size.mas_equalTo(CGSizeMake(scaleWidth375(300), 30));
     }];
     
-    CGFloat detailHEight = [UchainUtil calculateTextHeight:[UIFont systemFontOfSize:12] givenText:SOLocalizedStringFromTable(@"导出【助记词】并抄写到安全的地方，千万不要保存到网络上，然后尝试转入、转出小额资产开始使用。", nil) givenWidth:scaleWidth375(300)];
+    CGFloat detailHEight = [UchainUtil calculateTextHeight:[UIFont systemFontOfSize:12] givenText:SOLocalizedStringFromTable(@"Export mnemonics and keep it in a safe place, do not save on the internet. then begin using with transfer small assets.", nil) givenWidth:scaleWidth375(300)];
     
     [self.detailL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.tipL.mas_bottom).offset(scaleHeight667(20.0f));
@@ -119,7 +119,7 @@
     if (!_tipL) {
         _tipL = [[UILabel alloc] init];
         _tipL.font = [UIFont boldSystemFontOfSize:18];
-        _tipL.text = SOLocalizedStringFromTable(@"备份钱包助记词", nil);
+        _tipL.text = SOLocalizedStringFromTable(@"Backup wallet mnemonic", nil);
         _tipL.textColor = [UIColor blackColor];
     }
     return _tipL;
@@ -129,7 +129,7 @@
     if (!_detailL) {
         _detailL = [[UILabel alloc] init];
         _detailL.font = [UIFont systemFontOfSize:12];
-        _detailL.text = SOLocalizedStringFromTable(@"导出【助记词】并抄写到安全的地方，千万不要保存到网络上，然后尝试转入、转出小额资产开始使用。", nil);
+        _detailL.text = SOLocalizedStringFromTable(@"Export mnemonics and keep it in a safe place, do not save on the internet. then begin using with transfer small assets.", nil);
         _detailL.numberOfLines = 0;
         _detailL.textColor = [UIColor blackColor];
     }
@@ -139,7 +139,7 @@
 - (UIButton *)toBackUpBtn{
     if (!_toBackUpBtn) {
         _toBackUpBtn = [[UIButton alloc] init];
-        [_toBackUpBtn setTitle:SOLocalizedStringFromTable(@"立即备份", nil) forState:UIControlStateNormal];
+        [_toBackUpBtn setTitle:SOLocalizedStringFromTable(@"Backup now", nil) forState:UIControlStateNormal];
         [_toBackUpBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _toBackUpBtn.backgroundColor = [UchainUtil mainThemeColor];
         _toBackUpBtn.titleLabel.font = [UIFont systemFontOfSize:18];

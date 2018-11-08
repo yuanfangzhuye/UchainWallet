@@ -12,8 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UchainCreateWalletNameCell : UITableViewCell
 
-@property (nonatomic, strong) UITextField *inputTextField;
-//@property (nonatomic, strong) ApexAlertTextField *inputTextField;
+@property (nonatomic, strong) ApexAlertTextField *inputTextField;
 @property (nonatomic, strong) RACSignal *combineSignal;
 
 @end

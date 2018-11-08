@@ -31,7 +31,7 @@
         }];
         
         _passwordTextField = [[ApexAlertTextField alloc] initWithFrame:CGRectZero];
-        _passwordTextField.placeholder = SOLocalizedStringFromTable(@"8-16位字符，建议混合大小写字母、数字", nil);
+        _passwordTextField.placeholder = SOLocalizedStringFromTable(@"Please input", nil);
         _passwordTextField.font = [UIFont systemFontOfSize:13];
         _passwordTextField.floatingLabelYPadding = 5;
         
@@ -43,7 +43,7 @@
         _passwordTextField.secureTextEntry = NO;
         _passwordTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         
-        _passwordTextField.alertString = SOLocalizedStringFromTable(@"8-16位字符，建议混合大小写字母、数字", nil);
+        _passwordTextField.alertString = SOLocalizedStringFromTable(@"Please input 8-16 characters", nil);
         _passwordTextField.alertShowConditionBlock = ^BOOL(NSString *text) {
             
             if (text.length > 0) {
@@ -60,7 +60,7 @@
         }];
         
         _repeteTextField = [[ApexAlertTextField alloc] initWithFrame:CGRectZero];
-        _repeteTextField.placeholder = SOLocalizedStringFromTable(@"重复输入密码", nil);
+        _repeteTextField.placeholder = SOLocalizedStringFromTable(@"Repeat password", nil);
         _repeteTextField.font = [UIFont systemFontOfSize:13];
         _repeteTextField.floatingLabelYPadding = 5;
         
@@ -72,7 +72,7 @@
         _repeteTextField.secureTextEntry = NO;
         _repeteTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         
-        _repeteTextField.alertString = SOLocalizedStringFromTable(@"重复输入密码", nil);
+        _repeteTextField.alertString = SOLocalizedStringFromTable(@"Please input 8-16 characters", nil);
         _repeteTextField.alertShowConditionBlock = ^BOOL(NSString *text) {
             
             if (text.length > 0) {
