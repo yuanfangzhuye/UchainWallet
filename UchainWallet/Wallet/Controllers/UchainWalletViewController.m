@@ -9,15 +9,23 @@
 #import "UchainWalletViewController.h"
 #import "UchainSideViewController.h"
 #import "UchainNavigationViewController.h"
+#import "UchainWalletTableViewCell.h"
+static CGFloat kMargin = 15;
 
 #define RouteNameEvent_ShowMorePanel @"RouteNameEvent_ShowMorePanel"
 
-@interface UchainWalletViewController ()
+@interface UchainWalletViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UchainSideViewController *sideViewController;
+
 @property (nonatomic, strong) UchainNavigationViewController *screenNavigationController;
+
 @property (nonatomic, strong) UIButton *moreBtn;
+
 @property (nonatomic, strong) UIImageView *backgroundImageView;
+
+@property (nonatomic, strong) UITableView *tableView;
+
 
 @end
 
@@ -25,8 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.view addSubview:self.backgroundImageView];
+    [self p_creatUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -55,7 +62,58 @@
     [sideViewController showRightViewController:YES];
 }
 
-#pragma mark ------ getter
+#pragma mark - UI
+- (void)p_creatUI{
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#FFEDF2F5"];
+    UIImageView *bannerImageView = [[UIImageView alloc]init];
+    bannerImageView.image = [UIImage imageNamed:@"banner"];
+    [self.view addSubview:bannerImageView];
+    [bannerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(self.view);
+    }];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(bannerImageView.mas_bottom).with.offset(0);
+        make.left.right.bottom.equalTo(self.view);
+    }];
+    
+    
+}
+
+#pragma mark - TableViewDataSource
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 5;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UchainWalletTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+
+#pragma mark - TableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 60 + kMargin;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+
+#pragma mark - getter
 
 - (UIButton *)moreBtn {
     if (!_moreBtn) {
@@ -78,5 +136,24 @@
     
     return _backgroundImageView;
 }
+
+- (UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]init];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.showsVerticalScrollIndicator = YES;
+        _tableView.tableFooterView = [UIView new];
+        _tableView.backgroundColor = [UIColor clearColor];
+        [_tableView registerClass:[UchainWalletTableViewCell class] forCellReuseIdentifier:@"cell"];
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            
+//            [self p_getData];
+        }];
+
+    }return _tableView;
+}
+
 
 @end

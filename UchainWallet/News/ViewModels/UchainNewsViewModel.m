@@ -25,7 +25,7 @@
             newModel.cellTitle = @"特斯拉私有化后怎么样？看看SpaceX就知道了?";
             newModel.cellDate = @"08-18";
             newModel.imageUrl = @"icon-wallet-selected";
-            NSArray *arr =@[newModel];
+            NSArray *arr =@[newModel,newModel];
 
             [subscriber sendNext:arr];
             [subscriber sendCompleted];
