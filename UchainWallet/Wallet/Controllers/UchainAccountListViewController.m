@@ -8,8 +8,12 @@
 
 #import "UchainAccountListViewController.h"
 #import "UchainAccountListCell.h"
+<<<<<<< HEAD
 #import "UchainOperateWalletViewController.h"
 
+=======
+#import "WalletAddAssetsViewController.h"
+>>>>>>> beea715019b8ee7bbe4976f154944dde720ec73d
 static CGFloat kMargin = 15;
 
 @interface UchainAccountListViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -27,6 +31,12 @@ static CGFloat kMargin = 15;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_creatUI];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
+    [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -196,6 +206,8 @@ static CGFloat kMargin = 15;
         [_addBtn setImage:[UIImage imageNamed:@"acountwallet-navbtn-plus"] forState:UIControlStateNormal];
         [[_addBtn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
             UWLog(@"ClickAddBtn");
+            WalletAddAssetsViewController *addAssetsVC = [[WalletAddAssetsViewController alloc]init];
+            [self.navigationController pushViewController:addAssetsVC animated:YES];
         }];
         
     }return _addBtn;
