@@ -7,6 +7,9 @@
 //
 
 #import "UchainPayTransferViewController.h"
+#import "WalletBalanceView.h"
+
+static CGFloat kMargin = 15;
 
 @interface UchainPayTransferViewController ()
 
@@ -22,7 +25,8 @@
 
 #pragma mark - UI
 - (void)p_createUI{
-    
+    WalletBalanceView *balanceView = [[WalletBalanceView alloc]initWithFrame:CGRectMake(kMargin, kMargin + StatusBarAndNavigationBarHeight, kScreenWidth - kMargin*2, 120) withTypeName:@"ETH" withBalance:@"0.0000"];
+    [self.view addSubview:balanceView];
 }
 
 

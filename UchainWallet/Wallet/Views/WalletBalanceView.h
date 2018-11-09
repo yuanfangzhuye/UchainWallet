@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WalletBalanceView : UIView
 
+@property (nonatomic,strong) UILabel *typeLabel;
+@property (nonatomic,strong) UILabel *balanceLabel;
+
+- (instancetype)initWithFrame:(CGRect)frame withTypeName:(NSString *)type withBalance:(NSString *)balance;
 @end
 
 NS_ASSUME_NONNULL_END

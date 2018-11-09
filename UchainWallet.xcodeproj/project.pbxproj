@@ -21,6 +21,7 @@
 		58E5A6CF21955D2000F04459 /* UchainPayTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6CE21955D2000F04459 /* UchainPayTransferViewController.m */; };
 		58E5A6D521955EB600F04459 /* TransactionHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6D421955EB600F04459 /* TransactionHistoryCell.m */; };
 		58E5A6D8219561E800F04459 /* WalletBalanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6D7219561E800F04459 /* WalletBalanceView.m */; };
+		58E5A6DB219568E800F04459 /* CAGradientLayer+UWGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5A6DA219568E800F04459 /* CAGradientLayer+UWGradient.m */; };
 		9D131EB02189A8730068B36C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EAF2189A8730068B36C /* AppDelegate.m */; };
 		9D131EB82189A8730068B36C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D131EB72189A8730068B36C /* Assets.xcassets */; };
 		9D131EBE2189A8730068B36C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D131EBD2189A8730068B36C /* main.m */; };
@@ -154,6 +155,8 @@
 		58E5A6D421955EB600F04459 /* TransactionHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionHistoryCell.m; sourceTree = "<group>"; };
 		58E5A6D6219561E800F04459 /* WalletBalanceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletBalanceView.h; sourceTree = "<group>"; };
 		58E5A6D7219561E800F04459 /* WalletBalanceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletBalanceView.m; sourceTree = "<group>"; };
+		58E5A6D9219568E800F04459 /* CAGradientLayer+UWGradient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CAGradientLayer+UWGradient.h"; sourceTree = "<group>"; };
+		58E5A6DA219568E800F04459 /* CAGradientLayer+UWGradient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CAGradientLayer+UWGradient.m"; sourceTree = "<group>"; };
 		9A3212DDC04BBAFC80C9CFD1 /* Pods-UchainWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		9D131EAB2189A8730068B36C /* UchainWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UchainWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D131EAE2189A8730068B36C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -760,6 +763,8 @@
 				9D131F3D218ADEFE0068B36C /* UIViewController+UchainNavigationColor.m */,
 				9D131F2E218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.h */,
 				9D131F30218AA6CA0068B36C /* UINavigationController+ApexNavigationBar.m */,
+				58E5A6D9219568E800F04459 /* CAGradientLayer+UWGradient.h */,
+				58E5A6DA219568E800F04459 /* CAGradientLayer+UWGradient.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1172,6 +1177,7 @@
 				58E5A6C3219419AD00F04459 /* UchainWalletTableViewCell.m in Sources */,
 				58E5A6B52192C6E700F04459 /* UchainNewsViewModel.m in Sources */,
 				9D131FEC219168390068B36C /* UchainWelcomePageViewController.m in Sources */,
+				58E5A6DB219568E800F04459 /* CAGradientLayer+UWGradient.m in Sources */,
 				9D131FC621902E5B0068B36C /* LXDScanView.m in Sources */,
 				9D131F16218A998C0068B36C /* UchainMineViewController.m in Sources */,
 				58E5A6AD2192BA8300F04459 /* UchainNewsTableViewCell.m in Sources */,
