@@ -38,7 +38,6 @@
 #define KBindingWalletAddress @"KBindingWalletAddress"
 #define KBindingAddressToCommonProfile [NSString stringWithFormat:@"address_commonProfile"]
 #define KBindingAddressToSpecialProfile [NSString stringWithFormat:@"address_specialProfile"]
-#define KisFirstCreateWalletDone  @"KisFirstCreateWalletDone"
 #define KglobleWalletType @"KglobleWalletType" //全局的钱包类型key
 #define KLocalTXTrackerKey @"KLocalTXTrackerKey" //本地交易状态跟踪key
 #define KEthNonceTrackerKey @"KEthNonceTrackerKey" //本地存储的tx的nonce

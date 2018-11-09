@@ -19,6 +19,8 @@
 @property (nonatomic, strong) UIButton *confirmButton;
 @property (nonatomic, strong) UchainCreateBottomView *bottomView;
 
+@property (nonatomic, strong) id<ApexWalletManagerProtocal> walletManager;
+
 @end
 
 @implementation UchainOperateWalletViewController
@@ -84,6 +86,7 @@
     }];
     
     self.walletnameTextField.text = _model.name;
+    _walletManager = [ETHWalletManager shareManager];
 }
 
 - (void)handleEvent
@@ -102,9 +105,9 @@
             return;
         }
         
-        [[ETHWalletManager shareManager] changeWalletName:name forAddress:self.model.address];
+        [_walletManager changeWalletName:name forAddress:self.model.address];
         
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }];
     
     [[self.cancelButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -130,9 +133,9 @@
     [UchainPassWordConfirmAlertView showDeleteConfirmAlertAddress:self.model.address subTitle:SOLocalizedStringFromTable(@"Attention! Delete Wallet Can Not Be Revoked", nil) Success:^(NeomobileWallet *wallet) {
         
         @strongify(self);
-        [[ETHWalletManager shareManager] deleteWalletForAddress:self.model.address];
+        [_walletManager deleteWalletForAddress:self.model.address];
         
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     } fail:^{
         [self showMessage:SOLocalizedStringFromTable(@"Password Error",nil)];
     }];
@@ -170,10 +173,10 @@
         
         _walletnameTextField.alertString = SOLocalizedStringFromTable(@"1-12 characters", nil);
         _walletnameTextField.alertShowConditionBlock = ^BOOL(NSString *text) {
-            if (text.length > 1 && text.length < 12) {
-                return true;
+            if ((text.length > 0) && (text.length < 12)) {
+                return NO;
             }
-            return false;
+            return YES;
         };
     }
     return _walletnameTextField;
