@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ApexAppConfig.h"
 #import "AppDelegate+UchainUI.h"
 #import "UchainWalletInitViewController.h"
 #import "UchainWelcomePageViewController.h"
@@ -55,12 +56,12 @@
 //        [self targetRootViewControllerSet];
 //    }
 //
-//    [ApexAppConfig configAll];
 //    [UchainUtil configKeyBoard];
 //    if (@available(iOS 11.0, *)) {
 //        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
 //    }
     [self targetRootViewControllerSet];
+    [ApexAppConfig configAll];
     [self.window makeKeyAndVisible];
     
 //    [self showWelcomePage];
