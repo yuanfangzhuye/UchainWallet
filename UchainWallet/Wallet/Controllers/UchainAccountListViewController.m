@@ -8,12 +8,10 @@
 
 #import "UchainAccountListViewController.h"
 #import "UchainAccountListCell.h"
-<<<<<<< HEAD
 #import "UchainOperateWalletViewController.h"
 
-=======
 #import "WalletAddAssetsViewController.h"
->>>>>>> beea715019b8ee7bbe4976f154944dde720ec73d
+
 static CGFloat kMargin = 15;
 
 @interface UchainAccountListViewController ()<UITableViewDataSource,UITableViewDelegate>
