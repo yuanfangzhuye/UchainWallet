@@ -54,6 +54,9 @@
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.bottomView];
     
+    self.bottomView.importString = SOLocalizedStringFromTable(@"Import Wallet", nil);
+    self.bottomView.createString = SOLocalizedStringFromTable(@"Confirm", nil);
+    
     [self.bottomView.createButton addTarget:self action:@selector(createWallet) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView.importButton addTarget:self action:@selector(importWallet) forControlEvents:UIControlEventTouchUpInside];
     

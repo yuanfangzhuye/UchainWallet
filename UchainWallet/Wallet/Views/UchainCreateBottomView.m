@@ -8,6 +8,13 @@
 
 #import "UchainCreateBottomView.h"
 
+@interface UchainCreateBottomView ()
+
+@property (nonatomic, strong) UILabel *importLabel;
+@property (nonatomic, strong) UILabel *createLabel;
+
+@end
+
 @implementation UchainCreateBottomView
 
 - (instancetype)init
@@ -51,6 +58,18 @@
     return self;
 }
 
+- (void)setImportString:(NSString *)importString
+{
+    _importString = importString;
+    self.importLabel.text = _importString;
+}
+
+- (void)setCreateString:(NSString *)createString
+{
+    _createString = createString;
+    self.createLabel.text = _createString;
+}
+
 - (UIButton *)importButton
 {
     if (!_importButton) {
@@ -68,7 +87,6 @@
         _importLabel.font = [UIFont systemFontOfSize:15];
         _importLabel.textColor = [UchainUtil mainThemeColor];
         _importLabel.textAlignment = NSTextAlignmentCenter;
-        _importLabel.text = SOLocalizedStringFromTable(@"Import Wallet", nil);
     }
     
     return _importLabel;
@@ -90,7 +108,6 @@
         _createLabel.font = [UIFont systemFontOfSize:15];
         _createLabel.textColor = [UIColor whiteColor];
         _createLabel.textAlignment = NSTextAlignmentCenter;
-        _createLabel.text = SOLocalizedStringFromTable(@"Confirm", nil);
     }
     
     return _createLabel;

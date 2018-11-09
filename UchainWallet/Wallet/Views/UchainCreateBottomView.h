@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UchainCreateBottomView : UIView
 
 @property (nonatomic, strong) UIButton *importButton;
-@property (nonatomic, strong) UILabel *importLabel;
+@property (nonatomic, strong) NSString *importString;
 @property (nonatomic, strong) UIButton *createButton;
-@property (nonatomic, strong) UILabel *createLabel;
+@property (nonatomic, strong) NSString *createString;
 
 @end
 

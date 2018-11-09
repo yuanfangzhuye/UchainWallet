@@ -8,6 +8,7 @@
 
 #import "UchainAccountListViewController.h"
 #import "UchainAccountListCell.h"
+#import "UchainOperateWalletViewController.h"
 
 static CGFloat kMargin = 15;
 
@@ -162,8 +163,11 @@ static CGFloat kMargin = 15;
     return 70 + kMargin;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UchainOperateWalletViewController *operateWalletViewController = [[UchainOperateWalletViewController alloc] init];
+    operateWalletViewController.model = self.walletModel;
+    [self.navigationController pushViewController:operateWalletViewController animated:YES];
 }
 
 #pragma mark - getter
