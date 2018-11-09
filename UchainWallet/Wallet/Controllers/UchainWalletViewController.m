@@ -36,7 +36,7 @@ static CGFloat kMargin = 15;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self p_creatUI];
+    [self p_createUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -50,7 +50,7 @@ static CGFloat kMargin = 15;
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = NO;
+    [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = YES;
 }
 
 - (void)initNavigationBar
@@ -72,7 +72,7 @@ static CGFloat kMargin = 15;
 }
 
 #pragma mark - UI
-- (void)p_creatUI{
+- (void)p_createUI{
     _dataArray = [NSMutableArray new];
     self.view.backgroundColor = [UIColor colorWithHexString:@"#FFEDF2F5"];
     UIImageView *bannerImageView = [[UIImageView alloc]init];
