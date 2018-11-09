@@ -10,6 +10,8 @@
 #import "CAGradientLayer+UWGradient.h"
 
 @interface WalletBalanceView()
+@property (nonatomic,copy) NSString *type;
+@property (nonatomic,copy) NSString *balance;
 @end
 
 @implementation WalletBalanceView
@@ -17,6 +19,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.type = type;
+        self.balance = balance;
         [self p_createUI];
     }
     return self;
@@ -27,18 +31,20 @@
     self.layer.cornerRadius = 5;
     self.layer.masksToBounds = YES;
     self.layer.shadowColor = [UIColor colorWithHexString:@"#003C7F"].CGColor;
-    self.layer.shadowOffset = CGSizeMake(0, 0);
+    self.layer.shadowOffset = CGSizeMake(4, 4);
     self.layer.shadowOpacity = 1;
     self.layer.shadowRadius = 10;
     
     UILabel *typeLabel = [[UILabel alloc]init];
     typeLabel.font = UWFont(15);
+    typeLabel.text = self.type;
     typeLabel.textColor = [UIColor whiteColor];
     [self addSubview:typeLabel];
     self.typeLabel = typeLabel;
     
     UILabel *balanceLabel = [[UILabel alloc]init];
     balanceLabel.font = UWFont(30);
+    balanceLabel.text = self.balance;
     balanceLabel.textColor = [UIColor whiteColor];
     [self addSubview:balanceLabel];
     self.balanceLabel = balanceLabel;

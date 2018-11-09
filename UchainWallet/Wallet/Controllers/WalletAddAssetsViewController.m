@@ -27,7 +27,6 @@ static CGFloat kMargin = 15;
 
 - (void)p_createUI{
     self.navigationItem.title = @"添加资产";
-    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.bottom.equalTo(self.view);
@@ -39,6 +38,13 @@ static CGFloat kMargin = 15;
     [super viewWillDisappear:animated];
     [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
     [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = YES;
+    
+}
+
+#pragma mark - Data
+//RefreshData
+- (void)p_getData{
+    
     
 }
 
