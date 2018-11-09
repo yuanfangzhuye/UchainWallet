@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UchainWalletTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) NSString *walletName;
+@property (weak, nonatomic) NSString *backupWallet;
+
 @end
 
 NS_ASSUME_NONNULL_END

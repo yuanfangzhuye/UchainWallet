@@ -68,7 +68,7 @@
         _importLabel.font = [UIFont systemFontOfSize:15];
         _importLabel.textColor = [UchainUtil mainThemeColor];
         _importLabel.textAlignment = NSTextAlignmentCenter;
-        _importLabel.text = SOLocalizedStringFromTable(@"导入钱包", nil);
+        _importLabel.text = SOLocalizedStringFromTable(@"Import Wallet", nil);
     }
     
     return _importLabel;
@@ -90,7 +90,7 @@
         _createLabel.font = [UIFont systemFontOfSize:15];
         _createLabel.textColor = [UIColor whiteColor];
         _createLabel.textAlignment = NSTextAlignmentCenter;
-        _createLabel.text = SOLocalizedStringFromTable(@"确认", nil);
+        _createLabel.text = SOLocalizedStringFromTable(@"Confirm", nil);
     }
     
     return _createLabel;

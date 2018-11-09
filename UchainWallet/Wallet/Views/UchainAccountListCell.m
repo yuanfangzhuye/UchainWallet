@@ -7,6 +7,7 @@
 //
 
 #import "UchainAccountListCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 static CGFloat kCellMargin = 15;
 
@@ -51,7 +52,6 @@ static CGFloat kCellMargin = 15;
     
     self.cellTitleLabel = [[UILabel alloc]init];
     self.cellTitleLabel.font = UWFont(13);
-    self.cellTitleLabel.text = @"ETH";
     [self.contentView addSubview:self.cellTitleLabel];
     [self.cellTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.cellImageView.mas_right).with.offset(kCellMargin);
@@ -71,7 +71,6 @@ static CGFloat kCellMargin = 15;
     
     self.balanceLabel = [[UILabel alloc]init];
     self.balanceLabel.font = [UIFont systemFontOfSize:15 weight:3];
-    self.balanceLabel.text = @"0000.0";
     [self.contentView addSubview:self.balanceLabel];
     [self.balanceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.arrowImageView.mas_left).with.offset(-kCellMargin);
@@ -80,9 +79,26 @@ static CGFloat kCellMargin = 15;
     }];
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (void)setModel:(BalanceObject *)model
+{
+    _model = model;
+    if ([model.value isKindOfClass:NSNumber.class]) {
+        model.value = ((NSNumber*)model.value).stringValue;
+    }
+    self.balanceLabel.text = model.value.floatValue == 0 ? @"0" : model.value;
+    
+    if (_model.value.floatValue >= 0.00000001) {
+        self.balanceLabel.text = [[NSString stringWithFormat:@"%.18f",self.balanceLabel.text.doubleValue] substringToIndex:10];
+    }
+    
+    ApexAssetModel *assetModel = [[ETHWalletManager shareManager] assetModelByBalanceModel:model];
+    self.cellTitleLabel.text = assetModel.symbol;
+    
+    [self.cellImageView sd_setImageWithURL:[NSURL URLWithString:assetModel.image_url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        if (!image) {
+            self.cellImageView.image = [UIImage imageNamed:@"acountwallet-cell-icon"];
+        }
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

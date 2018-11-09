@@ -62,9 +62,15 @@ static CGFloat kCellMargin = 15;
         make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kCellMargin);
     }];
 }
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+
+- (void)setWalletName:(NSString *)walletName
+{
+    self.cellTitleLabel.text = walletName;
+}
+
+- (void)setBackupWallet:(NSString *)backupWallet
+{
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

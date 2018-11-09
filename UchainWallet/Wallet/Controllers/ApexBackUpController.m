@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = SOLocalizedStringFromTable(@"备份钱包", nil);
+    self.title = SOLocalizedStringFromTable(@"Backup Wallet", nil);
     
     [self initUI];
     [self handleEvent];
@@ -32,9 +32,9 @@
 
 - (void)initUI
 {
-    CGFloat tipHeight = [UchainUtil calculateTextHeight:[UIFont systemFontOfSize:12] givenText:SOLocalizedStringFromTable(@"助记词用于恢复钱包或重复钱包密码，将它准确的抄写到纸上，并存放再只有你知道的安全的地方。", nil) givenWidth:(kScreenWidth - 60.0f)];
+    CGFloat tipHeight = [UchainUtil calculateTextHeight:[UIFont systemFontOfSize:12] givenText:SOLocalizedStringFromTable(@"The mnemonic is used to recover the wallet or repeat the wallet password, copy it to the paper accurately, and store it in a safe place that only you know.", nil) givenWidth:(kScreenWidth - 60.0f)];
     
-    CGFloat tipHeight2 = [UchainUtil calculateTextHeight:[UIFont systemFontOfSize:12] givenText:SOLocalizedStringFromTable(@"请勿截图，如果有人获取你的助记词将直接获取你的资产！请抄写下助记词并存放再安全的地方。", nil) givenWidth:(kScreenWidth - 60.0f)];
+    CGFloat tipHeight2 = [UchainUtil calculateTextHeight:[UIFont systemFontOfSize:12] givenText:SOLocalizedStringFromTable(@"Do not take screenshots,  someone will have fully accecss to your assets ,if it gets your mnemonic! Please copy the mnemonic, then store it at a safe place.", nil) givenWidth:(kScreenWidth - 60.0f)];
     
     [self.view addSubview:self.tipLable01];
     [self.view addSubview:self.tipLabel2];
@@ -102,7 +102,7 @@
         _tipLable01 = [[UILabel alloc] init];
         _tipLable01.font = [UIFont boldSystemFontOfSize:20];
         _tipLable01.textColor = [UIColor blackColor];
-        _tipLable01.text = SOLocalizedStringFromTable(@"抄写下你的钱包助记词", nil);
+        _tipLable01.text = SOLocalizedStringFromTable(@"Copy your wallet mnemonic", nil);
     }
     
     return _tipLable01;
@@ -115,7 +115,7 @@
         _tipLabel2.font = [UIFont systemFontOfSize:12];
         _tipLabel2.textColor = [UIColor blackColor];
         _tipLabel2.numberOfLines = 0;
-        _tipLabel2.text = SOLocalizedStringFromTable(@"助记词用于恢复钱包或重复钱包密码，将它准确的抄写到纸上，并存放再只有你知道的安全的地方。", nil);
+        _tipLabel2.text = SOLocalizedStringFromTable(@"The mnemonic is used to recover the wallet or repeat the wallet password, copy it to the paper accurately, and store it in a safe place that only you know.", nil);
     }
     
     return _tipLabel2;
@@ -128,7 +128,7 @@
         _tipLable3.font = [UIFont systemFontOfSize:12];
         _tipLable3.textColor = [UIColor blackColor];
         _tipLable3.numberOfLines = 0;
-        _tipLable3.text = SOLocalizedStringFromTable(@"请勿截图，如果有人获取你的助记词将直接获取你的资产！请抄写下助记词并存放再安全的地方。", nil);
+        _tipLable3.text = SOLocalizedStringFromTable(@"Do not take screenshots,  someone will have fully accecss to your assets ,if it gets your mnemonic! Please copy the mnemonic, then store it at a safe place.", nil);
     }
     
     return _tipLable3;
@@ -154,7 +154,7 @@
 {
     if (!_nextBtn) {
         _nextBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_nextBtn setTitle:SOLocalizedStringFromTable(@"下一步", nil) forState:UIControlStateNormal];
+        [_nextBtn setTitle:SOLocalizedStringFromTable(@"Next step", nil) forState:UIControlStateNormal];
         [_nextBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _nextBtn.backgroundColor = [UchainUtil mainThemeColor];
         _nextBtn.titleLabel.font = [UIFont systemFontOfSize:18];

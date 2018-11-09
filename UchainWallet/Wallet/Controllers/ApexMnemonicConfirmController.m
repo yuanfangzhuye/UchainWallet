@@ -39,7 +39,7 @@
 - (void)initUI{
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-     self.title = SOLocalizedStringFromTable(@"备份钱包", nil);
+     self.title = SOLocalizedStringFromTable(@"Backup Wallet", nil);
     _choosenArr = [NSMutableArray array];
     
     _collectionView.delegate = self;
@@ -53,9 +53,9 @@
     self.showCollectionView.layer.shadowOpacity = 0.63;
     
     self.confirmBtn.layer.cornerRadius = 6;
-    [self.confirmBtn setTitle:SOLocalizedStringFromTable(@"Confirm", nil) forState:UIControlStateNormal];
+    [self.confirmBtn setTitle:SOLocalizedStringFromTable(@"Complete", nil) forState:UIControlStateNormal];
     
-    _tipLable0.text = SOLocalizedStringFromTable(@"Confirm your mnemonic", nil);
+    _tipLable0.text = SOLocalizedStringFromTable(@"Copy your wallet mnemonic", nil);
     _tipLable1.text = SOLocalizedStringFromTable(@"Please click on the mnemonic in order, make sure you backup correctly.", nil);
 }
 

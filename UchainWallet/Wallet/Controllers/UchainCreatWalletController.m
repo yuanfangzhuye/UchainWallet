@@ -167,23 +167,20 @@
 
 - (NSString *)getWalletName
 {
-//    UchainCreateWalletNameCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-//    return cell.inputTextField.text;
-    return @"测试";
+    UchainCreateWalletNameCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    return cell.inputTextField.text;
 }
 
 - (NSString *)getWalletPassword
 {
-//    UchainCreateWalletPasswordCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
-//    return cell.passwordTextField.text;
-    return @"123456";
+    UchainCreateWalletPasswordCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+    return cell.passwordTextField.text;
 }
 
 - (NSString *)getRepeatPassword
 {
-//    UchainCreateWalletPasswordCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
-//    return cell.repeteTextField.text;
-    return @"123456";
+    UchainCreateWalletPasswordCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+    return cell.repeteTextField.text;
 }
 
 - (BOOL)getPrivacySelected
@@ -225,7 +222,7 @@
     [ETHWalletManager creatETHWalletSuccess:^(EthmobileWallet *wallet) {
         
         NSError *ksErr = nil;
-        NSString *ks = [wallet toKeyStore:@"123456" error:&ksErr];
+        NSString *ks = [wallet toKeyStore:password error:&ksErr];
         if (ksErr) {
             [self showMessage:[NSString stringWithFormat:@"%@: %@",SOLocalizedStringFromTable(@"Create Keystore Failed", nil),ksErr]];
         }

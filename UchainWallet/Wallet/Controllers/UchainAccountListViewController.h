@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UchainAccountListViewController : UIViewController
 
+@property (nonatomic, strong) ETHWalletModel *walletModel;
+
 @end
 
 NS_ASSUME_NONNULL_END

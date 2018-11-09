@@ -21,6 +21,23 @@
 "Login Password" = "Login Password";
 "LanguageSetting" = "LanguageSetting";
 
+"Please input" = "Please input";
+"Please enter the correct wallet name" = "Please enter the correct wallet name";
+"8-16 characters" = "8-16 characters";
+"Please input 8-16 characters" = "Please input 8-16 characters";
+"Repeat password" = "Repeat password";
+"Confirm" = "Confirm";
+
+"Export mnemonics and keep it in a safe place, do not save on the internet. then begin using with transfer small assets." = "Export [mnemonics] and keep it in a safe place, do not save on the internet. then start using and testing with small amount of assets.";
+"Next step" = "Next";
+"The mnemonic is used to recover the wallet or repeat the wallet password, copy it to the paper accurately, and store it in a safe place that only you know." = "The mnemonic is used to recover the wallet. Write/store it accurately in a safe place that only you know or have access to.";
+"Do not take screenshots,  someone will have fully accecss to your assets ,if it gets your mnemonic! Please copy the mnemonic, then store it at a safe place." = "Do not take screenshots to avoid people other than yourself to have access to your wallet. Write/store it accurately in a safe place that only you know or have access to.";
+"Please click on the mnemonic in order, make sure you backup correctly." = "Please choose the words in the correct order, make sure you backup the phrase correctly.";
+"Backup Wallet" = "Backup Wallet";
+"Backup wallet mnemonic" = "Backup wallet mnemonic";
+"Backup now" = "Backup now";
+"Copy your wallet mnemonic" = "Copy your wallet mnemonic";
+"Complete" = "Complete";
 /*
  *我的模块
  */
