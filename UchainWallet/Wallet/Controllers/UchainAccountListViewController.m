@@ -14,6 +14,8 @@ static CGFloat kMargin = 15;
 @interface UchainAccountListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *assetArr;
+@property (nonatomic, strong) NSMutableDictionary *assetMap; //资产对应的余额字典
 
 @property (nonatomic, strong) UIButton *addBtn;
 
@@ -31,6 +33,7 @@ static CGFloat kMargin = 15;
     [super viewWillAppear:animated];
     
     [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
+    [self requestETHAsset];
 }
 
 #pragma mark - UI
@@ -44,6 +47,89 @@ static CGFloat kMargin = 15;
         make.top.left.right.bottom.equalTo(self.view);
     }];
     
+    MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingBlock:^{
+        [self requestETHAsset];
+    }];
+    self.tableView.mj_header = header;
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+}
+
+#pragma mark - 获取钱包ETH资产
+- (void)getLoacalEthAsset{
+    self.title = self.walletModel.name;
+    self.assetArr = self.walletModel.assetArr;
+    [self.tableView reloadData];
+    [self creataAssetMap];
+}
+
+- (void)creataAssetMap{
+    self.assetMap = [NSMutableDictionary dictionary];
+    for (BalanceObject *balance in self.assetArr) {
+        [self.assetMap setValue:balance.value forKey:balance.asset];
+    }
+}
+
+- (void)requestETHAsset{
+    [self getLoacalEthAsset];
+    
+    RACSignal *request1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        
+        [ETHWalletManager requestETHBalanceOfAddress:self.walletModel.address success:^(AFHTTPRequestOperation *operation, NSString *responseObject) {
+            
+            BalanceObject *obj = [BalanceObject new];
+            obj.asset = assetId_Eth;
+            obj.value = responseObject;
+            [subscriber sendNext:@{assetId_Eth:obj}];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [subscriber sendError:error];
+        }];
+        return nil;
+    }];
+    
+    RACSignal *request2 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        if (self.assetArr.count <= 1) [subscriber sendNext:dict];
+        for (BalanceObject *obj in self.assetArr) {
+            //非eth
+            if (![obj.asset isEqualToString:assetId_Eth]) {
+                ApexAssetModel *assetModel = [obj getRelativeETHAssetModel];
+                
+                [ETHWalletManager requestERC20BalanceOfContract:obj.asset Address:self.walletModel.address decimal:assetModel.precision success:^(AFHTTPRequestOperation *operation, NSString *responseObject) {
+                    obj.value = responseObject;
+                    [dict setObject:obj forKey:obj.asset];
+                    if (dict.allKeys.count == self.assetArr.count - 1) {
+                        [subscriber sendNext:dict];
+                    }
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [subscriber sendError:error];
+                }];
+            }
+        }
+        return nil;
+    }];
+    
+    RACSignal *combineSig = [RACSignal combineLatest:@[request1,request2] reduce:^id(NSDictionary *eth, NSDictionary *erc20){
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict addEntriesFromDictionary:eth];
+        [dict addEntriesFromDictionary:erc20];
+        return dict;
+    }];
+    
+    [[self rac_liftSelector:@selector(updateEthAndErc20:) withSignals:combineSig, nil] subscribeError:^(NSError * _Nullable error) {
+        [self.tableView.mj_header endRefreshing];
+        [self showMessage:SOLocalizedStringFromTable(@"Request Failed, Please Check Your Network Status", nil)];
+    }];
+}
+
+- (void)updateEthAndErc20:(NSDictionary*)dict{
+    [self.tableView.mj_header endRefreshing];
+    for (BalanceObject *obj in self.assetArr) {
+        obj.value = ((BalanceObject*)dict[obj.asset]).value;
+    }
+    
+    [[ETHWalletManager shareManager] updateWallet:self.walletModel WithAssetsArr:self.assetArr];
+    [self.tableView reloadData];
 }
 
 #pragma mark - TableViewDataSource
@@ -53,13 +139,15 @@ static CGFloat kMargin = 15;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    NSInteger count = self.assetArr.count;
+    return count == 0 ? 1 : count;;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UchainAccountListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.model = self.assetArr[indexPath.row];
     
     return cell;
 }
@@ -107,7 +195,14 @@ static CGFloat kMargin = 15;
         }];
         
     }return _addBtn;
-};
+}
+
+- (NSMutableArray *)assetArr{
+    if (!_assetArr) {
+        _assetArr = [NSMutableArray array];
+    }
+    return _assetArr;
+}
 
 /*
 #pragma mark - Navigation

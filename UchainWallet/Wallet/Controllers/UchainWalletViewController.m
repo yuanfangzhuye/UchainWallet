@@ -131,8 +131,11 @@ static CGFloat kMargin = 15;
     return 60 + kMargin;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ETHWalletModel *model = _dataArray[indexPath.row];
     UchainAccountListViewController *acountVC = [[UchainAccountListViewController alloc]init];
+    acountVC.walletModel = model;
     [self.navigationController pushViewController:acountVC animated:YES];
 }
 

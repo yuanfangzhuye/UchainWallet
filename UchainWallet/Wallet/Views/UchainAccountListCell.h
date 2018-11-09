@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UchainAccountListCell : UITableViewCell
 
+@property (nonatomic, strong) BalanceObject *model;
+
 @end
 
 NS_ASSUME_NONNULL_END
