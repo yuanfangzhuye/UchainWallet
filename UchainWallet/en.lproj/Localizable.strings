@@ -38,6 +38,9 @@
 "Backup now" = "Backup now";
 "Copy your wallet mnemonic" = "Copy your wallet mnemonic";
 "Complete" = "Complete";
+"1-12 characters" = "1-12 characters";
+"Delete Wallet" = "Delete Wallet";
+"Backup Mnemonic" = "Backup Mnemonic";
 /*
  *我的模块
  */

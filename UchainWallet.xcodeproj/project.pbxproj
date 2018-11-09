@@ -122,6 +122,7 @@
 		9D1320D22194110A0068B36C /* ApexETHClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320CE2194110A0068B36C /* ApexETHClient.m */; };
 		9D1320D5219412930068B36C /* ApexNetWorkCommonConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320D4219412930068B36C /* ApexNetWorkCommonConfig.m */; };
 		9D1320D9219414480068B36C /* ApexBlockChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1320D7219414480068B36C /* ApexBlockChainManager.m */; };
+		9DE372702195527C009E58C7 /* UchainOperateWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE3726F2195527C009E58C7 /* UchainOperateWalletViewController.m */; };
 		F506AF8A11147E314A1F51F2 /* libPods-UchainWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */; };
 /* End PBXBuildFile section */
 
@@ -353,6 +354,8 @@
 		9D1320D4219412930068B36C /* ApexNetWorkCommonConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexNetWorkCommonConfig.m; sourceTree = "<group>"; };
 		9D1320D7219414480068B36C /* ApexBlockChainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApexBlockChainManager.m; sourceTree = "<group>"; };
 		9D1320D8219414480068B36C /* ApexBlockChainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApexBlockChainManager.h; sourceTree = "<group>"; };
+		9DE3726E2195527C009E58C7 /* UchainOperateWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UchainOperateWalletViewController.h; sourceTree = "<group>"; };
+		9DE3726F2195527C009E58C7 /* UchainOperateWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UchainOperateWalletViewController.m; sourceTree = "<group>"; };
 		B3C00042EC786C0C4FEBD697 /* Pods-UchainWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UchainWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-UchainWallet/Pods-UchainWallet.release.xcconfig"; sourceTree = "<group>"; };
 		FA57950E6D25B1850F6B0376 /* libPods-UchainWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UchainWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -699,6 +702,8 @@
 				9D131F1B218A99C40068B36C /* UchainWalletViewController.m */,
 				58E5A6BE2194178200F04459 /* UchainAccountListViewController.h */,
 				58E5A6BF2194178200F04459 /* UchainAccountListViewController.m */,
+				9DE3726E2195527C009E58C7 /* UchainOperateWalletViewController.h */,
+				9DE3726F2195527C009E58C7 /* UchainOperateWalletViewController.m */,
 				58E5A6C7219444A500F04459 /* WalletAddAssetsViewController.h */,
 				58E5A6C8219444A500F04459 /* WalletAddAssetsViewController.m */,
 				58E5A6CD21955D2000F04459 /* UchainPayTransferViewController.h */,
@@ -1111,6 +1116,7 @@
 				58E5A6CF21955D2000F04459 /* UchainPayTransferViewController.m in Sources */,
 				9D131FB82190198B0068B36C /* UIViewController+NetLoadIndicator.m in Sources */,
 				9D131F08218A98480068B36C /* SOLocalization.m in Sources */,
+				9DE372702195527C009E58C7 /* UchainOperateWalletViewController.m in Sources */,
 				58E5A6C9219444A500F04459 /* WalletAddAssetsViewController.m in Sources */,
 				9D131EB02189A8730068B36C /* AppDelegate.m in Sources */,
 				9D1320C421940D130068B36C /* NSBundle+MJLocalization.m in Sources */,

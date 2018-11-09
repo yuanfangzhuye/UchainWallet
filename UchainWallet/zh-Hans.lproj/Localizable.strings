@@ -38,6 +38,9 @@
 "Backup now" = "立即备份";
 "Copy your wallet mnemonic" = "抄写下你的钱包助记词";
 "Complete" = "完成";
+"1-12 characters" = "1-12位字符";
+"Delete Wallet" = "删除钱包";
+"Backup Mnemonic" = "备份助记词";
 
 /*
  *我的模块
