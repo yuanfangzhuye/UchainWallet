@@ -52,8 +52,8 @@
 {
     UIImage *finishedImage = [self imageFromColor:[UIColor whiteColor]];
     
-    NSArray *tabBarItemSelectImages = @[@"icon-wallet-selected", @"icon-encurage-selected", @"icon-mine-selected"];
-    NSArray *tabBarItemDisSelectImages = @[@"icon-wallet", @"icon-encurage", @"icon-mine"];
+    NSArray *tabBarItemSelectImages = @[@"icon-wallet-selected", @"icon-news-selected", @"icon-mine-selected"];
+    NSArray *tabBarItemDisSelectImages = @[@"icon-wallet", @"icon-news", @"icon-mine"];
     NSArray *titleArray = @[@"", @"", @""];
     
     NSDictionary *selectAttribute = @{NSFontAttributeName:[UIFont systemFontOfSize:12], NSForegroundColorAttributeName:[UchainUtil mainThemeColor]};
