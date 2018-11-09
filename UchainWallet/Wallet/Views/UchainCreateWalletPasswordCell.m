@@ -32,7 +32,7 @@
         
         _passwordTextField = [[ApexAlertTextField alloc] initWithFrame:CGRectZero];
         _passwordTextField.placeholder = SOLocalizedStringFromTable(@"Please input", nil);
-        _passwordTextField.font = [UIFont systemFontOfSize:13];
+        _passwordTextField.font = [UIFont systemFontOfSize:12];
         _passwordTextField.floatingLabelYPadding = 5;
         
         _passwordTextField.floatingLabelTextColor = [UIColor colorWithHexString:@"555555"];
@@ -61,7 +61,7 @@
         
         _repeteTextField = [[ApexAlertTextField alloc] initWithFrame:CGRectZero];
         _repeteTextField.placeholder = SOLocalizedStringFromTable(@"Repeat password", nil);
-        _repeteTextField.font = [UIFont systemFontOfSize:13];
+        _repeteTextField.font = [UIFont systemFontOfSize:12];
         _repeteTextField.floatingLabelYPadding = 5;
         
         _repeteTextField.floatingLabelTextColor = [UIColor colorWithHexString:@"555555"];
@@ -96,7 +96,7 @@
 {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = [UIFont systemFontOfSize:15];
+        _titleLabel.font = [UIFont systemFontOfSize:14];
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.text = SOLocalizedStringFromTable(@"Login Password", nil);
     }

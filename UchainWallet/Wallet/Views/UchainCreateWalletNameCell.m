@@ -31,7 +31,7 @@
         }];
         
         _inputTextField = [[ApexAlertTextField alloc] initWithFrame:CGRectZero];
-        _inputTextField.font = [UIFont systemFontOfSize:13];
+        _inputTextField.font = [UIFont systemFontOfSize:12];
         _inputTextField.floatingLabelYPadding = 5;
         _inputTextField.placeholder = SOLocalizedStringFromTable(@"Please input", nil);
 
@@ -67,7 +67,7 @@
 {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = [UIFont systemFontOfSize:15];
+        _titleLabel.font = [UIFont systemFontOfSize:14];
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.text = SOLocalizedStringFromTable(@"Wallet Name", nil);
     }

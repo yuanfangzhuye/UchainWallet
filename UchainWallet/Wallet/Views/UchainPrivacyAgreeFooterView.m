@@ -25,7 +25,7 @@
         }];
         
         [self.privacyAgreeLable  mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.privacyAgreeBtn.mas_right).offset(15);
+            make.left.equalTo(self.privacyAgreeBtn.mas_right).offset(10);
             make.centerY.equalTo(self.privacyAgreeBtn.mas_centerY);
         }];
         

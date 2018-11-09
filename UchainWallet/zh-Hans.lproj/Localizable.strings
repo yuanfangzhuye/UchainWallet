@@ -26,7 +26,7 @@
 "8-16 characters" = "8-16位字符";
 "Please input 8-16 characters" = "请输入8-16位字符";
 "Repeat password" = "重复输入密码";
-"Confirm" = "确认";
+"Confirm11" = "确认";
 
 "Export mnemonics and keep it in a safe place, do not save on the internet. then begin using with transfer small assets." = "导出【助记词】并抄写到安全的地方，千万不要保存到网络上，然后尝试转入、转出小额资产开始使用。";
 "Next step" = "下一步";
@@ -41,6 +41,9 @@
 "1-12 characters" = "1-12位字符";
 "Delete Wallet" = "删除钱包";
 "Backup Mnemonic" = "备份助记词";
+"Password" = "密码";
+"Cancle" = "取消";
+"Confirm" = "确定";
 
 /*
  *我的模块

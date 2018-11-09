@@ -26,7 +26,7 @@
 "8-16 characters" = "8-16 characters";
 "Please input 8-16 characters" = "Please input 8-16 characters";
 "Repeat password" = "Repeat password";
-"Confirm" = "Confirm";
+"Confirm11" = "Confirm";
 
 "Export mnemonics and keep it in a safe place, do not save on the internet. then begin using with transfer small assets." = "Export [mnemonics] and keep it in a safe place, do not save on the internet. then start using and testing with small amount of assets.";
 "Next step" = "Next";
@@ -41,6 +41,9 @@
 "1-12 characters" = "1-12 characters";
 "Delete Wallet" = "Delete Wallet";
 "Backup Mnemonic" = "Backup Mnemonic";
+"Password" = "Password";
+"Cancle" = "Cancle";
+"Confirm" = "Confirm";
 /*
  *我的模块
  */
