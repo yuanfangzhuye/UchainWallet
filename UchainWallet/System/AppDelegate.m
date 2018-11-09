@@ -69,7 +69,8 @@
 
 - (void)targetRootViewControllerSet
 {
-    NSArray *arr = [[ETHWalletManager shareManager] getWalletsArr];
+//    NSArray *arr = [[ETHWalletManager shareManager] getWalletsArr];
+    NSArray *arr = @[@"1"];
     BOOL isFirstCreatDone = [[NSUserDefaults standardUserDefaults] objectForKey:KisFirstCreateWalletDone];
     
     if (arr.count == 0 && !isFirstCreatDone) {

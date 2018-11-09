@@ -1,47 +1,44 @@
 //
-//  UchainAccountListViewController.m
+//  WalletAddAssetsViewController.m
 //  UchainWallet
 //
 //  Created by 马晨曦 on 2018/11/8.
 //  Copyright © 2018 uwallet. All rights reserved.
 //
 
-#import "UchainAccountListViewController.h"
-#import "UchainAccountListCell.h"
 #import "WalletAddAssetsViewController.h"
+#import "AddAssetsTableViewCell.h"
 static CGFloat kMargin = 15;
 
-@interface UchainAccountListViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface WalletAddAssetsViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) UIButton *addBtn;
-
 @end
 
-@implementation UchainAccountListViewController
+@implementation WalletAddAssetsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_creatUI];
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
-    [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = NO;
-}
-
 #pragma mark - UI
 
 - (void)p_creatUI{
-    self.navigationItem.title = @"Oamul Lu的钱包";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.addBtn];
-    self.view.backgroundColor = [UIColor colorWithHexString:@"#FFEDF2F5"];
+    self.navigationItem.title = @"添加资产";
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.bottom.equalTo(self.view);
     }];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
+    [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = NO;
     
 }
 
@@ -57,9 +54,10 @@ static CGFloat kMargin = 15;
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UchainAccountListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    AddAssetsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    cell.separatorInset = UIEdgeInsetsMake(0, kMargin, 0, kMargin);
+
     return cell;
 }
 
@@ -74,8 +72,9 @@ static CGFloat kMargin = 15;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
 }
+
 
 #pragma mark - getter
 
@@ -84,11 +83,10 @@ static CGFloat kMargin = 15;
         _tableView = [[UITableView alloc]init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.showsVerticalScrollIndicator = YES;
         _tableView.tableFooterView = [UIView new];
         _tableView.backgroundColor = [UIColor clearColor];
-        [_tableView registerClass:[UchainAccountListCell class] forCellReuseIdentifier:@"cell"];
+        [_tableView registerClass:[AddAssetsTableViewCell class] forCellReuseIdentifier:@"cell"];
         _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             
             //            [self p_getData];
@@ -96,20 +94,6 @@ static CGFloat kMargin = 15;
         
     }return _tableView;
 }
-
-- (UIButton *)addBtn{
-    if (!_addBtn) {
-        _addBtn = [[UIButton alloc]init];
-        [_addBtn setImage:[UIImage imageNamed:@"acountwallet-navbtn-plus"] forState:UIControlStateNormal];
-        [[_addBtn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
-            UWLog(@"ClickAddBtn");
-            WalletAddAssetsViewController *addAssetsVC = [[WalletAddAssetsViewController alloc]init];
-            [self.navigationController pushViewController:addAssetsVC animated:YES];
-        }];
-        
-    }return _addBtn;
-};
-
 /*
 #pragma mark - Navigation
 

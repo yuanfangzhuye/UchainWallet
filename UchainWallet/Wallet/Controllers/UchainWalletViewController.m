@@ -50,7 +50,6 @@ static CGFloat kMargin = 15;
     [super viewWillDisappear:animated];
     [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
     [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = NO;
-
 }
 
 - (void)initNavigationBar
