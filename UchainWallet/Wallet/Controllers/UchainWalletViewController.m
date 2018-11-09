@@ -23,17 +23,18 @@ static CGFloat kMargin = 15;
 @property (nonatomic, strong) UchainNavigationViewController *screenNavigationController;
 
 @property (nonatomic, strong) UIButton *moreBtn;
-
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
 
 @end
 
 @implementation UchainWalletViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self p_creatUI];
 }
@@ -44,13 +45,12 @@ static CGFloat kMargin = 15;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [[[AppDelegate sharedApplicationDelegate] mainTabBarController] setTabBarHidden:NO animated:animated];
     [self initNavigationBar];
+    [self getWalletLists];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
     [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = NO;
-
 }
 
 - (void)initNavigationBar
@@ -73,6 +73,7 @@ static CGFloat kMargin = 15;
 
 #pragma mark - UI
 - (void)p_creatUI{
+    _dataArray = [NSMutableArray new];
     self.view.backgroundColor = [UIColor colorWithHexString:@"#FFEDF2F5"];
     UIImageView *bannerImageView = [[UIImageView alloc]init];
     bannerImageView.image = [UIImage imageNamed:@"banner"];
@@ -86,7 +87,18 @@ static CGFloat kMargin = 15;
         make.left.right.bottom.equalTo(self.view);
     }];
     
-    
+    MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingBlock:^{
+        [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
+    }];
+    self.tableView.mj_header = header;
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+}
+
+- (void)getWalletLists
+{
+    _dataArray = [[ETHWalletManager shareManager] getWalletsArr];
+    [self.tableView reloadData];
 }
 
 #pragma mark - TableViewDataSource
@@ -96,12 +108,14 @@ static CGFloat kMargin = 15;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return _dataArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UchainWalletTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    ETHWalletModel *model = [_dataArray objectAtIndex:indexPath.row];
+    cell.walletName = model.name;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
@@ -157,10 +171,6 @@ static CGFloat kMargin = 15;
         _tableView.tableFooterView = [UIView new];
         _tableView.backgroundColor = [UIColor clearColor];
         [_tableView registerClass:[UchainWalletTableViewCell class] forCellReuseIdentifier:@"cell"];
-        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            
-//            [self p_getData];
-        }];
 
     }return _tableView;
 }

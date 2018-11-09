@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     [self initUI];
-//    [self handleEvent];
+    [self handleEvent];
 }
 
 #pragma mark - ------private------
@@ -65,8 +65,6 @@
         make.height.mas_equalTo(50);
         make.bottom.equalTo(self.view.mas_bottom).offset(-(iPhoneX ? 34.0F : 0));
     }];
-    
-    [self.toBackUpBtn addTarget:self action:@selector(backUpClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)back
@@ -75,35 +73,23 @@
 }
 
 #pragma mark - ------eventResponse------
-//- (void)handleEvent{
-//
-//
-//    [[self.toBackUpBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-//
-//    }];
-//}
-
-- (void)backUpClick:(id)sender
-{
-    NSString *keystore = [PDKeyChain load:[NSString stringWithFormat:@"%@", self.model.address]];
-    NeomobileWallet *wallet = nil;
-    NSError *err = nil;
-    if (keystore) {
-        wallet = NeomobileFromKeyStore(keystore, @"123456", &err);
-    }
-    
-    if (err) {
-        return;
-    }
-    ApexBackUpController *vc = [[ApexBackUpController alloc] init];
-    vc.model = self.model;
-    vc.mnemonic = [wallet mnemonic:mnemonicEnglish error:&err];
-    vc.BackupCompleteBlock = self.BackupCompleteBlock;
-    if (err) {
-        [self showMessage:SOLocalizedStringFromTable(@"Create Mnemonics Failed", nil)];
-        return;
-    }
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)handleEvent{
+    [[self.toBackUpBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        [UchainPassWordConfirmAlertView showDeleteConfirmAlertAddress:self.model.address subTitle:@"" Success:^(NeomobileWallet *wallet) {
+            NSError *err = nil;
+            ApexBackUpController *vc = [[ApexBackUpController alloc] init];
+            vc.model = self.model;
+            vc.mnemonic = [wallet mnemonic:mnemonicEnglish error:&err];
+            vc.BackupCompleteBlock = self.BackupCompleteBlock;
+            if (err) {
+                [self showMessage:SOLocalizedStringFromTable(@"Create Mnemonics Failed", nil)];
+                return;
+            }
+            [self.navigationController pushViewController:vc animated:YES];
+        } fail:^{
+            [self showMessage:SOLocalizedStringFromTable(@"Create Mnemonics Failed", nil)];
+        }];
+    }];
 }
 
 #pragma mark - ------getter & setter------

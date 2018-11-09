@@ -26,6 +26,13 @@ static CGFloat kMargin = 15;
     [self p_creatUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
+}
+
 #pragma mark - UI
 
 - (void)p_creatUI{
