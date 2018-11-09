@@ -9,6 +9,7 @@
 #import "UchainAccountListViewController.h"
 #import "UchainAccountListCell.h"
 #import "UchainOperateWalletViewController.h"
+#import "UchainPayTransferViewController.h"
 
 #import "WalletAddAssetsViewController.h"
 
@@ -173,9 +174,8 @@ static CGFloat kMargin = 15;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UchainOperateWalletViewController *operateWalletViewController = [[UchainOperateWalletViewController alloc] init];
-    operateWalletViewController.model = self.walletModel;
-    [self.navigationController pushViewController:operateWalletViewController animated:YES];
+    UchainPayTransferViewController *uchainPayTransferVC = [[UchainPayTransferViewController alloc] init];
+    [self.navigationController pushViewController:uchainPayTransferVC animated:YES];
 }
 
 #pragma mark - getter
