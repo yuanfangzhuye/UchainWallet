@@ -32,7 +32,7 @@ static CGFloat kMargin = 15;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.cellTitleArray = @[SOLocalizedStringFromTable(@"LanguageSetting", nil),SOLocalizedStringFromTable(@"Manual", nil),SOLocalizedStringFromTable(@"AboutUS", nil)];
-    self.cellImageNameArray = @[@"icon-wallet-create",@"icon-wallet-create",@"icon-wallet-create"];
+    self.cellImageNameArray = @[@"mine-settings",@"mine-box",@"mail-opened"];
     
     [self creatUI];
 }
@@ -73,16 +73,19 @@ static CGFloat kMargin = 15;
 #pragma mark - UI
 - (void)creatUI{
     
-    [self.view addSubview:self.backgroundImageView];
+    self.view.backgroundColor = [UIColor blackColor];
     
+    [self.view addSubview:self.backgroundImageView];
+
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.textColor = [UIColor colorWithHexString:@"#FF00C1FF"];
     titleLabel.text = SOLocalizedStringFromTable(@"MyAccount", nil);
     [self.view addSubview:titleLabel];
-    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).with.offset(92 + StatusBarHeight);
-    }];
+    
+    UIImageView *topImageView = [[UIImageView alloc]init];
+    topImageView.image = [UIImage imageNamed:@"mine-topimage"];
+    topImageView.layer.contentsGravity = @"resizeAspect";
+    [self.view addSubview:topImageView];
     
     UIView *lineView = [[UIView alloc]init];
     lineView.backgroundColor = [UIColor colorWithHexString:@"#FFC1C9CF"];
@@ -93,6 +96,20 @@ static CGFloat kMargin = 15;
         make.size.mas_equalTo(CGSizeMake(1, 20));
     }];
     
+    [self.backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.right.left.equalTo(self.view);
+    }];
+    
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.view.mas_top).with.offset(92 + StatusBarHeight);
+    }];
+    
+    [topImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.view);
+        make.bottom.equalTo(titleLabel.mas_top).with.offset(-5);
+    }];
+
     [self.managementWalletBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(lineView);
         make.left.equalTo(self.view.mas_left);
@@ -190,8 +207,8 @@ static CGFloat kMargin = 15;
 - (UIImageView *)backgroundImageView
 {
     if (!_backgroundImageView) {
-        _backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-        _backgroundImageView.image = [UIImage imageNamed:@"walletBackgroundImage"];
+        _backgroundImageView = [[UIImageView alloc]init];
+        _backgroundImageView.image = [UIImage imageNamed:@"mine-backImage"];
     }
     
     return _backgroundImageView;
@@ -201,7 +218,7 @@ static CGFloat kMargin = 15;
     if (!_managementWalletBtn) {
         _managementWalletBtn = [[JXLayoutButton alloc]init];
         _managementWalletBtn.layoutStyle = JXLayoutButtonStyleLeftImageRightTitle;
-        [_managementWalletBtn setImage:[UIImage imageNamed:@"icon-wallet-create"] forState:UIControlStateNormal];
+        [_managementWalletBtn setImage:[UIImage imageNamed:@"mine-pantone"] forState:UIControlStateNormal];
         _managementWalletBtn.titleLabel.font = UWFont(15);
         [_managementWalletBtn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
         [_managementWalletBtn setTitle:SOLocalizedStringFromTable(@"ManagemetWallet", nil) forState:UIControlStateNormal];
@@ -214,7 +231,7 @@ static CGFloat kMargin = 15;
     if (!_transactionRecordBtn) {
         _transactionRecordBtn = [[JXLayoutButton alloc]init];
         _transactionRecordBtn.layoutStyle = JXLayoutButtonStyleLeftImageRightTitle;
-        [_transactionRecordBtn setImage:[UIImage imageNamed:@"icon-wallet-create"] forState:UIControlStateNormal];
+        [_transactionRecordBtn setImage:[UIImage imageNamed:@"mine-selected-file"] forState:UIControlStateNormal];
         _transactionRecordBtn.titleLabel.font = UWFont(15);
         [_transactionRecordBtn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
         [_transactionRecordBtn setTitle:SOLocalizedStringFromTable(@"TransactionRecord", nil) forState:UIControlStateNormal];

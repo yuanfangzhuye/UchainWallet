@@ -39,6 +39,8 @@
 //#import "NSBundle+MJLocalization.h"
 //#import "NSString+Tool.h"
 #import "NSString+Encypte.h"
+#import "CAGradientLayer+UWGradient.h"
+
 
 /**< tools */
 #import "ApexThread.h"

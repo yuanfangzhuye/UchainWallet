@@ -17,7 +17,8 @@ static CGFloat kMargin = 15;
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) UIButton *payBtn;
-@property (nonatomic, strong) UIButton *btn;
+
+@property (nonatomic, strong) UIButton *transferBtn;
 
 
 
@@ -44,17 +45,20 @@ static CGFloat kMargin = 15;
     [self.view addSubview:topLabel];
     
     UIView *backTabView = [[UIView alloc]init];
-    backTabView.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:27/255.0 blue:132/255.0 alpha:0.07].CGColor;
-//    backTabView.layer.shadowOffset = CGSizeMake(0,2);
-//    backTabView.layer.shadowOpacity = 1;
-    backTabView.layer.shadowRadius = 5;
+    backTabView.backgroundColor = [UIColor whiteColor];
+    backTabView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    backTabView.layer.shadowOffset = CGSizeMake(0, 1);
+    backTabView.layer.shadowOpacity = 0.5;
     [self.view addSubview:backTabView];
     
+    [backTabView addSubview:self.payBtn];
+    [backTabView addSubview:self.transferBtn];
     
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(balanceView.mas_bottom).with.offset(75);
-        make.left.right.bottom.equalTo(self.view);
+        make.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(-SafeBottomMargin - 52.0f);
     }];
     
     [topLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -64,10 +68,20 @@ static CGFloat kMargin = 15;
     
     [backTabView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self.view);
-        make.height.mas_equalTo(50);
+        make.height.mas_equalTo(SafeBottomMargin + 50.0f);
     }];
     
-//    [backTabView]
+    [self.payBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(backTabView.mas_left).with.offset((kScreenWidth - 170*2 - 5)/2);
+        make.top.equalTo(backTabView.mas_top).with.offset(5);
+        make.size.mas_equalTo(CGSizeMake(170, 40));
+    }];
+    [self.transferBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(backTabView.mas_right).with.offset(-(kScreenWidth - 170*2 - 5)/2);
+        make.top.equalTo(backTabView.mas_top).with.offset(5);
+        make.size.mas_equalTo(CGSizeMake(170, 40));
+    }];
+
 
 }
 
@@ -130,6 +144,33 @@ static CGFloat kMargin = 15;
     }return _tableView;
 }
 
+- (UIButton *)payBtn{
+    if (!_payBtn) {
+        _payBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_payBtn setTitle:@"收款" forState:UIControlStateNormal];
+        [_payBtn setTitleColor:[UIColor colorWithHexString:@"#0061FF"] forState:UIControlStateNormal];
+        _payBtn.layer.borderWidth = 1;
+        _payBtn.layer.borderColor = [UIColor colorWithHexString:@"#0061FF"].CGColor;
+        [[_payBtn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
+            UWLog(@"click paybutton");
+        }];
+        
+    }return _payBtn;
+}
+
+- (UIButton *)transferBtn{
+    if (!_transferBtn) {
+        _transferBtn = [[UIButton alloc]init];
+        [_transferBtn setTitle:@"转账" forState:UIControlStateNormal];
+        [_transferBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _transferBtn.backgroundColor = [UchainUtil mainThemeColor];
+        [_transferBtn.layer addSublayer:[CAGradientLayer setGradualChangingColor:_transferBtn fromColor:@"#0061FF" toColor:@"#00B3FF"]];
+        [[_transferBtn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
+            UWLog(@"click paybutton");
+        }];
+        
+    }return _transferBtn;
+}
 
 /*
 #pragma mark - Navigation
