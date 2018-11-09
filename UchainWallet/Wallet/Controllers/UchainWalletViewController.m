@@ -88,8 +88,8 @@ static CGFloat kMargin = 15;
     }];
     
     MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingBlock:^{
-        [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
     }];
     self.tableView.mj_header = header;
     self.tableView.mj_header.automaticallyChangeAlpha = YES;

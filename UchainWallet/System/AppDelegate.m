@@ -69,9 +69,8 @@
 
 - (void)targetRootViewControllerSet
 {
-//    NSArray *arr = [[ETHWalletManager shareManager] getWalletsArr];
-    NSArray *arr = @[@"1"];
-    BOOL isFirstCreatDone = [[NSUserDefaults standardUserDefaults] objectForKey:KisFirstCreateWalletDone];
+    NSArray *arr = [[ETHWalletManager shareManager] getWalletsArr];
+    BOOL isFirstCreatDone = ((NSNumber*)[TKFileManager ValueWithKey:KisFirstCreateWalletDone]).boolValue;
     
     if (arr.count == 0 && !isFirstCreatDone) {
         UchainWalletInitViewController *walletInitViewController = [[UchainWalletInitViewController alloc] init];

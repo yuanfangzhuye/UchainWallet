@@ -21,9 +21,9 @@
 
 - (void)uchain_viewWillDisappear:(BOOL)animated
 {
-    
     Class class = NSClassFromString(@"UIInputWindowController");
-    if (self.class != class) {
+    Class class2 = NSClassFromString(@"UIApplicationRotationFollowingControllerNoTouches");
+    if (self.class != class && self.class != class2) {
         [self.navigationController lt_setBackgroundColor:[UIColor clearColor]];
         [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
@@ -35,7 +35,8 @@
 - (void)uchain_viewDidLoad
 {
     Class class = NSClassFromString(@"UIInputWindowController");
-    if (self.class != class) {
+    Class class2 = NSClassFromString(@"UIApplicationRotationFollowingControllerNoTouches");
+    if (self.class != class && self.class != class2) {
         self.view.backgroundColor = [UIColor whiteColor];
     }
     
