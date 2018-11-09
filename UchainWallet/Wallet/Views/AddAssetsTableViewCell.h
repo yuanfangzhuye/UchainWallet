@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AddAssetsTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) ApexAssetModel *model;
+@property (nonatomic, assign) BOOL indicatorSelected;
+
 @end
 
 NS_ASSUME_NONNULL_END

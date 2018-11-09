@@ -55,7 +55,7 @@
     [self.view addSubview:self.bottomView];
     
     self.bottomView.importString = SOLocalizedStringFromTable(@"Import Wallet", nil);
-    self.bottomView.createString = SOLocalizedStringFromTable(@"Confirm", nil);
+    self.bottomView.createString = SOLocalizedStringFromTable(@"Confirm11", nil);
     
     [self.bottomView.createButton addTarget:self action:@selector(createWallet) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView.importButton addTarget:self action:@selector(importWallet) forControlEvents:UIControlEventTouchUpInside];
@@ -66,7 +66,7 @@
     [self.tableView registerClass:[UchainPrivacyAgreeFooterView class] forHeaderFooterViewReuseIdentifier:@"footer"];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).with.offset([UchainUtil naviBarHeight]);
+        make.top.equalTo(self.view).with.offset([UchainUtil naviBarHeight] + 20.0f);
         make.left.equalTo(self.view).with.offset(15.0f);
         make.right.equalTo(self.view).with.offset(-15.0f);
         make.bottom.equalTo(self.view).offset(-(iPhoneX ? 83.0f : 49.0f));

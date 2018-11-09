@@ -20,8 +20,8 @@
 
 +(CGFloat)getTipsContentHeight
 {
-    CGFloat tips01Height = [UchainUtil calculateTextHeight:[UIFont fontWithName:@"PingFangSC-Regular" size:12] givenText:SOLocalizedStringFromTable(@"CreatWalletTip01", nil) givenWidth:kScreenWidth - 70.0f];
-    CGFloat tips02Height = [UchainUtil calculateTextHeight:[UIFont fontWithName:@"PingFangSC-Regular" size:12] givenText:SOLocalizedStringFromTable(@"CreatWalletTip02", nil) givenWidth:kScreenWidth - 70.0f];
+    CGFloat tips01Height = [UchainUtil calculateTextHeight:[UIFont systemFontOfSize:13] givenText:SOLocalizedStringFromTable(@"CreatWalletTip01", nil) givenWidth:kScreenWidth - 70.0f];
+    CGFloat tips02Height = [UchainUtil calculateTextHeight:[UIFont systemFontOfSize:13] givenText:SOLocalizedStringFromTable(@"CreatWalletTip02", nil) givenWidth:kScreenWidth - 70.0f];
     
     return 15.0f * 2 + tips01Height + 10.0f + tips02Height;
 }
@@ -36,8 +36,8 @@
             make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
         }];
         
-        CGFloat tips01Height = [UchainUtil calculateTextHeight:[UIFont fontWithName:@"PingFangSC-Regular" size:12] givenText:SOLocalizedStringFromTable(@"CreatWalletTip01", nil) givenWidth:kScreenWidth - 70.0f];
-        CGFloat tips02Height = [UchainUtil calculateTextHeight:[UIFont fontWithName:@"PingFangSC-Regular" size:12] givenText:SOLocalizedStringFromTable(@"CreatWalletTip02", nil) givenWidth:kScreenWidth - 70.0f];
+        CGFloat tips01Height = [UchainUtil calculateTextHeight:[UIFont systemFontOfSize:13] givenText:SOLocalizedStringFromTable(@"CreatWalletTip01", nil) givenWidth:kScreenWidth - 70.0f];
+        CGFloat tips02Height = [UchainUtil calculateTextHeight:[UIFont systemFontOfSize:13] givenText:SOLocalizedStringFromTable(@"CreatWalletTip02", nil) givenWidth:kScreenWidth - 70.0f];
         
         UIImageView *topIconImageView = [[UIImageView alloc] init];
         topIconImageView.backgroundColor = [UIColor blueColor];
@@ -100,7 +100,7 @@
     if (!_tipTopLabel) {
         _tipTopLabel = [[UILabel alloc] init];
         _tipTopLabel.text = SOLocalizedStringFromTable(@"CreatWalletTip01", nil);
-        _tipTopLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:12];
+        _tipTopLabel.font = [UIFont systemFontOfSize:13];
         _tipTopLabel.textColor = [UIColor colorWithRed:102/255 green:102/255 blue:102/255 alpha:1];
         _tipTopLabel.numberOfLines = 0;
     }
@@ -112,7 +112,7 @@
     if (!_tipBottomLabel) {
         _tipBottomLabel = [[UILabel alloc] init];
         _tipBottomLabel.text = SOLocalizedStringFromTable(@"CreatWalletTip02", nil);
-        _tipBottomLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:12];
+        _tipBottomLabel.font = [UIFont systemFontOfSize:13];
         _tipBottomLabel.textColor = [UIColor colorWithRed:102/255 green:102/255 blue:102/255 alpha:1];
         _tipBottomLabel.numberOfLines = 0;
     }

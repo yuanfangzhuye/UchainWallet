@@ -13,6 +13,7 @@ static CGFloat kMargin = 15;
 @interface WalletAddAssetsViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *contentArr;
 
 @end
 
@@ -34,6 +35,13 @@ static CGFloat kMargin = 15;
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self prepareEthData];
+}
+
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
@@ -42,10 +50,27 @@ static CGFloat kMargin = 15;
 }
 
 #pragma mark - Data
-//RefreshData
-- (void)p_getData{
-    
-    
+- (void)prepareEthData{
+    self.contentArr = [ETHAssetModelManage getLocalAssetModelsArr];
+    ApexAssetModel *ethModel = nil;
+    for (ApexAssetModel *model in [self.contentArr copy]) {
+        if ([model.hex_hash isEqualToString:assetId_Eth]) {
+            [self.contentArr removeObject:ethModel];
+            ethModel = model;
+            break;
+        }
+    }
+    if(ethModel) [self.contentArr insertObject:ethModel atIndex:0];
+    [self.tableView reloadData];
+}
+
+- (BOOL)verifyIsSelect:(ApexAssetModel*)model{
+    for (BalanceObject *obj in self.walletAssetArr) {
+        if ([model.hex_hash isEqualToString:obj.asset]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 #pragma mark - TableViewDataSource
@@ -55,7 +80,7 @@ static CGFloat kMargin = 15;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return self.contentArr.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,6 +88,9 @@ static CGFloat kMargin = 15;
     AddAssetsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.separatorInset = UIEdgeInsetsMake(0, kMargin, 0, kMargin);
+    
+    cell.model = self.contentArr[indexPath.row];
+    cell.indicatorSelected = [self verifyIsSelect:cell.model];
 
     return cell;
 }
@@ -74,11 +102,22 @@ static CGFloat kMargin = 15;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 70 + kMargin;
+    return 60.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ApexAssetModel *model = self.contentArr[indexPath.row];
+//    if ([model.hex_hash isEqualToString:assetId_NeoGas] || [model.hex_hash isEqualToString:assetId_Neo] || [model.hex_hash isEqualToString:assetId_CPX]) {
+//        return;
+//    }
     
+    AddAssetsTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.indicatorSelected = !cell.indicatorSelected;
+    if (cell.indicatorSelected) {
+        [self.walletAssetArr addObject:[model convertToBalanceObject]];
+    }else{
+        [self.walletAssetArr removeObject:[model convertToBalanceObject]];
+    }
 }
 
 

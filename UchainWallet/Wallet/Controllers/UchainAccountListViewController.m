@@ -49,7 +49,6 @@ static CGFloat kMargin = 15;
 #pragma mark - UI
 
 - (void)p_createUI{
-    self.navigationItem.title = @"Oamul Lu的钱包";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.addBtn];
     self.view.backgroundColor = [UIColor colorWithHexString:@"#FFEDF2F5"];
     [self.view addSubview:self.tableView];
@@ -201,6 +200,7 @@ static CGFloat kMargin = 15;
         [[_addBtn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
             UWLog(@"ClickAddBtn");
             WalletAddAssetsViewController *addAssetsVC = [[WalletAddAssetsViewController alloc]init];
+            addAssetsVC.walletAssetArr = self.assetArr;
             [self.navigationController pushViewController:addAssetsVC animated:YES];
         }];
         
