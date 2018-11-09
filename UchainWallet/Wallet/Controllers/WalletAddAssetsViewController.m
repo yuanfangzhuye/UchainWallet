@@ -20,12 +20,12 @@ static CGFloat kMargin = 15;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self p_creatUI];
+    [self p_createUI];
 }
 
 #pragma mark - UI
 
-- (void)p_creatUI{
+- (void)p_createUI{
     self.navigationItem.title = @"添加资产";
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
@@ -38,7 +38,7 @@ static CGFloat kMargin = 15;
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
-    [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = NO;
+    [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = YES;
     
 }
 

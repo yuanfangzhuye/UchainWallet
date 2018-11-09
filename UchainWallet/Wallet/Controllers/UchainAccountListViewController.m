@@ -25,13 +25,13 @@ static CGFloat kMargin = 15;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self p_creatUI];
+    [self p_createUI];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.navigationController lt_setBackgroundColor:[UIColor whiteColor]];
-    [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = NO;
+    [self.navigationController findHairlineImageViewUnder:self.navigationController.navigationBar].hidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -44,7 +44,7 @@ static CGFloat kMargin = 15;
 
 #pragma mark - UI
 
-- (void)p_creatUI{
+- (void)p_createUI{
     self.navigationItem.title = @"Oamul Lu的钱包";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.addBtn];
     self.view.backgroundColor = [UIColor colorWithHexString:@"#FFEDF2F5"];
@@ -184,10 +184,6 @@ static CGFloat kMargin = 15;
         _tableView.tableFooterView = [UIView new];
         _tableView.backgroundColor = [UIColor clearColor];
         [_tableView registerClass:[UchainAccountListCell class] forCellReuseIdentifier:@"cell"];
-        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            
-            //            [self p_getData];
-        }];
         
     }return _tableView;
 }
